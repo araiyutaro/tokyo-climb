@@ -828,8 +828,8 @@
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Fish+and+Bird+%E6%9D%B1%E9%99%BD%E7%94%BA"
       },
       "collector": {
-        "adapter": "wordpress-rss",
-        "feedUrl": "https://fish-bird.co.jp/feed/"
+        "adapter": "html-news",
+        "feedUrl": "https://fish-bird.co.jp/"
       }
     },
     {
@@ -888,8 +888,8 @@
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=BETA+Climbing+Gym+%E6%9B%99%E6%A9%8B"
       },
       "collector": {
-        "adapter": "wordpress-rss",
-        "feedUrl": "https://beta-climbing.com/feed/"
+        "adapter": "html-news",
+        "feedUrl": "https://beta-climbing.com/"
       }
     },
     {
@@ -918,8 +918,8 @@
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=ROCKLANDS+%E8%91%9B%E8%A5%BF"
       },
       "collector": {
-        "adapter": "wordpress-rss",
-        "feedUrl": "https://www.rocklands.tokyo/feed/"
+        "adapter": "html-news",
+        "feedUrl": "https://www.rocklands.tokyo/"
       }
     }
   ]

@@ -1,19 +1,217 @@
 {
-  "updatedAt": "2026-11-24T07:30:00Z",
+  "updatedAt": "2026-11-24T07:40:08.238Z",
   "events": [
     {
-      "id": "westrock-chofu-2026-11-30-full-hold-change",
-      "gymId": "westrock-chofu",
-      "type": "hold_change_full",
-      "title": "調布店 全面ホールド替え休業",
-      "description": "全面ホールド替え作業のため5日間終日休業となります。",
-      "startDate": "2026-11-30",
-      "endDate": "2026-12-04",
+      "id": "auto-underground-jujo-2026-05-01-0c407b2cde",
+      "gymId": "underground-jujo",
+      "type": "event",
+      "title": "ALCATRAZ2026　申し込みフォーム",
+      "description": "ALCATRAZ 2026 開催要項 開催日：2026年6月20日 会場：UNDERGROUND 参加費：6000円 ノベルティ：アングラオリジナルＴシャツ セッター：坂本裕樹・UNDERGROUNDスタッフ ◆カテゴリー (すべてのカテゴリーが男女混合になります) ビギナークラス … コンスタントに登れるグレードが5級までの方 ミドルクラス … コンスタントに登れるグレードが4級までの方 マスタークラス … コンスタントに登れるグレー",
+      "startDate": "2026-05-01",
+      "endDate": "2026-06-19",
       "source": {
-        "url": "https://www.westrock-climbing.com/",
+        "url": "https://underground-climb.com/2026/04/30/12195/",
+        "label": "公式サイトRSS",
+        "confidence": "auto",
+        "fetchedAt": "2026-11-24T07:40:08.238Z"
+      }
+    },
+    {
+      "id": "auto-basecamp-shinjuku-2026-08-08-e4f62a5819",
+      "gymId": "basecamp-shinjuku",
+      "type": "hold_change_partial",
+      "title": "お盆の営業時間について",
+      "description": "新宿店では8/8(土)～8/16(日)まで通常通り営業いたします。 ※8/12(月)～8/13(火)はルートセットのため8/11（日）の18：00～Close、8/12(月)および8/13(火)のOpen～18：00は利用エリアを制限させていただきますのでご注意ください。",
+      "startDate": "2026-08-08",
+      "endDate": "2026-08-16",
+      "source": {
+        "url": "https://b-camp.jp/shinjuku/pickup/1458/",
+        "label": "公式サイトRSS",
+        "confidence": "auto",
+        "fetchedAt": "2026-11-24T07:40:08.238Z"
+      }
+    },
+    {
+      "id": "auto-basecamp-higashimurayama-2026-09-02-bf50e28468",
+      "gymId": "basecamp-higashimurayama",
+      "type": "hold_change_partial",
+      "title": "9月セットスケジュール",
+      "description": "9月のセット予定 第1週に強傾斜壁、第4週に緩傾斜壁のセットがありますのでご確認お願いします＊9/2(水)21:00～Kusa wall Leftのホールド外し 9/3(木)14:00 OPEN～強傾斜エリア封鎖 9/4(金)強傾斜ホールド替え 18:00 OPEN ＊9/23(水)21:00〜Slab 92のホールド外し 9/24(木)14:00 OPEN〜緩傾斜エリア封鎖 9/25(金)緩傾斜ホールド替え 18:00 OPENThe",
+      "startDate": "2026-09-02",
+      "endDate": "2026-09-02",
+      "source": {
+        "url": "https://b-camp.jp/higashimurayama/route/1092/?utm_source=rss&utm_medium=rss&utm_campaign=9%25e6%259c%2588%25e3%2582%25bb%25e3%2583%2583%25e3%2583%2588%25e3%2582%25b9%25e3%2582%25b1%25e3%2582%25b8%25e3%2583%25a5%25e3%2583%25bc%25e3%2583%25ab-2",
+        "label": "公式サイトRSS",
+        "confidence": "auto",
+        "fetchedAt": "2026-11-24T07:40:08.238Z"
+      }
+    },
+    {
+      "id": "auto-quail-nerima-2026-10-13-c44b84c827",
+      "gymId": "quail-nerima",
+      "type": "hold_change_partial",
+      "title": "ホールド替えに伴う営業スケジュール変更のお知らせ",
+      "description": "ホールド替えに伴う営業スケジュール変更のお知らせ 10月13,14日に90,100度壁のホールド替えを行います。 それに伴い、ジムの営業時間に一部変更がありますので、ご注意ください。 10月13日(火)のキッズスクールはお休みです。 対象エリア 90°,100°壁 スケジュール 10月12日（月）通常営業 10月13日（火）お休み 10月14日（水）短縮営業(19-23) 10月15日（木）通常営業 月パスの期間が10月13日にかかる方",
+      "startDate": "2026-10-13",
+      "endDate": "2026-10-13",
+      "source": {
+        "url": "http://quail-climbing.com/2026/10/01/%e3%83%9b%e3%83%bc%e3%83%ab%e3%83%89%e6%9b%bf%e3%81%88%e3%81%ab%e4%bc%b4%e3%81%86%e5%96%b6%e6%a5%ad%e3%82%b9%e3%82%b1%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e5%a4%89%e6%9b%b4%e3%81%ae%e3%81%8a-47/",
+        "label": "公式サイトお知らせ",
+        "confidence": "auto",
+        "fetchedAt": "2026-11-24T07:40:08.238Z"
+      }
+    },
+    {
+      "id": "auto-basecamp-shinbashi-2026-10-18-9f276769e4",
+      "gymId": "basecamp-shinbashi",
+      "type": "hold_change_full",
+      "title": "10月全面ホールド替えのお知らせ",
+      "description": "ROUTE SET INFORMATION 10月のセットインフォです ーーーーー 10/18 (日) 18:00CLOSE ホールド外し作業のため 10/19 (月) 臨時休業日 10/20 (火) ラインセットリニューアル OPEN 18:00 〜 CLOSE 23:00 @onebouldering @tnfc_official divisiontryout 10/25(日) まで Hubble(強傾斜壁)限定ラインセット まぶし",
+      "startDate": "2026-10-18",
+      "endDate": "2026-10-18",
+      "source": {
+        "url": "https://b-camp.jp/shinbashi/route/836/?utm_source=rss&utm_medium=rss&utm_campaign=10%25e6%259c%2588%25e5%2585%25a8%25e9%259d%25a2%25e3%2583%259b%25e3%2583%25bc%25e3%2583%25ab%25e3%2583%2589%25e6%259b%25bf%25e3%2581%2588%25e3%2581%25ae%25e3%2581%258a%25e7%259f%25a5%25e3%2582%2589%25e3%2581%259b-3",
+        "label": "公式サイトRSS",
+        "confidence": "auto",
+        "fetchedAt": "2026-11-24T07:40:08.238Z"
+      }
+    },
+    {
+      "id": "auto-basecamp-shinbashi-2026-10-19-792609d06f",
+      "gymId": "basecamp-shinbashi",
+      "type": "hold_change_full",
+      "title": "10月19日（月）　ルートセットに伴う臨時休業のお知らせ",
+      "description": "10/19（月）は終日ルートセット作業の為、 臨時休業とさせて頂きます。 また新橋店の長期パスを利用の方は休業日数分延長され、 単店舗サブスクパス利用の方は同日での他店舗の利用が可能となります ご理解ご協力の程よろしくお願い致します。The post 10月19日（月） ルートセットに伴う臨時休業のお知らせ first appeared on Urban Base Camp 新橋.",
+      "startDate": "2026-10-19",
+      "endDate": "2026-10-19",
+      "source": {
+        "url": "https://b-camp.jp/shinbashi/pickup/840/?utm_source=rss&utm_medium=rss&utm_campaign=10%25e6%259c%258819%25e6%2597%25a5%25ef%25bc%2588%25e6%259c%2588%25ef%25bc%2589%25e3%2580%2580%25e3%2583%25ab%25e3%2583%25bc%25e3%2583%2588%25e3%2582%25bb%25e3%2583%2583%25e3%2583%2588%25e3%2581%25ab%25e4%25bc%25b4%25e3%2581%2586%25e8%2587%25a8%25e6%2599%2582%25e4%25bc%2591%25e6%25a5%25ad%25e3%2581%25ae%25e3%2581%258a",
+        "label": "公式サイトRSS",
+        "confidence": "auto",
+        "fetchedAt": "2026-11-24T07:40:08.238Z"
+      }
+    },
+    {
+      "id": "auto-basecamp-higashimurayama-2026-10-29-131be53fd4",
+      "gymId": "basecamp-higashimurayama",
+      "type": "closed",
+      "title": "臨時休業と営業時間の変更のお知らせ",
+      "description": "臨時休業と営業時間の変更のお知らせ ３周年イベントに伴い、臨時休業日と営業時間の変更がございます。 臨時休業日 １０月２９日(木)、１０月３０日(金) 営業時間の変更 １０月３１日(土) １８:００ 閉店 ＊１０月２９日～１０月３０日は臨時休業日となり、東村山店の長期パスが休業日数分延長され、単店舗サブスクパス利用者は同日での他店舗の利用が可能となります。The post 臨時休業と営業時間の変更のお知らせ first appeared",
+      "startDate": "2026-10-29",
+      "endDate": "2026-10-30",
+      "source": {
+        "url": "https://b-camp.jp/higashimurayama/pickup/1118/?utm_source=rss&utm_medium=rss&utm_campaign=%25e8%2587%25a8%25e6%2599%2582%25e4%25bc%2591%25e6%25a5%25ad%25e3%2581%25a8%25e5%2596%25b6%25e6%25a5%25ad%25e6%2599%2582%25e9%2596%2593%25e3%2581%25ae%25e5%25a4%2589%25e6%259b%25b4%25e3%2581%25ae%25e3%2581%258a%25e7%259f%25a5%25e3%2582%2589%25e3%2581%259b",
+        "label": "公式サイトRSS",
+        "confidence": "auto",
+        "fetchedAt": "2026-11-24T07:40:08.238Z"
+      }
+    },
+    {
+      "id": "auto-girigiri-nishitokyo-2026-10-31-f7ac4af8c7",
+      "gymId": "girigiri-nishitokyo",
+      "type": "event",
+      "title": "10/31(土)ボルダーエリア貸切のお知らせ",
+      "description": "お知らせ10/31（土）ハロウィンイベント開催に伴い、ボルダーエリアが使用できなくなります。10-12時 2階ボルダー テープ貼りの準備12-14時 1階ボルダー準備14-15時半 イベント開催中、1.2階貸切です。ご理解の程よろしくお願いいたします#クライミングジムギリギリ #girigiri #クライミングジム #ハロウィンイベント #ボルダー貸切 FacebookXBlueskythreadsCopyFacebookXBluesk",
+      "startDate": "2026-10-31",
+      "endDate": "2026-10-31",
+      "source": {
+        "url": "https://climbing-girigiri.com/2026/10/26/10-31%e5%9c%9f%e3%83%9c%e3%83%ab%e3%83%80%e3%83%bc%e3%82%a8%e3%83%aa%e3%82%a2%e8%b2%b8%e5%88%87%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b/",
+        "label": "公式サイトRSS",
+        "confidence": "auto",
+        "fetchedAt": "2026-11-24T07:40:08.238Z"
+      }
+    },
+    {
+      "id": "auto-basecamp-shinbashi-2026-11-15-95cd03b42f",
+      "gymId": "basecamp-shinbashi",
+      "type": "hold_change_full",
+      "title": "11月全面ホールド替えのお知らせ",
+      "description": "ROUTE SET INFORMATION 11月のセットインフォです ーーーーー 11/15(日) 18:00CLOSE ホールド外し作業のため 11/16(月) 臨時休業日 11/17(火) ラインセットリニューアル OPEN 18:00 〜 CLOSE 23:00 ーーーーー 11月のゲストはイケメンが2人The post 11月全面ホールド替えのお知らせ first appeared on Urban Base Camp 新橋.",
+      "startDate": "2026-11-15",
+      "endDate": "2026-11-15",
+      "source": {
+        "url": "https://b-camp.jp/shinbashi/route/852/?utm_source=rss&utm_medium=rss&utm_campaign=11%25e6%259c%2588%25e5%2585%25a8%25e9%259d%25a2%25e3%2583%259b%25e3%2583%25bc%25e3%2583%25ab%25e3%2583%2589%25e6%259b%25bf%25e3%2581%2588%25e3%2581%25ae%25e3%2581%258a%25e7%259f%25a5%25e3%2582%2589%25e3%2581%259b-4",
+        "label": "公式サイトRSS",
+        "confidence": "auto",
+        "fetchedAt": "2026-11-24T07:40:08.238Z"
+      }
+    },
+    {
+      "id": "auto-basecamp-shinbashi-2026-11-16-57e1fde5b1",
+      "gymId": "basecamp-shinbashi",
+      "type": "hold_change_full",
+      "title": "11月16日（月）　ルートセットに伴う臨時休業のお知らせ",
+      "description": "11/16（月）は終日ルートセット作業の為、 臨時休業とさせて頂きます。 また新橋店の長期パスを利用の方は休業日数分延長され、 単店舗サブスクパス利用の方は同日での他店舗の利用が可能となります ご理解ご協力の程よろしくお願い致します。The post 11月16日（月） ルートセットに伴う臨時休業のお知らせ first appeared on Urban Base Camp 新橋.",
+      "startDate": "2026-11-16",
+      "endDate": "2026-11-16",
+      "source": {
+        "url": "https://b-camp.jp/shinbashi/pickup/856/?utm_source=rss&utm_medium=rss&utm_campaign=11%25e6%259c%258816%25e6%2597%25a5%25ef%25bc%2588%25e6%259c%2588%25ef%25bc%2589%25e3%2580%2580%25e3%2583%25ab%25e3%2583%25bc%25e3%2583%2588%25e3%2582%25bb%25e3%2583%2583%25e3%2583%2588%25e3%2581%25ab%25e4%25bc%25b4%25e3%2581%2586%25e8%2587%25a8%25e6%2599%2582%25e4%25bc%2591%25e6%25a5%25ad%25e3%2581%25ae%25e3%2581%258a",
+        "label": "公式サイトRSS",
+        "confidence": "auto",
+        "fetchedAt": "2026-11-24T07:40:08.238Z"
+      }
+    },
+    {
+      "id": "auto-quail-nerima-2026-11-16-c536e4d333",
+      "gymId": "quail-nerima",
+      "type": "hold_change_partial",
+      "title": "ホールド替えに伴う営業スケジュール変更のお知らせ",
+      "description": "ホールド替えに伴う営業スケジュール変更のお知らせ 11月16,17日に120度壁のホールド替えを行います。 それに伴い、ジムの営業時間に一部変更がありますので、ご注意ください。 11月17日(火)のキッズスクールはお休みです。 対象エリア 120°壁 スケジュール 11月15日（日）通常営業 10月16日（月）お休み 10月17日（火）短縮営業(19-23) 10月18日（水）通常営業 月パスの期間が11月16日にかかる方は1日分延長し",
+      "startDate": "2026-11-16",
+      "endDate": "2026-11-16",
+      "source": {
+        "url": "http://quail-climbing.com/2026/11/05/%e3%83%9b%e3%83%bc%e3%83%ab%e3%83%89%e6%9b%bf%e3%81%88%e3%81%ab%e4%bc%b4%e3%81%86%e5%96%b6%e6%a5%ad%e3%82%b9%e3%82%b1%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e5%a4%89%e6%9b%b4%e3%81%ae%e3%81%8a-48/",
+        "label": "公式サイトお知らせ",
+        "confidence": "auto",
+        "fetchedAt": "2026-11-24T07:40:08.238Z"
+      }
+    },
+    {
+      "id": "quail-nerima-2026-11-16-120deg-set",
+      "gymId": "quail-nerima",
+      "type": "hold_change_partial",
+      "title": "120度壁 ホールド替え",
+      "description": "120度壁のホールド替え実施（11/17キッズスクール休講）。",
+      "startDate": "2026-11-16",
+      "endDate": "2026-11-17",
+      "affectedAreas": [
+        "120度壁"
+      ],
+      "source": {
+        "url": "http://quail-climbing.com/",
         "label": "公式サイトお知らせ",
         "confidence": "verified",
-        "fetchedAt": "2026-11-24T07:20:00Z"
+        "fetchedAt": "2026-11-24T07:30:00Z"
+      }
+    },
+    {
+      "id": "auto-girigiri-nishitokyo-2026-11-22-8a2940db38",
+      "gymId": "girigiri-nishitokyo",
+      "type": "event",
+      "title": "11/22(日)コンペの為、2階ボルダー10：00～16：00貸切です",
+      "description": "お知らせ11/22（日）ギリギリコンペ開催の為、１０時から１６時頃まで2階ボルダーは貸切となります。1階ボルダーは１０時半から１１時半までキッズスクールがあり、１５時から１７時までボルダリング体験会開催の為、大変混み合いますのでご了承ください。よろしくお願い致します#クライミングジムギリギリ #コンペ #西東京市 #ボルタリング #girigiri FacebookXBlueskythreadsCopyFacebookXBlueskyt",
+      "startDate": "2026-11-22",
+      "endDate": "2026-11-22",
+      "source": {
+        "url": "https://climbing-girigiri.com/2026/11/20/11-22%e6%97%a5%e3%82%b3%e3%83%b3%e3%83%9a%e3%81%ae%e7%82%ba%e3%80%812%e9%9a%8e%e3%83%9c%e3%83%ab%e3%83%80%e3%83%bc10%ef%bc%9a00%ef%bd%9e16%ef%bc%9a00%e8%b2%b8%e5%88%87%e3%81%a7%e3%81%99/",
+        "label": "公式サイトRSS",
+        "confidence": "auto",
+        "fetchedAt": "2026-11-24T07:40:08.238Z"
+      }
+    },
+    {
+      "id": "auto-bpump-akiba-2026-11-25-678bc51c6e",
+      "gymId": "bpump-akiba",
+      "type": "event",
+      "title": "Climbing Shoes Summit 2026 ”開催に伴うセットスケジュール",
+      "description": "Climbing Shoes Summit 2026 ”開催に伴うセットスケジュール イベント開催に伴い一部エリアのホールドを外させていただきます ・11月25日（水） 4階 Concept Wall & 長モノ […]",
+      "startDate": "2026-11-25",
+      "endDate": "2026-11-25",
+      "source": {
+        "url": "https://pump-climbing.com/gym/akiba/climbing-shoes-summit-2026-%e9%96%8b%e5%82%ac%e3%81%ab%e4%bc%b4%e3%81%86%e3%82%bb%e3%83%83%e3%83%88%e3%82%b9%e3%82%b1%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab/blog-news/",
+        "label": "公式サイトRSS",
+        "confidence": "auto",
+        "fetchedAt": "2026-11-24T07:40:08.238Z"
       }
     },
     {
@@ -24,10 +222,32 @@
       "description": "Climbing Shoes Summit 2026 に向けた変則セットのため、21:00以降4階の一部エリアが利用不可になります。",
       "startDate": "2026-11-25",
       "endDate": "2026-11-25",
-      "affectedAreas": ["4F Concept Wall", "長モノエリア（黄緑課題）"],
+      "affectedAreas": [
+        "4F Concept Wall",
+        "長モノエリア（黄緑課題）"
+      ],
       "source": {
         "url": "https://pump-climbing.com/gym/akiba/",
         "label": "公式サイト SET info",
+        "confidence": "verified",
+        "fetchedAt": "2026-11-24T07:30:00Z"
+      }
+    },
+    {
+      "id": "basecamp-kinshicho-2026-11-25-leaning-tower",
+      "gymId": "basecamp-kinshicho",
+      "type": "hold_change_partial",
+      "title": "リードエリア「Leaning Tower」リニューアルセット",
+      "description": "11/25〜11/27はLeaning Tower利用不可（18:00までは手前Rostrumエリアも一部制限あり）。ボルダーエリアは営業。",
+      "startDate": "2026-11-25",
+      "endDate": "2026-11-27",
+      "affectedAreas": [
+        "Leaning Tower",
+        "Rostrum（一部）"
+      ],
+      "source": {
+        "url": "https://b-camp.jp/kinshicho/",
+        "label": "公式サイトお知らせ",
         "confidence": "verified",
         "fetchedAt": "2026-11-24T07:30:00Z"
       }
@@ -40,7 +260,10 @@
       "description": "20:00以降、2階 B Wall 全課題および D Wall 全課題がホールド外し作業のため利用不可になります。",
       "startDate": "2026-11-26",
       "endDate": "2026-11-26",
-      "affectedAreas": ["2F B Wall", "2F D Wall"],
+      "affectedAreas": [
+        "2F B Wall",
+        "2F D Wall"
+      ],
       "source": {
         "url": "https://pump-climbing.com/gym/akiba/",
         "label": "公式サイト SET info",
@@ -64,37 +287,261 @@
       }
     },
     {
-      "id": "basecamp-kinshicho-2026-11-25-leaning-tower",
-      "gymId": "basecamp-kinshicho",
-      "type": "hold_change_partial",
-      "title": "リードエリア「Leaning Tower」リニューアルセット",
-      "description": "11/25〜11/27はLeaning Tower利用不可（18:00までは手前Rostrumエリアも一部制限あり）。ボルダーエリアは営業。",
-      "startDate": "2026-11-25",
-      "endDate": "2026-11-27",
-      "affectedAreas": ["Leaning Tower", "Rostrum（一部）"],
+      "id": "auto-pump2-kawasaki-2026-11-28-202b06df8c",
+      "gymId": "pump2-kawasaki",
+      "type": "event",
+      "title": "Climbing Shoes Summit 2026 開催 @ B-PUMP TOKYO",
+      "description": "Climbing Shoes Summit 2026 がB-PUMP TOKYOにて開催！ 「測る、試す、登る」 昨年、多くのクライマーにご来場いただいた 「Climbing Shoes Summit」をグレードアップして開催します！ 日々進化していく課題と足型、進化するクライミングシューズ。 みなさんは、自分の足に本当に合った一足に出会えていますか？ 自身の足型を3Dスキャンし、その場で自分にあったシューズを試すことができる唯一無二の",
+      "startDate": "2026-11-28",
+      "endDate": "2026-11-29",
       "source": {
-        "url": "https://b-camp.jp/kinshicho/",
-        "label": "公式サイトお知らせ",
-        "confidence": "verified",
-        "fetchedAt": "2026-11-24T07:30:00Z"
+        "url": "https://pump-climbing.com/gym/pump2/climbing-shoes-summit-2026-%e9%96%8b%e5%82%ac-b-pump-tokyo/",
+        "label": "公式サイトRSS",
+        "confidence": "auto",
+        "fetchedAt": "2026-11-24T07:40:08.238Z"
       }
     },
     {
-      "id": "quail-nerima-2026-11-16-120deg-set",
-      "gymId": "quail-nerima",
-      "type": "hold_change_partial",
-      "title": "120度壁 ホールド替え",
-      "description": "120度壁のホールド替え実施（11/17キッズスクール休講）。",
-      "startDate": "2026-11-16",
-      "endDate": "2026-11-17",
-      "affectedAreas": ["120度壁"],
+      "id": "auto-basecamp-kinshicho-2026-11-28-f9292c8bff",
+      "gymId": "basecamp-kinshicho",
+      "type": "event",
+      "title": "11月28日(土)3周年感謝祭”錦祭り”",
+      "description": "当日はイベント盛りだくさんでお届けします。 通常通りのご利用が可能です。 いろいろお得な抽選会もございますので、ぜひご来店お待ちしています！The post 11月28日(土)3周年感謝祭”錦祭り” first appeared on BASE CAMP TOKYO 錦糸町.",
+      "startDate": "2026-11-28",
+      "endDate": "2026-11-28",
       "source": {
-        "url": "http://quail-climbing.com/",
+        "url": "https://b-camp.jp/kinshicho/pickup/1023/",
+        "label": "公式サイトRSS",
+        "confidence": "auto",
+        "fetchedAt": "2026-11-24T07:40:08.238Z"
+      }
+    },
+    {
+      "id": "westrock-chofu-2026-11-30-full-hold-change",
+      "gymId": "westrock-chofu",
+      "type": "hold_change_full",
+      "title": "調布店 全面ホールド替え休業",
+      "description": "全面ホールド替え作業のため5日間終日休業となります。",
+      "startDate": "2026-11-30",
+      "endDate": "2026-12-04",
+      "source": {
+        "url": "https://www.westrock-climbing.com/",
         "label": "公式サイトお知らせ",
         "confidence": "verified",
-        "fetchedAt": "2026-11-24T07:30:00Z"
+        "fetchedAt": "2026-11-24T07:20:00Z"
+      }
+    },
+    {
+      "id": "auto-girigiri-nishitokyo-2026-12-12-c8ad3c9544",
+      "gymId": "girigiri-nishitokyo",
+      "type": "event",
+      "title": "12/12（土）キッズボルダリングイベント開催🎄",
+      "description": "クリスマスキッズボルダリングイベント開催！ 日時：１２/１２(土)１５：００～１７：００ 参加費：2,000円（月パスが無い方は別途利用料かかります） ※12/9(水)参加締切り 新しい課題とその日限定のテープ課題を皆で登って、最後にビンゴ大会をやります スクール生以外の小学生も参加ＯＫですが別途利用料かかります FacebookXBlueskythreadsCopyFacebookXBlueskythreadsCopy",
+      "startDate": "2026-12-12",
+      "endDate": "2026-12-12",
+      "source": {
+        "url": "https://climbing-girigiri.com/2026/11/08/12-12%ef%bc%88%e5%9c%9f%ef%bc%89%e3%82%ad%e3%83%83%e3%82%ba%e3%83%9c%e3%83%ab%e3%83%80%e3%83%aa%e3%83%b3%e3%82%b0%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e9%96%8b%e5%82%ac%f0%9f%8e%84/",
+        "label": "公式サイトRSS",
+        "confidence": "auto",
+        "fetchedAt": "2026-11-24T07:40:08.238Z"
+      }
+    },
+    {
+      "id": "auto-girigiri-nishitokyo-2026-12-13-20292d65c4",
+      "gymId": "girigiri-nishitokyo",
+      "type": "event",
+      "title": "12/13(日)大西さんのボルダリング講習会開催★",
+      "description": "お知らせお待たせしました！12/13(日)大西良治さんのボルダリング講習会開催！特別講習会なので、ぜひこの機会にご参加下さいご予約お待ちしております！ ☆料金：1人3,000円（別途施設使用料かかります）10：30～11：30 4級以上（高校生以上）12：00～13：00 5級以下（高校生以上）14：00～15：0０ 4級以上（高校生以上）15:30〜16:30 小・中学生 その人のレベルに合わせてレクチャーしてくれるのでグレードはあま",
+      "startDate": "2026-12-13",
+      "endDate": "2026-12-13",
+      "source": {
+        "url": "https://climbing-girigiri.com/2026/10/26/12-13%e6%97%a5%e5%a4%a7%e8%a5%bf%e3%81%95%e3%82%93%e3%81%ae%e3%83%9c%e3%83%ab%e3%83%80%e3%83%aa%e3%83%b3%e3%82%b0%e8%ac%9b%e7%bf%92%e4%bc%9a%e9%96%8b%e5%82%ac%e2%98%85/",
+        "label": "公式サイトRSS",
+        "confidence": "auto",
+        "fetchedAt": "2026-11-24T07:40:08.238Z"
       }
     }
   ],
-  "syncStatus": []
+  "syncStatus": [
+    {
+      "gymId": "bpump-ogikubo",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "bpump-akiba",
+      "status": "ok",
+      "eventsFound": 2,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "pump2-kawasaki",
+      "status": "ok",
+      "eventsFound": 1,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "rocky-shinjuku",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "rocky-shinagawa",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "rocky-ryogoku",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "noborock-shibuya",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "noborock-shinjuku",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "noborock-ikebukuro",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "noborock-takadanobaba",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "noborock-machida",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "noborock-mizonokuchi",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "dbouldering-tachikawa",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "dbouldering-hachioji",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "dbouldering-tamachi",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "dbouldering-yokohama",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "westrock-chofu",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "westrock-fuchu",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "basecamp-shinjuku",
+      "status": "ok",
+      "eventsFound": 1,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "basecamp-higashimurayama",
+      "status": "ok",
+      "eventsFound": 2,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "basecamp-edogawabashi",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "basecamp-shinbashi",
+      "status": "ok",
+      "eventsFound": 4,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "basecamp-kinshicho",
+      "status": "ok",
+      "eventsFound": 1,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "quail-nerima",
+      "status": "ok",
+      "eventsFound": 2,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "girigiri-nishitokyo",
+      "status": "ok",
+      "eventsFound": 4,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "nextgen-niiza",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "fish-and-bird-toyocho",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "underground-jujo",
+      "status": "ok",
+      "eventsFound": 1,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "beta-akebonobashi",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    },
+    {
+      "gymId": "rocklands-kasai",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-24T07:40:08.238Z"
+    }
+  ]
 }
