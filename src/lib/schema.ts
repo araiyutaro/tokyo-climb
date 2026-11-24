@@ -81,6 +81,7 @@ export const CollectorConfigSchema = z.object({
     'wordpress-rss',
     'wordpress-rest',
     'html-news',
+    'noborock-calendar',
     'google-calendar-ics',
     'calendar-image',
     'manual-only',

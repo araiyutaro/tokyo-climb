@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T07:30:00Z",
+  "updatedAt": "2026-11-24T08:40:34.879Z",
   "gyms": [
     {
       "id": "bpump-ogikubo",
@@ -11,14 +11,38 @@
       "address": "東京都杉並区上荻1-10-12 荻窪東亜会館3F",
       "nearestStation": "荻窪駅 徒歩1分",
       "regularHours": {
-        "mon": { "open": "13:00", "close": "23:00" },
-        "tue": { "open": "13:00", "close": "23:00" },
-        "wed": { "open": "13:00", "close": "23:00" },
-        "thu": { "open": "13:00", "close": "23:00" },
-        "fri": { "open": "13:00", "close": "23:00" },
-        "sat": { "open": "10:00", "close": "21:00" },
-        "sun": { "open": "10:00", "close": "21:00" },
-        "holiday": { "open": "10:00", "close": "21:00" }
+        "mon": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
       },
       "links": {
         "website": "https://pump-climbing.com/gym/bpump/",
@@ -41,19 +65,43 @@
       "address": "東京都文京区湯島1-1-8",
       "nearestStation": "秋葉原駅 / 御茶ノ水駅 徒歩5分",
       "regularHours": {
-        "mon": { "open": "12:00", "close": "23:00" },
-        "tue": { "open": "12:00", "close": "23:00" },
-        "wed": { "open": "12:00", "close": "23:00" },
-        "thu": { "open": "12:00", "close": "23:00" },
-        "fri": { "open": "12:00", "close": "23:00" },
-        "sat": { "open": "11:00", "close": "21:00" },
-        "sun": { "open": "10:00", "close": "21:00" },
-        "holiday": { "open": "11:00", "close": "21:00" }
+        "mon": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "11:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "11:00",
+          "close": "21:00"
+        }
       },
       "links": {
         "website": "https://pump-climbing.com/gym/akiba/",
         "scheduleUrl": "https://pump-climbing.com/gym/akiba/news/",
-        "instagram": "https://www.instagram.com/bpump_tokyo/",
+        "instagram": "https://www.instagram.com/bpumptokyo/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=B-PUMP+TOKYO+%E7%A7%8B%E8%91%89%E5%8E%9F"
       },
       "collector": {
@@ -72,19 +120,40 @@
       "nearestStation": "中野島駅 徒歩8分",
       "regularHours": {
         "mon": null,
-        "tue": { "open": "12:00", "close": "23:00" },
-        "wed": { "open": "12:00", "close": "23:00" },
-        "thu": { "open": "12:00", "close": "23:00" },
-        "fri": { "open": "12:00", "close": "23:00" },
-        "sat": { "open": "10:00", "close": "22:00" },
-        "sun": { "open": "10:00", "close": "21:00" },
-        "holiday": { "open": "10:00", "close": "21:00" }
+        "tue": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "22:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
       },
       "notes": "月曜定休（祝日の場合は営業・翌火曜振替休業）",
       "links": {
         "website": "https://pump-climbing.com/gym/pump2/",
         "scheduleUrl": "https://pump-climbing.com/gym/pump2/news/",
-        "instagram": "https://www.instagram.com/pump2_kawasaki/",
+        "instagram": "https://www.instagram.com/pump2climbing/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=PUMP2+%E5%B7%9D%E5%B4%8E"
       },
       "collector": {
@@ -102,19 +171,43 @@
       "address": "東京都新宿区市谷台町7-1",
       "nearestStation": "曙橋駅 徒歩5分",
       "regularHours": {
-        "mon": { "open": "10:00", "close": "23:00" },
-        "tue": { "open": "10:00", "close": "23:00" },
-        "wed": { "open": "10:00", "close": "23:00" },
-        "thu": { "open": "10:00", "close": "23:00" },
-        "fri": { "open": "10:00", "close": "23:00" },
-        "sat": { "open": "10:00", "close": "21:00" },
-        "sun": { "open": "10:00", "close": "21:00" },
-        "holiday": { "open": "10:00", "close": "21:00" }
+        "mon": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
       },
       "links": {
         "website": "https://www.rockyclimbing.com/shinjukuakebonobashi/",
         "scheduleUrl": "https://www.rockyclimbing.com/",
-        "instagram": "https://www.instagram.com/rockyclimbing_shinjuku/",
+        "instagram": "https://www.instagram.com/jyuku_rocky/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=ROCKY+%E6%96%B0%E5%AE%BF%E6%9B%99%E6%A9%8B"
       },
       "collector": {
@@ -133,19 +226,43 @@
       "address": "東京都港区港南5-4-38 松岡品川埠頭ビル103",
       "nearestStation": "天王洲アイル駅 徒歩12分 / 品川駅からバス",
       "regularHours": {
-        "mon": { "open": "10:00", "close": "23:00" },
-        "tue": { "open": "10:00", "close": "23:00" },
-        "wed": { "open": "10:00", "close": "23:00" },
-        "thu": { "open": "10:00", "close": "23:00" },
-        "fri": { "open": "10:00", "close": "23:00" },
-        "sat": { "open": "10:00", "close": "21:00" },
-        "sun": { "open": "10:00", "close": "21:00" },
-        "holiday": { "open": "10:00", "close": "21:00" }
+        "mon": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
       },
       "links": {
         "website": "https://www.rockyclimbing.com/shinagawa/",
         "scheduleUrl": "https://www.rockyclimbing.com/",
-        "instagram": "https://www.instagram.com/rockyclimbing_shinagawa/",
+        "instagram": "https://www.instagram.com/shina_rocky/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=ROCKY+%E5%93%81%E5%B7%9D"
       },
       "collector": {
@@ -164,19 +281,43 @@
       "address": "東京都墨田区石原1-12-9",
       "nearestStation": "蔵前駅 徒歩9分 / 両国駅 徒歩10分",
       "regularHours": {
-        "mon": { "open": "10:00", "close": "23:00" },
-        "tue": { "open": "10:00", "close": "23:00" },
-        "wed": { "open": "10:00", "close": "23:00" },
-        "thu": { "open": "10:00", "close": "23:00" },
-        "fri": { "open": "10:00", "close": "23:00" },
-        "sat": { "open": "10:00", "close": "21:00" },
-        "sun": { "open": "10:00", "close": "21:00" },
-        "holiday": { "open": "10:00", "close": "21:00" }
+        "mon": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
       },
       "links": {
         "website": "https://www.rockyclimbing.com/ryougoku/",
         "scheduleUrl": "https://www.rockyclimbing.com/",
-        "instagram": "https://www.instagram.com/rockyclimbing_ryogoku/",
+        "instagram": "https://www.instagram.com/ryougoku_rocky/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=ROCKY+%E4%B8%A1%E5%9B%BD"
       },
       "collector": {
@@ -195,24 +336,48 @@
       "address": "東京都渋谷区桜丘町17-6 協栄ビルB1F",
       "nearestStation": "渋谷駅 南改札 徒歩5分",
       "regularHours": {
-        "mon": { "open": "10:00", "close": "23:00" },
-        "tue": { "open": "10:00", "close": "23:00" },
-        "wed": { "open": "10:00", "close": "23:00" },
-        "thu": { "open": "10:00", "close": "23:00" },
-        "fri": { "open": "10:00", "close": "23:00" },
-        "sat": { "open": "10:00", "close": "22:00" },
-        "sun": { "open": "10:00", "close": "22:00" },
-        "holiday": { "open": "10:00", "close": "22:00" }
+        "mon": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "22:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "22:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "22:00"
+        }
       },
       "links": {
-        "website": "https://noborock-climbing.com/",
+        "website": "https://noborock-climbing.com/program/shibuya/",
         "scheduleUrl": "https://noborock-climbing.com/calendar/",
         "instagram": "https://www.instagram.com/noborock_shibuya/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=NOBOROCK+%E6%B8%8B%E8%B0%B7"
       },
       "collector": {
-        "adapter": "wordpress-rss",
-        "feedUrl": "https://noborock-climbing.com/feed/",
+        "adapter": "noborock-calendar",
+        "feedUrl": "https://noborock-climbing.com/calendar/",
         "storeKeyword": "渋谷"
       }
     },
@@ -226,24 +391,48 @@
       "address": "東京都新宿区百人町1-23-29 南和ビルB1F",
       "nearestStation": "西武新宿駅 / 大久保駅 徒歩5分",
       "regularHours": {
-        "mon": { "open": "10:00", "close": "23:00" },
-        "tue": { "open": "10:00", "close": "23:00" },
-        "wed": { "open": "10:00", "close": "23:00" },
-        "thu": { "open": "10:00", "close": "23:00" },
-        "fri": { "open": "10:00", "close": "23:00" },
-        "sat": { "open": "10:00", "close": "21:00" },
-        "sun": { "open": "10:00", "close": "21:00" },
-        "holiday": { "open": "10:00", "close": "21:00" }
+        "mon": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
       },
       "links": {
-        "website": "https://noborock-climbing.com/",
+        "website": "https://noborock-climbing.com/program/%e6%96%b0%e5%ae%bf%e5%ba%97/",
         "scheduleUrl": "https://noborock-climbing.com/calendar/",
         "instagram": "https://www.instagram.com/noborock_shinjuku/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=NOBOROCK+%E6%96%B0%E5%AE%BF"
       },
       "collector": {
-        "adapter": "wordpress-rss",
-        "feedUrl": "https://noborock-climbing.com/feed/",
+        "adapter": "noborock-calendar",
+        "feedUrl": "https://noborock-climbing.com/calendar/",
         "storeKeyword": "新宿"
       }
     },
@@ -257,24 +446,48 @@
       "address": "東京都豊島区西池袋3-29-14 池袋E・AビルB1F",
       "nearestStation": "池袋駅 西口C2出口 徒歩3分",
       "regularHours": {
-        "mon": { "open": "10:00", "close": "23:00" },
-        "tue": { "open": "10:00", "close": "23:00" },
-        "wed": { "open": "10:00", "close": "23:00" },
-        "thu": { "open": "10:00", "close": "23:00" },
-        "fri": { "open": "10:00", "close": "23:00" },
-        "sat": { "open": "10:00", "close": "21:00" },
-        "sun": { "open": "10:00", "close": "21:00" },
-        "holiday": { "open": "10:00", "close": "21:00" }
+        "mon": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
       },
       "links": {
-        "website": "https://noborock-climbing.com/",
+        "website": "https://noborock-climbing.com/program/ikebukuro/",
         "scheduleUrl": "https://noborock-climbing.com/calendar/",
         "instagram": "https://www.instagram.com/noborock_ikebukuro/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=NOBOROCK+%E6%B1%A0%E8%A2%8B"
       },
       "collector": {
-        "adapter": "wordpress-rss",
-        "feedUrl": "https://noborock-climbing.com/feed/",
+        "adapter": "noborock-calendar",
+        "feedUrl": "https://noborock-climbing.com/calendar/",
         "storeKeyword": "池袋"
       }
     },
@@ -288,24 +501,48 @@
       "address": "東京都新宿区高田馬場1-26-12",
       "nearestStation": "高田馬場駅 徒歩4分",
       "regularHours": {
-        "mon": { "open": "10:00", "close": "22:45" },
-        "tue": { "open": "10:00", "close": "22:45" },
-        "wed": { "open": "10:00", "close": "22:45" },
-        "thu": { "open": "10:00", "close": "22:45" },
-        "fri": { "open": "10:00", "close": "22:45" },
-        "sat": { "open": "10:00", "close": "21:00" },
-        "sun": { "open": "10:00", "close": "21:00" },
-        "holiday": { "open": "10:00", "close": "21:00" }
+        "mon": {
+          "open": "10:00",
+          "close": "22:45"
+        },
+        "tue": {
+          "open": "10:00",
+          "close": "22:45"
+        },
+        "wed": {
+          "open": "10:00",
+          "close": "22:45"
+        },
+        "thu": {
+          "open": "10:00",
+          "close": "22:45"
+        },
+        "fri": {
+          "open": "10:00",
+          "close": "22:45"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
       },
       "links": {
-        "website": "https://noborock-climbing.com/",
+        "website": "https://noborock-climbing.com/program/takadanobaba/",
         "scheduleUrl": "https://noborock-climbing.com/calendar/",
         "instagram": "https://www.instagram.com/noborock_takadanobaba/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=NOBOROCK+%E9%AB%98%E7%94%B0%E9%A6%AC%E5%A0%B4"
       },
       "collector": {
-        "adapter": "wordpress-rss",
-        "feedUrl": "https://noborock-climbing.com/feed/",
+        "adapter": "noborock-calendar",
+        "feedUrl": "https://noborock-climbing.com/calendar/",
         "storeKeyword": "高田馬場"
       }
     },
@@ -319,24 +556,48 @@
       "address": "東京都町田市原町田6-15-16 コマヤビルB1F",
       "nearestStation": "小田急町田駅 徒歩1分 / JR町田駅 徒歩5分",
       "regularHours": {
-        "mon": { "open": "10:00", "close": "23:00" },
-        "tue": { "open": "10:00", "close": "23:00" },
-        "wed": { "open": "10:00", "close": "23:00" },
-        "thu": { "open": "10:00", "close": "23:00" },
-        "fri": { "open": "10:00", "close": "23:00" },
-        "sat": { "open": "10:00", "close": "21:00" },
-        "sun": { "open": "10:00", "close": "21:00" },
-        "holiday": { "open": "10:00", "close": "21:00" }
+        "mon": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
       },
       "links": {
-        "website": "https://noborock-climbing.com/",
+        "website": "https://noborock-climbing.com/program/machida/",
         "scheduleUrl": "https://noborock-climbing.com/calendar/",
         "instagram": "https://www.instagram.com/noborock_machida/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=NOBOROCK+%E7%94%BA%E7%94%B0"
       },
       "collector": {
-        "adapter": "wordpress-rss",
-        "feedUrl": "https://noborock-climbing.com/feed/",
+        "adapter": "noborock-calendar",
+        "feedUrl": "https://noborock-climbing.com/calendar/",
         "storeKeyword": "町田"
       }
     },
@@ -350,25 +611,46 @@
       "address": "神奈川県川崎市高津区溝口1-4-1 マルイファミリー溝口",
       "nearestStation": "溝の口駅 / 武蔵溝ノ口駅 徒歩3分",
       "regularHours": {
-        "mon": { "open": "10:00", "close": "23:00" },
-        "tue": { "open": "10:00", "close": "23:00" },
+        "mon": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "10:00",
+          "close": "23:00"
+        },
         "wed": null,
-        "thu": { "open": "10:00", "close": "23:00" },
-        "fri": { "open": "10:00", "close": "23:00" },
-        "sat": { "open": "10:00", "close": "20:00" },
-        "sun": { "open": "10:00", "close": "19:00" },
-        "holiday": { "open": "10:00", "close": "19:00" }
+        "thu": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "20:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "19:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "19:00"
+        }
       },
       "notes": "水曜定休",
       "links": {
-        "website": "https://noborock-climbing.com/",
+        "website": "https://noborock-climbing.com/program/mizonokuchi/",
         "scheduleUrl": "https://noborock-climbing.com/calendar/",
         "instagram": "https://www.instagram.com/noborock_mizonokuchi/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=NOBOROCK+%E6%BA%9D%E3%83%8E%E5%8F%A3"
       },
       "collector": {
-        "adapter": "wordpress-rss",
-        "feedUrl": "https://noborock-climbing.com/feed/",
+        "adapter": "noborock-calendar",
+        "feedUrl": "https://noborock-climbing.com/calendar/",
         "storeKeyword": "溝ノ口"
       }
     },
@@ -382,14 +664,38 @@
       "address": "東京都立川市曙町2-42-1 パークアベニュー4F",
       "nearestStation": "立川駅 北口 徒歩5分",
       "regularHours": {
-        "mon": { "open": "10:00", "close": "22:00" },
-        "tue": { "open": "10:00", "close": "22:00" },
-        "wed": { "open": "10:00", "close": "22:00" },
-        "thu": { "open": "10:00", "close": "22:00" },
-        "fri": { "open": "10:00", "close": "22:00" },
-        "sat": { "open": "10:00", "close": "19:00" },
-        "sun": { "open": "10:00", "close": "19:00" },
-        "holiday": { "open": "10:00", "close": "19:00" }
+        "mon": {
+          "open": "10:00",
+          "close": "22:00"
+        },
+        "tue": {
+          "open": "10:00",
+          "close": "22:00"
+        },
+        "wed": {
+          "open": "10:00",
+          "close": "22:00"
+        },
+        "thu": {
+          "open": "10:00",
+          "close": "22:00"
+        },
+        "fri": {
+          "open": "10:00",
+          "close": "22:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "19:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "19:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "19:00"
+        }
       },
       "memberHoursNote": "月パス・既会員は24時間営業（リードエリア除く）※表示は有人・都度利用時間",
       "is24HoursForMembers": true,
@@ -400,8 +706,8 @@
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=D%E3%83%9C%E3%83%AB%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0+%E7%AB%8B%E5%B7%9D"
       },
       "collector": {
-        "adapter": "wordpress-rss",
-        "feedUrl": "https://www.d-b-c.jp/top/tachikawa/feed/"
+        "adapter": "html-news",
+        "feedUrl": "https://www.d-b-c.jp/top/tachikawa/"
       }
     },
     {
@@ -414,14 +720,38 @@
       "address": "東京都八王子市旭町1-12 八王子オーパ5F",
       "nearestStation": "八王子駅 南口直結",
       "regularHours": {
-        "mon": { "open": "10:00", "close": "22:00" },
-        "tue": { "open": "10:00", "close": "22:00" },
-        "wed": { "open": "10:00", "close": "22:00" },
-        "thu": { "open": "10:00", "close": "22:00" },
-        "fri": { "open": "10:00", "close": "22:00" },
-        "sat": { "open": "11:30", "close": "21:00" },
-        "sun": { "open": "11:30", "close": "21:00" },
-        "holiday": { "open": "11:30", "close": "21:00" }
+        "mon": {
+          "open": "10:00",
+          "close": "22:00"
+        },
+        "tue": {
+          "open": "10:00",
+          "close": "22:00"
+        },
+        "wed": {
+          "open": "10:00",
+          "close": "22:00"
+        },
+        "thu": {
+          "open": "10:00",
+          "close": "22:00"
+        },
+        "fri": {
+          "open": "10:00",
+          "close": "22:00"
+        },
+        "sat": {
+          "open": "11:30",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "11:30",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "11:30",
+          "close": "21:00"
+        }
       },
       "memberHoursNote": "パス会員は土日祝も10:00〜利用可",
       "links": {
@@ -431,8 +761,8 @@
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=D%E3%83%9C%E3%83%AB%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0+%E5%85%AB%E7%8E%8B%E5%AD%90"
       },
       "collector": {
-        "adapter": "wordpress-rss",
-        "feedUrl": "https://www.d-b-c.jp/top/hachioji/feed/"
+        "adapter": "html-news",
+        "feedUrl": "https://www.d-b-c.jp/top/hachioji/"
       }
     },
     {
@@ -445,14 +775,38 @@
       "address": "東京都港区芝浦3-12-2 やまとビルB1F",
       "nearestStation": "田町駅 芝浦口 徒歩4分",
       "regularHours": {
-        "mon": { "open": "07:00", "close": "23:00" },
-        "tue": { "open": "07:00", "close": "23:00" },
-        "wed": { "open": "07:00", "close": "23:00" },
-        "thu": { "open": "07:00", "close": "23:00" },
-        "fri": { "open": "07:00", "close": "23:00" },
-        "sat": { "open": "11:00", "close": "21:00" },
-        "sun": { "open": "11:00", "close": "21:00" },
-        "holiday": { "open": "11:00", "close": "21:00" }
+        "mon": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "11:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "11:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "11:00",
+          "close": "21:00"
+        }
       },
       "memberHoursNote": "月パス会員は土日祝 9:00〜利用可（最終受付は閉店1時間前）",
       "links": {
@@ -462,8 +816,8 @@
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=D%E3%83%9C%E3%83%AB%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0+%E7%94%B0%E7%94%BA"
       },
       "collector": {
-        "adapter": "wordpress-rss",
-        "feedUrl": "https://www.d-b-c.jp/top/tamachi/feed/"
+        "adapter": "html-news",
+        "feedUrl": "https://www.d-b-c.jp/top/tamachi/"
       }
     },
     {
@@ -476,14 +830,38 @@
       "address": "神奈川県横浜市西区北幸2-2-1 ハマボールイアス",
       "nearestStation": "横浜駅 西口 徒歩5分",
       "regularHours": {
-        "mon": { "open": "06:00", "close": "26:00" },
-        "tue": { "open": "06:00", "close": "26:00" },
-        "wed": { "open": "06:00", "close": "26:00" },
-        "thu": { "open": "06:00", "close": "26:00" },
-        "fri": { "open": "06:00", "close": "26:00" },
-        "sat": { "open": "06:00", "close": "26:00" },
-        "sun": { "open": "06:00", "close": "26:00" },
-        "holiday": { "open": "06:00", "close": "26:00" }
+        "mon": {
+          "open": "06:00",
+          "close": "26:00"
+        },
+        "tue": {
+          "open": "06:00",
+          "close": "26:00"
+        },
+        "wed": {
+          "open": "06:00",
+          "close": "26:00"
+        },
+        "thu": {
+          "open": "06:00",
+          "close": "26:00"
+        },
+        "fri": {
+          "open": "06:00",
+          "close": "26:00"
+        },
+        "sat": {
+          "open": "06:00",
+          "close": "26:00"
+        },
+        "sun": {
+          "open": "06:00",
+          "close": "26:00"
+        },
+        "holiday": {
+          "open": "06:00",
+          "close": "26:00"
+        }
       },
       "memberHoursNote": "無人営業含む 6:00〜26:00（有人・初回受付：平日10:00〜23:00 / 土日祝10:00〜21:00）",
       "links": {
@@ -493,8 +871,8 @@
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=D%E3%83%9C%E3%83%AB%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0+%E6%A8%AA%E6%B5%9C"
       },
       "collector": {
-        "adapter": "wordpress-rss",
-        "feedUrl": "https://www.d-b-c.jp/top/yokohama/feed/"
+        "adapter": "html-news",
+        "feedUrl": "https://www.d-b-c.jp/top/yokohama/"
       }
     },
     {
@@ -507,24 +885,49 @@
       "address": "東京都調布市上石原1-43-1",
       "nearestStation": "西調布駅 徒歩8分",
       "regularHours": {
-        "mon": { "open": "13:00", "close": "23:00" },
-        "tue": { "open": "13:00", "close": "23:00" },
-        "wed": { "open": "13:00", "close": "23:00" },
-        "thu": { "open": "13:00", "close": "23:00" },
-        "fri": { "open": "13:00", "close": "23:00" },
-        "sat": { "open": "10:00", "close": "22:00" },
-        "sun": { "open": "10:00", "close": "21:00" },
-        "holiday": { "open": "10:00", "close": "21:00" }
+        "mon": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "22:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
       },
       "links": {
         "website": "https://www.westrock-climbing.com/",
         "scheduleUrl": "https://www.westrock-climbing.com/",
         "instagram": "https://www.instagram.com/westrock_climbing/",
-        "googleMaps": "https://www.google.com/maps/search/?api=1&query=WESTROCK+%E8%AA%BF%E5%B8%83"
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=WESTROCK+%E8%AA%BF%E5%B8%83",
+        "x": "https://twitter.com/ClimbingGym"
       },
       "collector": {
-        "adapter": "wordpress-rss",
-        "feedUrl": "https://www.westrock-climbing.com/feed/",
+        "adapter": "html-news",
+        "feedUrl": "https://www.westrock-climbing.com/",
         "storeKeyword": "調布"
       }
     },
@@ -538,24 +941,49 @@
       "address": "東京都府中市若松町2-27-16",
       "nearestStation": "東府中駅 徒歩8分",
       "regularHours": {
-        "mon": { "open": "13:00", "close": "23:00" },
-        "tue": { "open": "13:00", "close": "23:00" },
-        "wed": { "open": "13:00", "close": "23:00" },
-        "thu": { "open": "13:00", "close": "23:00" },
-        "fri": { "open": "13:00", "close": "23:00" },
-        "sat": { "open": "10:00", "close": "22:00" },
-        "sun": { "open": "10:00", "close": "21:00" },
-        "holiday": { "open": "10:00", "close": "21:00" }
+        "mon": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "22:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
       },
       "links": {
         "website": "https://www.westrock-climbing.com/",
         "scheduleUrl": "https://www.westrock-climbing.com/",
         "instagram": "https://www.instagram.com/westrock_climbing/",
-        "googleMaps": "https://www.google.com/maps/search/?api=1&query=WESTROCK+%E5%BA%9C%E4%B8%AD"
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=WESTROCK+%E5%BA%9C%E4%B8%AD",
+        "x": "https://twitter.com/ClimbingGym"
       },
       "collector": {
-        "adapter": "wordpress-rss",
-        "feedUrl": "https://www.westrock-climbing.com/feed/",
+        "adapter": "html-news",
+        "feedUrl": "https://www.westrock-climbing.com/",
         "storeKeyword": "府中"
       }
     },
@@ -569,19 +997,43 @@
       "address": "東京都新宿区西新宿7-4-7 イマス浜田ビルB1F",
       "nearestStation": "西武新宿駅 徒歩3分 / JR新宿駅 徒歩5分",
       "regularHours": {
-        "mon": { "open": "10:00", "close": "23:00" },
-        "tue": { "open": "10:00", "close": "23:00" },
-        "wed": { "open": "10:00", "close": "23:00" },
-        "thu": { "open": "10:00", "close": "23:00" },
-        "fri": { "open": "10:00", "close": "23:00" },
-        "sat": { "open": "10:00", "close": "22:00" },
-        "sun": { "open": "10:00", "close": "22:00" },
-        "holiday": { "open": "10:00", "close": "22:00" }
+        "mon": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "22:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "22:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "22:00"
+        }
       },
       "links": {
         "website": "https://b-camp.jp/shinjuku/",
         "scheduleUrl": "https://b-camp.jp/shinjuku/",
-        "instagram": "https://www.instagram.com/urbanbasecamp_shinjuku/",
+        "instagram": "https://www.instagram.com/basecamp_shinjuku/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Urban+Base+Camp+%E6%96%B0%E5%AE%BF"
       },
       "collector": {
@@ -599,19 +1051,43 @@
       "address": "東京都東村山市本町2-3-77",
       "nearestStation": "東村山駅 徒歩4分",
       "regularHours": {
-        "mon": { "open": "12:30", "close": "22:30" },
-        "tue": { "open": "12:30", "close": "22:30" },
-        "wed": { "open": "12:30", "close": "22:30" },
-        "thu": { "open": "12:30", "close": "22:30" },
-        "fri": { "open": "12:30", "close": "22:30" },
-        "sat": { "open": "10:00", "close": "21:00" },
-        "sun": { "open": "10:00", "close": "20:00" },
-        "holiday": { "open": "10:00", "close": "20:00" }
+        "mon": {
+          "open": "12:30",
+          "close": "22:30"
+        },
+        "tue": {
+          "open": "12:30",
+          "close": "22:30"
+        },
+        "wed": {
+          "open": "12:30",
+          "close": "22:30"
+        },
+        "thu": {
+          "open": "12:30",
+          "close": "22:30"
+        },
+        "fri": {
+          "open": "12:30",
+          "close": "22:30"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "20:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "20:00"
+        }
       },
       "links": {
         "website": "https://b-camp.jp/higashimurayama/",
         "scheduleUrl": "https://b-camp.jp/higashimurayama/",
-        "instagram": "https://www.instagram.com/bpbc_higashimurayama/",
+        "instagram": "https://www.instagram.com/basecamp_higashimurayama/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Base+Camp+%E6%9D%B1%E6%9D%91%E5%B1%B1"
       },
       "collector": {
@@ -629,19 +1105,43 @@
       "address": "東京都文京区水道2-5-23",
       "nearestStation": "江戸川橋駅 4番出口 徒歩6分",
       "regularHours": {
-        "mon": { "open": "12:00", "close": "23:00" },
-        "tue": { "open": "12:00", "close": "23:00" },
-        "wed": { "open": "12:00", "close": "23:00" },
-        "thu": { "open": "12:00", "close": "23:00" },
-        "fri": { "open": "12:00", "close": "23:00" },
-        "sat": { "open": "10:00", "close": "21:00" },
-        "sun": { "open": "10:00", "close": "21:00" },
-        "holiday": { "open": "10:00", "close": "21:00" }
+        "mon": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
       },
       "links": {
         "website": "https://b-camp.jp/edogawabashi/",
         "scheduleUrl": "https://b-camp.jp/edogawabashi/",
-        "instagram": "https://www.instagram.com/basecamptokyo_edogawabashi/",
+        "instagram": "https://www.instagram.com/basecamp_edogawabashi/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Base+Camp+Tokyo+%E6%B1%9F%E6%88%B8%E5%B7%9D%E6%A9%8B"
       },
       "collector": {
@@ -659,20 +1159,44 @@
       "address": "東京都港区新橋4-31-3 第3名和ビルB1F",
       "nearestStation": "新橋駅 徒歩8分 / 内幸町駅・御成門駅 徒歩5分",
       "regularHours": {
-        "mon": { "open": "10:00", "close": "23:00" },
-        "tue": { "open": "10:00", "close": "23:00" },
-        "wed": { "open": "10:00", "close": "23:00" },
-        "thu": { "open": "10:00", "close": "23:00" },
-        "fri": { "open": "10:00", "close": "23:00" },
-        "sat": { "open": "10:00", "close": "21:00" },
-        "sun": { "open": "10:00", "close": "21:00" },
-        "holiday": { "open": "10:00", "close": "21:00" }
+        "mon": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
       },
       "notes": "2027年7月25日（土）をもって閉店予定（それまでは通常営業）",
       "links": {
         "website": "https://b-camp.jp/shinbashi/",
         "scheduleUrl": "https://b-camp.jp/shinbashi/",
-        "instagram": "https://www.instagram.com/urbanbasecamp_shinbashi/",
+        "instagram": "https://www.instagram.com/basecamp_shinbashi/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Urban+Base+Camp+%E6%96%B0%E6%A9%8B"
       },
       "collector": {
@@ -690,19 +1214,43 @@
       "address": "東京都墨田区江東橋5-3-13",
       "nearestStation": "住吉駅 徒歩5分 / 錦糸町駅 徒歩6分",
       "regularHours": {
-        "mon": { "open": "12:00", "close": "23:00" },
-        "tue": { "open": "12:00", "close": "23:00" },
-        "wed": { "open": "12:00", "close": "23:00" },
-        "thu": { "open": "12:00", "close": "23:00" },
-        "fri": { "open": "12:00", "close": "23:00" },
-        "sat": { "open": "10:00", "close": "21:00" },
-        "sun": { "open": "10:00", "close": "21:00" },
-        "holiday": { "open": "10:00", "close": "21:00" }
+        "mon": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
       },
       "links": {
         "website": "https://b-camp.jp/kinshicho/",
         "scheduleUrl": "https://b-camp.jp/kinshicho/",
-        "instagram": "https://www.instagram.com/basecamptokyo_kinshicho/",
+        "instagram": "https://www.instagram.com/basecamp_kinshicho/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Base+Camp+Tokyo+%E9%8C%A6%E7%B3%B8%E7%94%BA"
       },
       "collector": {
@@ -720,19 +1268,43 @@
       "address": "東京都練馬区高松5-8-20 J.CITY 1F",
       "nearestStation": "光が丘駅 / 練馬高野台駅",
       "regularHours": {
-        "mon": { "open": "13:00", "close": "23:00" },
-        "tue": { "open": "13:00", "close": "23:00" },
-        "wed": { "open": "13:00", "close": "23:00" },
-        "thu": { "open": "13:00", "close": "23:00" },
-        "fri": { "open": "13:00", "close": "23:00" },
-        "sat": { "open": "13:00", "close": "23:00" },
-        "sun": { "open": "13:00", "close": "23:00" },
-        "holiday": { "open": "13:00", "close": "23:00" }
+        "mon": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "sun": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "holiday": {
+          "open": "13:00",
+          "close": "23:00"
+        }
       },
       "links": {
         "website": "http://quail-climbing.com/",
         "scheduleUrl": "http://quail-climbing.com/",
-        "instagram": "https://www.instagram.com/quailclimbing/",
+        "instagram": "https://www.instagram.com/quail.climbing.gym/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%AF%E3%82%A8%E3%83%BC%E3%83%AB+%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%B8%E3%83%A0"
       },
       "collector": {
@@ -750,19 +1322,43 @@
       "address": "東京都西東京市芝久保町4-4-4",
       "nearestStation": "田無駅 / 花小金井駅",
       "regularHours": {
-        "mon": { "open": "14:00", "close": "22:00" },
-        "tue": { "open": "14:00", "close": "22:00" },
-        "wed": { "open": "14:00", "close": "22:00" },
-        "thu": { "open": "14:00", "close": "22:00" },
-        "fri": { "open": "14:00", "close": "22:00" },
-        "sat": { "open": "10:00", "close": "21:00" },
-        "sun": { "open": "10:00", "close": "21:00" },
-        "holiday": { "open": "10:00", "close": "21:00" }
+        "mon": {
+          "open": "14:00",
+          "close": "22:00"
+        },
+        "tue": {
+          "open": "14:00",
+          "close": "22:00"
+        },
+        "wed": {
+          "open": "14:00",
+          "close": "22:00"
+        },
+        "thu": {
+          "open": "14:00",
+          "close": "22:00"
+        },
+        "fri": {
+          "open": "14:00",
+          "close": "22:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
       },
       "links": {
         "website": "https://climbing-girigiri.com/",
         "scheduleUrl": "https://climbing-girigiri.com/",
-        "instagram": "https://www.instagram.com/climbing_girigiri/",
+        "instagram": "https://www.instagram.com/climbing_gym_girigiri/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%B8%E3%83%A0+GIRI.GIRI"
       },
       "collector": {
@@ -780,20 +1376,44 @@
       "address": "埼玉県新座市野火止8-15-6",
       "nearestStation": "新座駅 / 志木駅",
       "regularHours": {
-        "mon": { "open": "13:00", "close": "22:00" },
-        "tue": { "open": "13:00", "close": "22:00" },
-        "wed": { "open": "13:00", "close": "23:00" },
-        "thu": { "open": "13:00", "close": "22:00" },
-        "fri": { "open": "13:00", "close": "23:00" },
-        "sat": { "open": "10:00", "close": "21:00" },
-        "sun": { "open": "10:00", "close": "21:00" },
-        "holiday": { "open": "10:00", "close": "21:00" }
+        "mon": {
+          "open": "13:00",
+          "close": "22:00"
+        },
+        "tue": {
+          "open": "13:00",
+          "close": "22:00"
+        },
+        "wed": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "13:00",
+          "close": "22:00"
+        },
+        "fri": {
+          "open": "13:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
       },
       "notes": "水・金は23:00まで営業",
       "links": {
         "website": "https://www.nextgen-bouldering.com/",
         "scheduleUrl": "https://www.nextgen-bouldering.com/",
-        "instagram": "https://www.instagram.com/nextgen_bouldering/",
+        "instagram": "https://www.instagram.com/nextgen.bouldering/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Next+Gen+Bouldering+%E6%96%B0%E5%BA%A7"
       },
       "collector": {
@@ -811,19 +1431,43 @@
       "address": "東京都江東区東陽7-4-12",
       "nearestStation": "東陽町駅 徒歩10分",
       "regularHours": {
-        "mon": { "open": "14:00", "close": "23:00" },
-        "tue": { "open": "14:00", "close": "23:00" },
-        "wed": { "open": "14:00", "close": "23:00" },
-        "thu": { "open": "14:00", "close": "23:00" },
-        "fri": { "open": "14:00", "close": "23:00" },
-        "sat": { "open": "10:00", "close": "21:00" },
-        "sun": { "open": "10:00", "close": "21:00" },
-        "holiday": { "open": "10:00", "close": "21:00" }
+        "mon": {
+          "open": "14:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "14:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "14:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "14:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "14:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
       },
       "links": {
         "website": "https://fish-bird.co.jp/",
         "scheduleUrl": "https://fish-bird.co.jp/",
-        "instagram": "https://www.instagram.com/fishandbird_climbing/",
+        "instagram": "https://www.instagram.com/fishandbird_toyocho/",
         "x": "https://x.com/fishandbird_jp",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Fish+and+Bird+%E6%9D%B1%E9%99%BD%E7%94%BA"
       },
@@ -842,21 +1486,46 @@
       "address": "東京都荒川区西日暮里2-56-3",
       "nearestStation": "西日暮里駅 徒歩4分 / 日暮里駅 徒歩4分",
       "regularHours": {
-        "mon": { "open": "14:00", "close": "23:00" },
-        "tue": { "open": "14:00", "close": "23:00" },
-        "wed": { "open": "14:00", "close": "23:00" },
-        "thu": { "open": "14:00", "close": "23:00" },
-        "fri": { "open": "14:00", "close": "23:00" },
-        "sat": { "open": "10:00", "close": "21:00" },
-        "sun": { "open": "10:00", "close": "21:00" },
-        "holiday": { "open": "10:00", "close": "21:00" }
+        "mon": {
+          "open": "14:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "14:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "14:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "14:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "14:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
       },
       "memberHoursNote": "朝RaB（平日朝パス会員限定）7:00〜14:00",
       "links": {
         "website": "https://www.rhino-bird.com/",
         "scheduleUrl": "https://www.rhino-bird.com/",
         "instagram": "https://www.instagram.com/rhinoandbird_nishinippori/",
-        "googleMaps": "https://www.google.com/maps/search/?api=1&query=Rhino+and+Bird+%E8%A5%BF%E6%97%A5%E6%9A%AE%E9%87%8C"
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=Rhino+and+Bird+%E8%A5%BF%E6%97%A5%E6%9A%AE%E9%87%8C",
+        "x": "https://twitter.com/RaBclimbing/"
       },
       "collector": {
         "adapter": "html-news",
@@ -873,20 +1542,45 @@
       "address": "東京都北区東十条2-6-9 B1F",
       "nearestStation": "東十条駅 徒歩3分 / 十条駅 徒歩10分",
       "regularHours": {
-        "mon": { "open": "11:00", "close": "23:00" },
-        "tue": { "open": "11:00", "close": "23:00" },
-        "wed": { "open": "11:00", "close": "23:00" },
-        "thu": { "open": "11:00", "close": "23:00" },
-        "fri": { "open": "11:00", "close": "23:00" },
-        "sat": { "open": "11:00", "close": "23:00" },
-        "sun": { "open": "10:00", "close": "21:00" },
-        "holiday": { "open": "10:00", "close": "21:00" }
+        "mon": {
+          "open": "11:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "11:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "11:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "11:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "11:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "11:00",
+          "close": "23:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
       },
       "links": {
         "website": "https://underground-climb.com/",
         "scheduleUrl": "https://underground-climb.com/",
-        "instagram": "https://www.instagram.com/underground_climb/",
-        "googleMaps": "https://www.google.com/maps/search/?api=1&query=UNDERGROUND+%E6%9D%B1%E5%8D%81%E6%9D%A1+%E3%83%9C%E3%83%AB%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0"
+        "instagram": "https://www.instagram.com/underground_bouldering_gym/",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=UNDERGROUND+%E6%9D%B1%E5%8D%81%E6%9D%A1+%E3%83%9C%E3%83%AB%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0",
+        "x": "https://twitter.com/UG_CLIMB"
       },
       "collector": {
         "adapter": "wordpress-rss",
@@ -903,20 +1597,45 @@
       "address": "東京都新宿区住吉町1-14",
       "nearestStation": "曙橋駅 A1出口 徒歩20秒",
       "regularHours": {
-        "mon": { "open": "10:00", "close": "23:00" },
-        "tue": { "open": "10:00", "close": "23:00" },
-        "wed": { "open": "10:00", "close": "23:00" },
-        "thu": { "open": "10:00", "close": "23:00" },
-        "fri": { "open": "10:00", "close": "23:00" },
-        "sat": { "open": "08:00", "close": "23:00" },
-        "sun": { "open": "08:00", "close": "20:00" },
-        "holiday": { "open": "08:00", "close": "20:00" }
+        "mon": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "08:00",
+          "close": "23:00"
+        },
+        "sun": {
+          "open": "08:00",
+          "close": "20:00"
+        },
+        "holiday": {
+          "open": "08:00",
+          "close": "20:00"
+        }
       },
       "links": {
         "website": "https://beta-climbing.com/",
         "scheduleUrl": "https://beta-climbing.com/",
-        "instagram": "https://www.instagram.com/beta_climbing_gym/",
-        "googleMaps": "https://www.google.com/maps/search/?api=1&query=BETA+Climbing+Gym+%E6%9B%99%E6%A9%8B"
+        "instagram": "https://www.instagram.com/betaclimb/",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=BETA+Climbing+Gym+%E6%9B%99%E6%A9%8B",
+        "x": "https://x.com/betaclimb"
       },
       "collector": {
         "adapter": "html-news",
@@ -933,19 +1652,43 @@
       "address": "東京都江戸川区東葛西5-27-16",
       "nearestStation": "葛西駅 徒歩5分",
       "regularHours": {
-        "mon": { "open": "12:00", "close": "23:00" },
-        "tue": { "open": "12:00", "close": "23:00" },
-        "wed": { "open": "12:00", "close": "23:00" },
-        "thu": { "open": "12:00", "close": "23:00" },
-        "fri": { "open": "12:00", "close": "23:00" },
-        "sat": { "open": "09:00", "close": "21:00" },
-        "sun": { "open": "09:00", "close": "21:00" },
-        "holiday": { "open": "09:00", "close": "21:00" }
+        "mon": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "09:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "09:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "09:00",
+          "close": "21:00"
+        }
       },
       "links": {
         "website": "https://www.rocklands.tokyo/",
         "scheduleUrl": "https://www.rocklands.tokyo/",
-        "instagram": "https://www.instagram.com/rocklands_tokyo/",
+        "instagram": "https://www.instagram.com/climbinggym_rocklands/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=ROCKLANDS+%E8%91%9B%E8%A5%BF"
       },
       "collector": {

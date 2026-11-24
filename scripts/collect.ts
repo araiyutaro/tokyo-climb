@@ -8,6 +8,7 @@ import {
   type ScheduleEvent,
 } from '../src/lib/schema';
 import { parseFeedXml, parseHtmlNewsPage } from '../src/collector/rss-parser';
+import { parseNoborockCalendarHtml } from '../src/collector/noborock-calendar';
 import { extractScheduleEventFromArticle } from '../src/collector/text-extractor';
 import { extractWithGemini } from '../src/collector/llm-extractor';
 import type { FeedArticle } from '../src/collector/types';
@@ -16,7 +17,8 @@ const DATA_DIR = path.resolve(process.cwd(), 'data');
 const GYMS_PATH = path.join(DATA_DIR, 'gyms.json');
 const EVENTS_PATH = path.join(DATA_DIR, 'events.json');
 
-const USER_AGENT = 'TokyoClimbBot/1.0 (+https://github.com/tokyo-climb; personal schedule aggregator)';
+const USER_AGENT =
+  'TokyoClimbBot/1.0 (+https://github.com/tokyo-climb; personal schedule aggregator)';
 
 async function fetchTextWithTimeout(url: string, timeoutMs = 12_000): Promise<string> {
   const res = await fetch(url, {
@@ -30,6 +32,15 @@ async function fetchTextWithTimeout(url: string, timeoutMs = 12_000): Promise<st
     throw new Error(`HTTP ${res.status} ${res.statusText}`);
   }
   return res.text();
+}
+
+function getCachedText(url: string, feedCache: Map<string, Promise<string>>): Promise<string> {
+  let promise = feedCache.get(url);
+  if (!promise) {
+    promise = fetchTextWithTimeout(url);
+    feedCache.set(url, promise);
+  }
+  return promise;
 }
 
 async function collectForGym(
@@ -54,12 +65,39 @@ async function collectForGym(
   }
 
   try {
-    let fetchPromise = feedCache.get(cfg.feedUrl);
-    if (!fetchPromise) {
-      fetchPromise = fetchTextWithTimeout(cfg.feedUrl);
-      feedCache.set(cfg.feedUrl, fetchPromise);
+    // Dedicated NOBOROCK calendar adapter (fetches current + next month)
+    if (cfg.adapter === 'noborock-calendar') {
+      const currentHtml = await getCachedText(cfg.feedUrl, feedCache);
+      const currentResult = parseNoborockCalendarHtml(currentHtml, gym, cfg.feedUrl, now);
+      const collected = [...currentResult.events];
+
+      if (currentResult.nextMonthUrl) {
+        try {
+          const nextHtml = await getCachedText(currentResult.nextMonthUrl, feedCache);
+          const nextResult = parseNoborockCalendarHtml(
+            nextHtml,
+            gym,
+            currentResult.nextMonthUrl,
+            now,
+          );
+          collected.push(...nextResult.events);
+        } catch {
+          // Next month fetch failure shouldn't fail current month results
+        }
+      }
+
+      return {
+        events: collected,
+        meta: {
+          gymId: gym.id,
+          status: 'ok',
+          eventsFound: collected.length,
+          checkedAt,
+        },
+      };
     }
-    const raw = await fetchPromise;
+
+    const raw = await getCachedText(cfg.feedUrl, feedCache);
 
     let articles: FeedArticle[] = [];
     if (cfg.adapter === 'wordpress-rss') {
