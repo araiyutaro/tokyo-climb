@@ -45,6 +45,11 @@ npm run collect
 
 Instagramストーリーや店頭告知など、Webから自動取得できない情報は `data/overrides.json` の `events` 配列に追記することで即座に反映されます（同一 `id` があれば自動収集データより優先されます）。
 
-## 公開（デプロイ）
+## 公開（Vercel デプロイ手順）
 
-データベース不要の静的＋JSON構成のため、GitHubリポジトリを **Vercel** または **Cloudflare Pages** に接続するだけでそのまま無料枠で公開できます。GitHub Actions で `data/events.json` が更新されるたびに自動再デプロイされます。
+データベース不要の構成のため、無料枠（Hobby プラン）ですぐに一般公開できます。
+
+1. [Vercel](https://vercel.com/new) に GitHub アカウントでログインし、`araiyutaro/tokyo-climb` を Import
+2. Framework Preset が **Next.js** になっていることを確認してそのまま **Deploy**（環境変数なしで動作します）
+3. （任意）GitHub リポジトリの `Settings > Secrets and variables > Actions` に `GEMINI_API_KEY` を設定すると、6時間ごとの自動収集時に曖昧な告知文のAI抽出も有効になります
+4. GitHub Actions（`.github/workflows/collect-schedules.yml`）が6時間ごとに `data/events.json` を自動更新・コミットし、差分があれば Vercel が自動で再デプロイします

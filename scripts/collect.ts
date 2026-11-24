@@ -18,7 +18,7 @@ const GYMS_PATH = path.join(DATA_DIR, 'gyms.json');
 const EVENTS_PATH = path.join(DATA_DIR, 'events.json');
 
 const USER_AGENT =
-  'TokyoClimbBot/1.0 (+https://github.com/tokyo-climb; personal schedule aggregator)';
+  'TokyoClimbBot/1.0 (+https://github.com/araiyutaro/tokyo-climb; bouldering schedule aggregator)';
 
 async function fetchTextWithTimeout(url: string, timeoutMs = 12_000): Promise<string> {
   const res = await fetch(url, {

@@ -19,6 +19,7 @@ interface QuickImportClientProps {
   gyms: Gym[];
   initialOverrides: ScheduleEvent[];
   todayStr: string;
+  canSaveLocally: boolean;
 }
 
 const EVENT_TYPES: { value: ScheduleEventType; label: string }[] = [
@@ -33,6 +34,7 @@ export function QuickImportClient({
   gyms,
   initialOverrides,
   todayStr,
+  canSaveLocally,
 }: QuickImportClientProps) {
   const [overrides, setOverrides] = useState<ScheduleEvent[]>(initialOverrides);
   const [gymId, setGymId] = useState<string>(gyms[0]?.id ?? '');
@@ -209,6 +211,19 @@ export function QuickImportClient({
     await navigator.clipboard.writeText(JSON.stringify(event, null, 2));
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const buildGitHubIssueUrl = (): string => {
+    const event = buildEventObject();
+    const issueTitle = `[予定提供] ${selectedGym?.name ?? gymId}: ${event.title}`;
+    const issueBody = [
+      '以下の予定情報を提供します（Tokyo Climb SNS取込フォームより生成）:',
+      '',
+      '```json',
+      JSON.stringify(event, null, 2),
+      '```',
+    ].join('\n');
+    return `https://github.com/araiyutaro/tokyo-climb/issues/new?title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}`;
   };
 
   return (
@@ -469,16 +484,33 @@ export function QuickImportClient({
             </div>
           )}
 
+          {!canSaveLocally && (
+            <div className="mt-4 rounded-xl bg-amber-50 px-3.5 py-2.5 text-xs text-amber-900 ring-1 ring-amber-200">
+              公開サイトでは予定データの自動抽出・JSON生成および GitHub Issue での情報提供ツールとして利用できます。
+            </div>
+          )}
+
           <div className="mt-4 flex flex-wrap items-center gap-2.5">
-            <button
-              type="button"
-              onClick={handleSave}
-              disabled={saving || !title.trim()}
-              className="inline-flex items-center gap-1.5 rounded-xl bg-emerald-600 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-40"
+            {canSaveLocally && (
+              <button
+                type="button"
+                onClick={handleSave}
+                disabled={saving || !title.trim()}
+                className="inline-flex items-center gap-1.5 rounded-xl bg-emerald-600 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                <Plus className="h-4 w-4" />
+                {saving ? '保存中...' : '予定を登録する'}
+              </button>
+            )}
+
+            <a
+              href={buildGitHubIssueUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-slate-900 px-4 py-2.5 text-xs font-bold text-white transition-colors hover:bg-slate-800"
             >
-              <Plus className="h-4 w-4" />
-              {saving ? '保存中...' : '予定を登録する'}
-            </button>
+              GitHub Issue で情報提供
+            </a>
 
             <button
               type="button"
@@ -524,14 +556,16 @@ export function QuickImportClient({
                       <p className="mt-0.5 text-slate-700">{ev.title}</p>
                     </div>
 
-                    <button
-                      type="button"
-                      onClick={() => handleDelete(ev.id)}
-                      className="inline-flex items-center gap-1 rounded-lg bg-rose-50 px-2.5 py-1.5 font-semibold text-rose-700 hover:bg-rose-100"
-                    >
-                      <Trash2 className="h-3.5 w-3.5" />
-                      削除
-                    </button>
+                    {canSaveLocally && (
+                      <button
+                        type="button"
+                        onClick={() => handleDelete(ev.id)}
+                        className="inline-flex items-center gap-1 rounded-lg bg-rose-50 px-2.5 py-1.5 font-semibold text-rose-700 hover:bg-rose-100"
+                      >
+                        <Trash2 className="h-3.5 w-3.5" />
+                        削除
+                      </button>
+                    )}
                   </li>
                 );
               })}

@@ -11,6 +11,11 @@ import {
 
 const OVERRIDES_PATH = path.resolve(process.cwd(), 'data', 'overrides.json');
 
+function isLocalWriteAllowed(): boolean {
+  if (process.env.VERCEL === '1') return false;
+  return process.env.NODE_ENV !== 'production' || process.env.ENABLE_LOCAL_OVERRIDES === 'true';
+}
+
 async function readOverrides() {
   const raw = await fs.readFile(OVERRIDES_PATH, 'utf8');
   return EventsFileSchema.parse(JSON.parse(raw));
@@ -29,6 +34,17 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
+  if (!isLocalWriteAllowed()) {
+    return NextResponse.json(
+      {
+        error:
+          '公開環境では直接保存が無効化されています。「GitHubで情報提供」または「JSONをコピー」をご利用ください。',
+        readOnly: true,
+      },
+      { status: 403 },
+    );
+  }
+
   try {
     const body = await request.json();
     const parsedEvent = ScheduleEventSchema.safeParse(body);
@@ -68,6 +84,13 @@ export async function POST(request: Request) {
 }
 
 export async function DELETE(request: Request) {
+  if (!isLocalWriteAllowed()) {
+    return NextResponse.json(
+      { error: '公開環境では削除できません。', readOnly: true },
+      { status: 403 },
+    );
+  }
+
   try {
     const { searchParams } = new URL(request.url);
     const id = searchParams.get('id');

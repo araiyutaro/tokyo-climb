@@ -199,9 +199,19 @@ export function TokyoClimbApp({
               </span>
             )}
           </div>
-          <p>
-            ※ 突発的な臨時休業やSNS限定告知（Instagramストーリー等）は各店舗の公式リンクより最新情報をご確認ください。
-          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <p>
+              ※ 突発的な臨時休業やSNS限定告知（Instagramストーリー等）は各店舗の公式リンクより最新情報をご確認ください。
+            </p>
+            <a
+              href="https://github.com/araiyutaro/tokyo-climb/issues/new"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-slate-600 underline hover:text-slate-900"
+            >
+              掲載ジム追加・情報修正リクエスト (GitHub)
+            </a>
+          </div>
         </div>
       </footer>
     </div>
