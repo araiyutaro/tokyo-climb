@@ -273,7 +273,7 @@ describe('evaluateGymDayStatus', () => {
     expect(result.isFromPreviousBusinessDay).toBe(true);
   });
 
-  it('collects upcoming hold change or closure alerts within the next 3 days', () => {
+  it('collects upcoming hold change or closure alerts within the next 30 days', () => {
     const events: ScheduleEvent[] = [
       makeEvent({
         id: 'soon-1',
@@ -284,19 +284,27 @@ describe('evaluateGymDayStatus', () => {
         endDate: '2026-11-27',
       }),
       makeEvent({
-        id: 'far-1',
+        id: 'within-month-1',
         gymId: 'bpump-ogikubo',
         type: 'hold_change_full',
         title: '来週のホールド替え',
         startDate: '2026-12-05',
         endDate: '2026-12-06',
       }),
+      makeEvent({
+        id: 'far-1',
+        gymId: 'bpump-ogikubo',
+        type: 'hold_change_full',
+        title: '1ヶ月以上先のホールド替え',
+        startDate: '2027-01-10',
+        endDate: '2027-01-11',
+      }),
     ];
 
     const now = new Date('2026-11-24T07:00:00Z');
     const result = evaluateGymDayStatus(baseGym, '2026-11-24', events, now);
 
-    expect(result.upcomingAlerts.map((e) => e.id)).toEqual(['soon-1']);
+    expect(result.upcomingAlerts.map((e) => e.id)).toEqual(['soon-1', 'within-month-1']);
   });
 
   it('returns scheduled_open for a future date rather than live open/closed_now', () => {

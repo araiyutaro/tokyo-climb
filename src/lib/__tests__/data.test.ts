@@ -26,9 +26,15 @@ describe('data integrity', () => {
       'quail-nerima',
       'girigiri-nishitokyo',
       'nextgen-niiza',
+      'fish-and-bird-toyocho',
+      'rhino-and-bird-nishinippori',
     ];
     for (const id of requiredIds) {
       expect(ids.has(id), `Expected gym ${id} to be present`).toBe(true);
+    }
+
+    for (const gym of dataset.gyms) {
+      expect(gym.links.scheduleUrl ?? '').not.toContain('%e3%82%ab%e3%83%ac%e3%83%b3%e3%83%80%e3%83%bc');
     }
   });
 
