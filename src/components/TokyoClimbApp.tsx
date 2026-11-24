@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { CalendarDays, Clock, ListFilter, Mountain, RefreshCw } from 'lucide-react';
+import Link from 'next/link';
+import { CalendarDays, Clock, ListFilter, Mountain, PlusCircle, RefreshCw } from 'lucide-react';
 import type { CollectorRunMeta, Gym, ScheduleEvent } from '@/lib/schema';
 import { getJstDateParts } from '@/lib/schedule';
 import { TodayGymList } from './TodayGymList';
@@ -149,6 +150,15 @@ export function TokyoClimbApp({
                 <Clock className="h-3.5 w-3.5 text-slate-500" />
                 {formatJstClock(now)}
               </div>
+
+              <Link
+                href="/import"
+                className="inline-flex shrink-0 items-center gap-1 rounded-xl border border-slate-200 bg-white px-2.5 py-1.5 text-xs font-bold text-slate-700 shadow-2xs transition-colors hover:bg-slate-100"
+                title="Instagram / X の告知文やカレンダー画像から予定を取り込む"
+              >
+                <PlusCircle className="h-3.5 w-3.5 text-emerald-600" />
+                <span className="hidden md:inline">SNS取込</span>
+              </Link>
             </div>
           </div>
         </div>

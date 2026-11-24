@@ -1,3 +1,5 @@
+import fs from 'fs';
+import path from 'path';
 import gymsJson from '../../data/gyms.json';
 import eventsJson from '../../data/events.json';
 import overridesJson from '../../data/overrides.json';
@@ -18,14 +20,34 @@ export interface LoadedDataset {
   syncStatus: CollectorRunMeta[];
 }
 
+function readDataJsonSafe(
+  fileName: 'gyms.json' | 'events.json' | 'overrides.json',
+  fallback: unknown,
+): unknown {
+  try {
+    const fullPath = path.join(process.cwd(), 'data', fileName);
+    if (fs.existsSync(fullPath)) {
+      return JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+    }
+  } catch {
+    // Fall back to statically bundled JSON
+  }
+  return fallback;
+}
+
+export function loadOverridesOnly(): ScheduleEvent[] {
+  const raw = readDataJsonSafe('overrides.json', overridesJson);
+  return EventsFileSchema.parse(raw).events;
+}
+
 export function loadDataset(): LoadedDataset {
-  const gymsFile = GymsFileSchema.parse(gymsJson);
-  const eventsFile = EventsFileSchema.parse(eventsJson);
-  const overridesFile = EventsFileSchema.parse(overridesJson);
+  const gymsFile = GymsFileSchema.parse(readDataJsonSafe('gyms.json', gymsJson));
+  const eventsFile = EventsFileSchema.parse(readDataJsonSafe('events.json', eventsJson));
+  const overridesEvents = loadOverridesOnly();
 
   return {
     gyms: gymsFile.gyms,
-    events: mergeEvents(eventsFile.events, overridesFile.events),
+    events: mergeEvents(eventsFile.events, overridesEvents),
     gymsUpdatedAt: gymsFile.updatedAt,
     eventsUpdatedAt: eventsFile.updatedAt,
     syncStatus: eventsFile.syncStatus ?? [],

@@ -14,9 +14,13 @@
   - 全店舗のホールド替え・臨時休業・時短営業・コンペ／イベントを色分け表示
   - エリア・種別・お気に入りのみの絞り込み＋選択日詳細パネル＋月間時系列リスト
 - **公式Web自動収集パイプライン**
-  - RSS / Atom / HTMLお知らせの定期取得＋日本語日付・ホールド替え分類パーサー
-  - `GEMINI_API_KEY` を設定すると、ルールベースで拾いにくい告知文を Gemini API で構造化抽出（未設定時はルールベースのみで動作）
+  - RSS / Atom / HTMLお知らせ / **NOBOROCK専用カレンダー（当月＋翌月）**の定期取得＋日本語日付・ホールド替え分類パーサー
+  - `GEMINI_API_KEY` を設定すると、曖昧な告知文やカレンダー画像の Gemini 抽出も有効化（未設定時はルールベースのみで動作）
   - GitHub Actions による6時間ごとの自動データ更新（`.github/workflows/collect-schedules.yml`）
+- **SNS・カレンダー予定 簡易取込ツール (`/import`)**
+  - Instagram / X の投稿文を貼り付けるだけで日時・ホールド替え種別を自動抽出し、ワンクリックで `data/overrides.json` に登録（カレンダー画像のGemini Vision抽出・JSONコピーにも対応）
+- **PWA＆公開対応**
+  - Web App Manifest・Apple Touch Icon・OGP画像を完備し、スマホのホーム画面に追加してアプリのように起動可能
 
 ## 開発・実行コマンド
 

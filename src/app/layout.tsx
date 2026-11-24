@@ -2,9 +2,22 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: 'Tokyo Climb | 東京・近郊ボルダリングジム 営業時間・ホールド替えまとめ',
   description:
     '東京都内および近郊の主要ボルダリングジム31店舗のリアルタイム営業状況、ホールド替えによる休業・壁制限、イベント予定を一箇所で確認できるスケジュール集約サイト。',
+  appleWebApp: {
+    capable: true,
+    title: 'Tokyo Climb',
+    statusBarStyle: 'default',
+  },
+  openGraph: {
+    title: 'Tokyo Climb | 東京・近郊ボルダリングジム 営業時間・ホールド替えまとめ',
+    description:
+      '東京都内および近郊の主要ボルダリングジム31店舗のリアルタイム営業状況、ホールド替え休業、月間横断カレンダー。',
+    type: 'website',
+    locale: 'ja_JP',
+  },
 };
 
 export const viewport: Viewport = {
