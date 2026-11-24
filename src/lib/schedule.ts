@@ -220,19 +220,21 @@ export function evaluateGymDayStatus(
   );
   const hasEvent = resolution.eventsOnDate.some((e) => e.type === 'event');
 
-  // Collect upcoming alerts (next 1..3 days) that affect climbing availability
+  // Collect upcoming alerts (next 1..30 days) that affect climbing availability
   const nextStart = addDaysToDateStr(dateStr, 1);
-  const nextEnd = addDaysToDateStr(dateStr, 3);
-  const upcomingAlerts = events.filter(
-    (ev) =>
-      ev.gymId === gym.id &&
-      (ev.type === 'hold_change_full' ||
-        ev.type === 'hold_change_partial' ||
-        ev.type === 'closed' ||
-        ev.type === 'hours_change') &&
-      ev.startDate >= nextStart &&
-      ev.startDate <= nextEnd,
-  );
+  const nextEnd = addDaysToDateStr(dateStr, 30);
+  const upcomingAlerts = events
+    .filter(
+      (ev) =>
+        ev.gymId === gym.id &&
+        (ev.type === 'hold_change_full' ||
+          ev.type === 'hold_change_partial' ||
+          ev.type === 'closed' ||
+          ev.type === 'hours_change') &&
+        ev.startDate >= nextStart &&
+        ev.startDate <= nextEnd,
+    )
+    .sort((a, b) => a.startDate.localeCompare(b.startDate));
 
   const base: Omit<GymDayStatus, 'status'> = {
     gym,

@@ -196,12 +196,12 @@ export function GymCard({ dayStatus, isFavorite, onToggleFavorite }: GymCardProp
           </div>
         )}
 
-        {/* Upcoming 3-day Alerts */}
+        {/* Upcoming 30-day Alerts */}
         {upcomingAlerts.length > 0 && (
           <div className="mt-2.5 rounded-xl bg-amber-50/80 px-2.5 py-2 text-[11px] text-amber-900 ring-1 ring-amber-200/80">
             <div className="flex items-center gap-1 font-semibold text-amber-800">
               <CalendarClock className="h-3.5 w-3.5 shrink-0" />
-              直近3日以内の予定
+              直近1ヶ月以内の予定
             </div>
             <ul className="mt-1 space-y-0.5">
               {upcomingAlerts.map((ev) => (
@@ -262,7 +262,7 @@ export function GymCard({ dayStatus, isFavorite, onToggleFavorite }: GymCardProp
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                   <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                 </svg>
-                IG
+                Insta
               </a>
             )}
             {gym.links.x && (
