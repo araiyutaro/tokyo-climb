@@ -314,4 +314,86 @@ describe('evaluateGymDayStatus', () => {
     expect(result.status).toBe('scheduled_open');
     expect(result.effectiveHours).toEqual({ open: '13:00', close: '23:00' });
   });
+
+  it('computes lastHoldChange from the most recent completed hold change event and ignores future/non-hold-change events', () => {
+    const events: ScheduleEvent[] = [
+      makeEvent({
+        id: 'old-set',
+        gymId: 'bpump-ogikubo',
+        type: 'hold_change_full',
+        title: '10月全面セット',
+        startDate: '2026-10-10',
+        endDate: '2026-10-12',
+      }),
+      makeEvent({
+        id: 'recent-set',
+        gymId: 'bpump-ogikubo',
+        type: 'hold_change_partial',
+        title: '11月スラブ壁ホールド替え',
+        startDate: '2026-11-18',
+        endDate: '2026-11-19',
+      }),
+      makeEvent({
+        id: 'recent-comp',
+        gymId: 'bpump-ogikubo',
+        type: 'event',
+        title: 'コンペイベント',
+        startDate: '2026-11-22',
+        endDate: '2026-11-22',
+      }),
+      makeEvent({
+        id: 'future-set',
+        gymId: 'bpump-ogikubo',
+        type: 'hold_change_full',
+        title: '12月全面セット',
+        startDate: '2026-12-01',
+        endDate: '2026-12-02',
+      }),
+    ];
+
+    const now = new Date('2026-11-25T00:00:00Z');
+    const result = evaluateGymDayStatus(baseGym, '2026-11-25', events, now);
+
+    expect(result.lastHoldChange).toEqual({
+      date: '2026-11-19',
+      daysAgo: 6,
+      title: '11月スラブ壁ホールド替え',
+      type: 'hold_change_partial',
+      sourceUrl: 'https://example.com/news',
+    });
+  });
+
+  it('falls back to gym.lastHoldChange baseline or prefers newer event over baseline', () => {
+    const gymWithBaseline: Gym = {
+      ...baseGym,
+      lastHoldChange: {
+        date: '2026-11-10',
+        summary: '3F壁セット完了',
+        type: 'hold_change_partial',
+        sourceUrl: 'https://pump-climbing.com/gym/bpump/',
+      },
+    };
+
+    const now = new Date('2026-11-25T00:00:00Z');
+    const withoutEvents = evaluateGymDayStatus(gymWithBaseline, '2026-11-25', [], now);
+    expect(withoutEvents.lastHoldChange).toEqual({
+      date: '2026-11-10',
+      daysAgo: 15,
+      title: '3F壁セット完了',
+      type: 'hold_change_partial',
+      sourceUrl: 'https://pump-climbing.com/gym/bpump/',
+    });
+
+    const newerEvent = makeEvent({
+      id: 'newer-set',
+      gymId: 'bpump-ogikubo',
+      type: 'hold_change_full',
+      title: '11/20 全面ホールド替え',
+      startDate: '2026-11-20',
+      endDate: '2026-11-20',
+    });
+    const withNewer = evaluateGymDayStatus(gymWithBaseline, '2026-11-25', [newerEvent], now);
+    expect(withNewer.lastHoldChange?.date).toBe('2026-11-20');
+    expect(withNewer.lastHoldChange?.daysAgo).toBe(5);
+  });
 });

@@ -2,27 +2,39 @@ import { describe, it, expect } from 'vitest';
 import { loadDataset } from '../data';
 
 describe('data integrity', () => {
-  it('loads and validates all 28 configured Tokyo & nearby gyms with unique IDs', () => {
+  it('loads and validates all 43 configured Tokyo & nearby gyms with unique IDs', () => {
     const dataset = loadDataset();
-    expect(dataset.gyms.length).toBeGreaterThanOrEqual(27);
+    expect(dataset.gyms.length).toBeGreaterThanOrEqual(43);
 
     const ids = new Set(dataset.gyms.map((g) => g.id));
     expect(ids.size).toBe(dataset.gyms.length);
 
-    // Ensure key user-requested gyms are present
+    // Ensure key user-requested and newly added gyms are present
     const requiredIds = [
       'bpump-ogikubo',
       'bpump-akiba',
+      'bpump-yokohama',
+      'pump1-kawaguchi',
       'dbouldering-tachikawa',
       'dbouldering-hachioji',
       'dbouldering-tamachi',
       'dbouldering-yokohama',
+      'dbouldering-tsunashima',
+      'dbouldering-tsudanuma',
       'westrock-chofu',
       'westrock-fuchu',
       'basecamp-shinjuku',
       'basecamp-higashimurayama',
       'basecamp-edogawabashi',
       'basecamp-shinbashi',
+      'basecamp-iruma',
+      'noborock-asakusa',
+      'noborock-omiya',
+      'rocky-funabashi',
+      'rocky-inzai',
+      'boulcom-shinjuku',
+      'project-yokohama',
+      'dogwood-chofu',
       'quail-nerima',
       'girigiri-nishitokyo',
       'nextgen-niiza',
