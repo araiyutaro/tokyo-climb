@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import type { Gym, ScheduleEvent, ScheduleEventType } from '@/lib/schema';
 import { formatDateRangeJa, getEventTypeMeta } from '@/lib/ui-helpers';
+import { ThemeToggle } from './ThemeToggle';
 
 interface QuickImportClientProps {
   gyms: Gym[];
@@ -227,26 +228,27 @@ export function QuickImportClient({
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 pb-16">
-      <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur-md">
+    <div className="min-h-screen bg-slate-50 pb-16 dark:bg-slate-950">
+      <header className="pt-safe sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/90">
         <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-3 sm:px-6">
           <div className="flex items-center gap-2.5">
             <Link
               href="/"
-              className="inline-flex items-center gap-1 rounded-xl bg-slate-100 px-3 py-1.5 text-xs font-bold text-slate-700 hover:bg-slate-200"
+              className="inline-flex items-center gap-1 rounded-xl bg-slate-100 px-3 py-1.5 text-xs font-bold text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
             >
               <ArrowLeft className="h-4 w-4" />
               一覧に戻る
             </Link>
             <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900 text-white">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900 text-white dark:bg-white dark:text-slate-900">
                 <Mountain className="h-4 w-4" />
               </div>
-              <h1 className="text-sm font-extrabold text-slate-900 sm:text-base">
+              <h1 className="text-sm font-extrabold text-slate-900 dark:text-white sm:text-base">
                 SNS・カレンダー予定 簡易取込
               </h1>
             </div>
           </div>
+          <ThemeToggle />
         </div>
       </header>
 

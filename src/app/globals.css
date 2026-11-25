@@ -1,8 +1,14 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --background: #f8fafc;
   --foreground: #0f172a;
+}
+
+.dark {
+  --background: #020617;
+  --foreground: #f1f5f9;
 }
 
 html {
@@ -39,7 +45,7 @@ body {
 @keyframes sheet-up {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;

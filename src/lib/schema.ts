@@ -97,6 +97,11 @@ export const LastHoldChangeBaselineSchema = z.object({
   sourceUrl: z.string().url().optional(),
 });
 
+export const CoordinatesSchema = z.object({
+  lat: z.number().min(-90).max(90),
+  lng: z.number().min(-180).max(180),
+});
+
 export const GymSchema = z.object({
   id: z.string().min(1),
   name: z.string().min(1),
@@ -106,6 +111,7 @@ export const GymSchema = z.object({
   prefecture: z.enum(['東京都', '神奈川県', '埼玉県', '千葉県']),
   address: z.string().min(1),
   nearestStation: z.string().min(1),
+  coordinates: CoordinatesSchema.optional(),
   regularHours: WeeklyHoursSchema,
   memberHoursNote: z.string().optional(),
   is24HoursForMembers: z.boolean().optional(),

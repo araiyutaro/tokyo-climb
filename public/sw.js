@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tokyo-climb-v1';
+const CACHE_NAME = 'tokyo-climb-v2';
 const PRECACHE_URLS = ['/', '/manifest.webmanifest', '/icon.svg', '/apple-icon'];
 
 self.addEventListener('install', (event) => {

@@ -53,6 +53,10 @@
       "collector": {
         "adapter": "wordpress-rss",
         "feedUrl": "https://pump-climbing.com/gym/bpump/feed/"
+      },
+      "coordinates": {
+        "lat": 35.7049,
+        "lng": 139.6194
       }
     },
     {
@@ -107,6 +111,10 @@
       "collector": {
         "adapter": "wordpress-rss",
         "feedUrl": "https://pump-climbing.com/gym/akiba/feed/"
+      },
+      "coordinates": {
+        "lat": 35.701,
+        "lng": 139.7694
       }
     },
     {
@@ -159,6 +167,10 @@
       "collector": {
         "adapter": "wordpress-rss",
         "feedUrl": "https://pump-climbing.com/gym/pump2/feed/"
+      },
+      "coordinates": {
+        "lat": 35.6295,
+        "lng": 139.5553
       }
     },
     {
@@ -214,6 +226,10 @@
         "adapter": "html-news",
         "feedUrl": "https://www.rockyclimbing.com/",
         "storeKeyword": "新宿曙橋"
+      },
+      "coordinates": {
+        "lat": 35.6939,
+        "lng": 139.7243
       }
     },
     {
@@ -269,6 +285,10 @@
         "adapter": "html-news",
         "feedUrl": "https://www.rockyclimbing.com/",
         "storeKeyword": "品川"
+      },
+      "coordinates": {
+        "lat": 35.6263,
+        "lng": 139.7544
       }
     },
     {
@@ -324,6 +344,10 @@
         "adapter": "html-news",
         "feedUrl": "https://www.rockyclimbing.com/",
         "storeKeyword": "両国"
+      },
+      "coordinates": {
+        "lat": 35.6998,
+        "lng": 139.7966
       }
     },
     {
@@ -379,6 +403,10 @@
         "adapter": "noborock-calendar",
         "feedUrl": "https://noborock-climbing.com/calendar/",
         "storeKeyword": "渋谷"
+      },
+      "coordinates": {
+        "lat": 35.6557,
+        "lng": 139.7017
       }
     },
     {
@@ -434,6 +462,10 @@
         "adapter": "noborock-calendar",
         "feedUrl": "https://noborock-climbing.com/calendar/",
         "storeKeyword": "新宿"
+      },
+      "coordinates": {
+        "lat": 35.6994,
+        "lng": 139.6989
       }
     },
     {
@@ -489,6 +521,10 @@
         "adapter": "noborock-calendar",
         "feedUrl": "https://noborock-climbing.com/calendar/",
         "storeKeyword": "池袋"
+      },
+      "coordinates": {
+        "lat": 35.7305,
+        "lng": 139.7082
       }
     },
     {
@@ -544,6 +580,10 @@
         "adapter": "noborock-calendar",
         "feedUrl": "https://noborock-climbing.com/calendar/",
         "storeKeyword": "高田馬場"
+      },
+      "coordinates": {
+        "lat": 35.7124,
+        "lng": 139.7048
       }
     },
     {
@@ -599,6 +639,10 @@
         "adapter": "noborock-calendar",
         "feedUrl": "https://noborock-climbing.com/calendar/",
         "storeKeyword": "町田"
+      },
+      "coordinates": {
+        "lat": 35.5435,
+        "lng": 139.4465
       }
     },
     {
@@ -652,6 +696,10 @@
         "adapter": "noborock-calendar",
         "feedUrl": "https://noborock-climbing.com/calendar/",
         "storeKeyword": "溝ノ口"
+      },
+      "coordinates": {
+        "lat": 35.6001,
+        "lng": 139.6113
       }
     },
     {
@@ -708,6 +756,10 @@
       "collector": {
         "adapter": "html-news",
         "feedUrl": "https://www.d-b-c.jp/top/tachikawa/"
+      },
+      "coordinates": {
+        "lat": 35.7007,
+        "lng": 139.4139
       }
     },
     {
@@ -763,6 +815,10 @@
       "collector": {
         "adapter": "html-news",
         "feedUrl": "https://www.d-b-c.jp/top/hachioji/"
+      },
+      "coordinates": {
+        "lat": 35.6553,
+        "lng": 139.3388
       }
     },
     {
@@ -818,6 +874,10 @@
       "collector": {
         "adapter": "html-news",
         "feedUrl": "https://www.d-b-c.jp/top/tamachi/"
+      },
+      "coordinates": {
+        "lat": 35.6443,
+        "lng": 139.7495
       }
     },
     {
@@ -873,6 +933,10 @@
       "collector": {
         "adapter": "html-news",
         "feedUrl": "https://www.d-b-c.jp/top/yokohama/"
+      },
+      "coordinates": {
+        "lat": 35.4658,
+        "lng": 139.6177
       }
     },
     {
@@ -929,6 +993,10 @@
         "adapter": "html-news",
         "feedUrl": "https://www.westrock-climbing.com/",
         "storeKeyword": "調布"
+      },
+      "coordinates": {
+        "lat": 35.6579,
+        "lng": 139.5284
       }
     },
     {
@@ -985,6 +1053,10 @@
         "adapter": "html-news",
         "feedUrl": "https://www.westrock-climbing.com/",
         "storeKeyword": "府中"
+      },
+      "coordinates": {
+        "lat": 35.6708,
+        "lng": 139.4937
       }
     },
     {
@@ -1039,6 +1111,10 @@
       "collector": {
         "adapter": "wordpress-rss",
         "feedUrl": "https://b-camp.jp/shinjuku/feed/"
+      },
+      "coordinates": {
+        "lat": 35.6943,
+        "lng": 139.6984
       }
     },
     {
@@ -1093,6 +1169,10 @@
       "collector": {
         "adapter": "wordpress-rss",
         "feedUrl": "https://b-camp.jp/higashimurayama/feed/"
+      },
+      "coordinates": {
+        "lat": 35.7623,
+        "lng": 139.4682
       }
     },
     {
@@ -1153,6 +1233,10 @@
         "summary": "ルートエリアセット",
         "type": "hold_change_partial",
         "sourceUrl": "https://b-camp.jp/edogawabashi/"
+      },
+      "coordinates": {
+        "lat": 35.7099,
+        "lng": 139.7351
       }
     },
     {
@@ -1208,6 +1292,10 @@
       "collector": {
         "adapter": "wordpress-rss",
         "feedUrl": "https://b-camp.jp/shinbashi/feed/"
+      },
+      "coordinates": {
+        "lat": 35.6634,
+        "lng": 139.7538
       }
     },
     {
@@ -1268,6 +1356,10 @@
         "summary": "11月ボルダー全面リニューアルセット（錦祭りVer.）",
         "type": "hold_change_full",
         "sourceUrl": "https://b-camp.jp/kinshicho/"
+      },
+      "coordinates": {
+        "lat": 35.6929,
+        "lng": 139.8147
       }
     },
     {
@@ -1322,6 +1414,10 @@
       "collector": {
         "adapter": "html-news",
         "feedUrl": "http://quail-climbing.com/"
+      },
+      "coordinates": {
+        "lat": 35.7568,
+        "lng": 139.6291
       }
     },
     {
@@ -1376,6 +1472,10 @@
       "collector": {
         "adapter": "wordpress-rss",
         "feedUrl": "https://climbing-girigiri.com/feed/"
+      },
+      "coordinates": {
+        "lat": 35.7304,
+        "lng": 139.5276
       }
     },
     {
@@ -1431,6 +1531,10 @@
       "collector": {
         "adapter": "html-news",
         "feedUrl": "https://www.nextgen-bouldering.com/"
+      },
+      "coordinates": {
+        "lat": 35.8058,
+        "lng": 139.5582
       }
     },
     {
@@ -1486,6 +1590,10 @@
       "collector": {
         "adapter": "html-news",
         "feedUrl": "https://fish-bird.co.jp/"
+      },
+      "coordinates": {
+        "lat": 35.6752,
+        "lng": 139.8172
       }
     },
     {
@@ -1542,6 +1650,10 @@
       "collector": {
         "adapter": "html-news",
         "feedUrl": "https://www.rhino-bird.com/"
+      },
+      "coordinates": {
+        "lat": 35.7309,
+        "lng": 139.7689
       }
     },
     {
@@ -1597,6 +1709,10 @@
       "collector": {
         "adapter": "wordpress-rss",
         "feedUrl": "https://underground-climb.com/feed/"
+      },
+      "coordinates": {
+        "lat": 35.7627,
+        "lng": 139.7267
       }
     },
     {
@@ -1652,6 +1768,10 @@
       "collector": {
         "adapter": "html-news",
         "feedUrl": "https://beta-climbing.com/"
+      },
+      "coordinates": {
+        "lat": 35.6925,
+        "lng": 139.7224
       }
     },
     {
@@ -1706,6 +1826,10 @@
       "collector": {
         "adapter": "html-news",
         "feedUrl": "https://www.rocklands.tokyo/"
+      },
+      "coordinates": {
+        "lat": 35.6606,
+        "lng": 139.8732
       }
     },
     {
@@ -1760,6 +1884,10 @@
       "collector": {
         "adapter": "wordpress-rss",
         "feedUrl": "https://pump-climbing.com/gym/bpump2/feed/"
+      },
+      "coordinates": {
+        "lat": 35.4596,
+        "lng": 139.6213
       }
     },
     {
@@ -1812,6 +1940,10 @@
       "collector": {
         "adapter": "wordpress-rss",
         "feedUrl": "https://pump-climbing.com/gym/pump1/feed/"
+      },
+      "coordinates": {
+        "lat": 35.8027,
+        "lng": 139.7347
       }
     },
     {
@@ -1873,6 +2005,10 @@
       "collector": {
         "adapter": "wordpress-rss",
         "feedUrl": "https://b-camp.jp/iruma/feed/"
+      },
+      "coordinates": {
+        "lat": 35.8294,
+        "lng": 139.4048
       }
     },
     {
@@ -1928,6 +2064,10 @@
         "adapter": "noborock-calendar",
         "feedUrl": "https://noborock-climbing.com/calendar/",
         "storeKeyword": "浅草"
+      },
+      "coordinates": {
+        "lat": 35.7097,
+        "lng": 139.8007
       }
     },
     {
@@ -1983,6 +2123,10 @@
         "adapter": "noborock-calendar",
         "feedUrl": "https://noborock-climbing.com/calendar/",
         "storeKeyword": "大宮"
+      },
+      "coordinates": {
+        "lat": 35.9056,
+        "lng": 139.6267
       }
     },
     {
@@ -2038,6 +2182,10 @@
         "adapter": "html-news",
         "feedUrl": "https://www.rockyclimbing.com/",
         "storeKeyword": "船橋"
+      },
+      "coordinates": {
+        "lat": 35.7019,
+        "lng": 139.9749
       }
     },
     {
@@ -2093,6 +2241,10 @@
         "adapter": "html-news",
         "feedUrl": "https://www.rockyclimbing.com/",
         "storeKeyword": "印西"
+      },
+      "coordinates": {
+        "lat": 35.8012,
+        "lng": 140.1558
       }
     },
     {
@@ -2148,6 +2300,10 @@
       "collector": {
         "adapter": "html-news",
         "feedUrl": "https://www.d-b-c.jp/top/tsunashima/"
+      },
+      "coordinates": {
+        "lat": 35.5372,
+        "lng": 139.6334
       }
     },
     {
@@ -2200,6 +2356,10 @@
       "collector": {
         "adapter": "html-news",
         "feedUrl": "https://www.d-b-c.jp/top/tsudanuma/"
+      },
+      "coordinates": {
+        "lat": 35.6942,
+        "lng": 140.0229
       }
     },
     {
@@ -2253,6 +2413,10 @@
       "collector": {
         "adapter": "wordpress-rss",
         "feedUrl": "https://project-climbing.com/feed/"
+      },
+      "coordinates": {
+        "lat": 35.5141,
+        "lng": 139.5681
       }
     },
     {
@@ -2305,6 +2469,10 @@
       "collector": {
         "adapter": "wordpress-rss",
         "feedUrl": "https://dogwood-climbing.jp/feed/"
+      },
+      "coordinates": {
+        "lat": 35.6438,
+        "lng": 139.5356
       }
     },
     {
@@ -2361,6 +2529,10 @@
       "collector": {
         "adapter": "html-news",
         "feedUrl": "http://mitakagym.com/"
+      },
+      "coordinates": {
+        "lat": 35.7035,
+        "lng": 139.5612
       }
     },
     {
@@ -2416,6 +2588,10 @@
       "collector": {
         "adapter": "wordpress-rss",
         "feedUrl": "https://xn--xckbj6a9jra6a4gy403a4b6j.com/feed/"
+      },
+      "coordinates": {
+        "lat": 35.7003,
+        "lng": 139.5608
       }
     },
     {
@@ -2473,6 +2649,10 @@
         "adapter": "wordpress-rss",
         "feedUrl": "https://boulcom.jp/feed/",
         "storeKeyword": "東京"
+      },
+      "coordinates": {
+        "lat": 35.6904,
+        "lng": 139.7664
       }
     },
     {
@@ -2530,6 +2710,10 @@
         "adapter": "wordpress-rss",
         "feedUrl": "https://boulcom.jp/feed/",
         "storeKeyword": "川崎"
+      },
+      "coordinates": {
+        "lat": 35.5326,
+        "lng": 139.6948
       }
     }
   ]

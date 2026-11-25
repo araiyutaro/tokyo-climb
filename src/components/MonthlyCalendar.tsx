@@ -27,6 +27,7 @@ interface MonthlyCalendarProps {
   events: ScheduleEvent[];
   todayStr: string;
   favorites: Set<string>;
+  onSelectGym: (gymId: string, dateStr: string) => void;
 }
 
 const WEEKDAYS = ['日', '月', '火', '水', '木', '金', '土'];
@@ -44,6 +45,7 @@ export function MonthlyCalendar({
   events,
   todayStr,
   favorites,
+  onSelectGym,
 }: MonthlyCalendarProps) {
   const [todayYear, todayMonth] = todayStr.split('-').map(Number);
   const [year, setYear] = useState(todayYear);
@@ -69,7 +71,6 @@ export function MonthlyCalendar({
     [cells, selectedDate],
   );
 
-  // Deduplicated list of events intersecting this month (for easy mobile browsing)
   const monthPrefix = `${year}-${String(month).padStart(2, '0')}`;
   const monthStart = `${monthPrefix}-01`;
   const lastDay = new Date(Date.UTC(year, month, 0)).getUTCDate();
@@ -125,32 +126,32 @@ export function MonthlyCalendar({
   return (
     <section className="space-y-4">
       {/* Controls */}
-      <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs">
+      <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs dark:border-slate-800 dark:bg-slate-900">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <button
               type="button"
               onClick={goPrevMonth}
               aria-label="前の月"
-              className="rounded-xl border border-slate-200 p-2 text-slate-600 hover:bg-slate-100"
+              className="rounded-xl border border-slate-200 p-2 text-slate-600 hover:bg-slate-100 active:scale-95 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
             >
               <ChevronLeft className="h-4 w-4" />
             </button>
-            <h2 className="min-w-[120px] text-center text-lg font-bold text-slate-900">
+            <h2 className="min-w-[120px] text-center text-lg font-bold text-slate-900 dark:text-white">
               {year}年 {month}月
             </h2>
             <button
               type="button"
               onClick={goNextMonth}
               aria-label="次の月"
-              className="rounded-xl border border-slate-200 p-2 text-slate-600 hover:bg-slate-100"
+              className="rounded-xl border border-slate-200 p-2 text-slate-600 hover:bg-slate-100 active:scale-95 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
             >
               <ChevronRight className="h-4 w-4" />
             </button>
             <button
               type="button"
               onClick={goToday}
-              className="ml-1 rounded-xl bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-200"
+              className="ml-1 rounded-xl bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-200 active:scale-95 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
             >
               今月
             </button>
@@ -161,7 +162,7 @@ export function MonthlyCalendar({
               value={selectedArea}
               onChange={(e) => setSelectedArea(e.target.value as AreaId | 'all')}
               aria-label="エリアで絞り込み"
-              className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700 focus:border-slate-400 focus:bg-white focus:outline-none"
+              className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700 focus:border-slate-400 focus:bg-white focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
             >
               <option value="all">全エリア</option>
               {AREA_OPTIONS.map((a) => (
@@ -174,10 +175,10 @@ export function MonthlyCalendar({
             <button
               type="button"
               onClick={() => setOnlyFavorites((v) => !v)}
-              className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-xs font-semibold transition-colors ${
+              className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-xs font-semibold transition-colors active:scale-95 ${
                 onlyFavorites
                   ? 'bg-amber-500 text-white'
-                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700'
               }`}
             >
               <Star className={`h-3.5 w-3.5 ${onlyFavorites ? 'fill-white' : ''}`} />
@@ -187,7 +188,7 @@ export function MonthlyCalendar({
         </div>
 
         {/* Event Type Legend / Toggle Filters */}
-        <div className="mt-3 flex flex-wrap gap-1.5">
+        <div className="no-scrollbar mt-3 flex gap-1.5 overflow-x-auto pb-0.5 sm:flex-wrap">
           {TYPE_FILTER_OPTIONS.map(({ type, label }) => {
             const meta = getEventTypeMeta(type);
             const active = selectedTypes.has(type);
@@ -196,15 +197,19 @@ export function MonthlyCalendar({
                 key={type}
                 type="button"
                 onClick={() => toggleType(type)}
-                className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold transition-all ${
+                className={`inline-flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold transition-all active:scale-95 ${
                   active
-                    ? 'bg-slate-900 text-white ring-2 ring-slate-900/20'
+                    ? 'bg-slate-900 text-white ring-2 ring-slate-900/20 dark:bg-white dark:text-slate-900'
                     : selectedTypes.size === 0
                       ? meta.pillClass
-                      : 'bg-slate-100 text-slate-400 hover:bg-slate-200 hover:text-slate-700'
+                      : 'bg-slate-100 text-slate-400 hover:bg-slate-200 hover:text-slate-700 dark:bg-slate-800 dark:text-slate-500'
                 }`}
               >
-                <span className={`h-2 w-2 rounded-full ${active ? 'bg-white' : meta.dotClass}`} />
+                <span
+                  className={`h-2 w-2 rounded-full ${
+                    active ? 'bg-white dark:bg-slate-900' : meta.dotClass
+                  }`}
+                />
                 {label}
               </button>
             );
@@ -213,7 +218,7 @@ export function MonthlyCalendar({
             <button
               type="button"
               onClick={() => setSelectedTypes(new Set())}
-              className="rounded-full px-2.5 py-1 text-xs font-medium text-slate-500 underline hover:text-slate-800"
+              className="shrink-0 rounded-full px-2.5 py-1 text-xs font-medium text-slate-500 underline hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200"
             >
               フィルタ解除
             </button>
@@ -223,18 +228,18 @@ export function MonthlyCalendar({
 
       {/* Main Split: Calendar Grid + Selected Day Panel */}
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xs lg:col-span-2">
+        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xs dark:border-slate-800 dark:bg-slate-900 lg:col-span-2">
           {/* Weekday Headers */}
-          <div className="grid grid-cols-7 border-b border-slate-200 bg-slate-50 text-center text-xs font-bold">
+          <div className="grid grid-cols-7 border-b border-slate-200 bg-slate-50 text-center text-xs font-bold dark:border-slate-800 dark:bg-slate-900/80">
             {WEEKDAYS.map((day, idx) => (
               <div
                 key={day}
                 className={`py-2 ${
                   idx === 0
-                    ? 'text-rose-600'
+                    ? 'text-rose-600 dark:text-rose-400'
                     : idx === 6
-                      ? 'text-blue-600'
-                      : 'text-slate-600'
+                      ? 'text-blue-600 dark:text-blue-400'
+                      : 'text-slate-600 dark:text-slate-400'
                 }`}
               >
                 {day}
@@ -243,7 +248,7 @@ export function MonthlyCalendar({
           </div>
 
           {/* Calendar Cells */}
-          <div className="grid grid-cols-7 divide-x divide-y divide-slate-100">
+          <div className="grid grid-cols-7 divide-x divide-y divide-slate-100 dark:divide-slate-800">
             {cells.map((cell) => {
               const isSelected = cell.dateStr === selectedDate;
               return (
@@ -253,26 +258,30 @@ export function MonthlyCalendar({
                   onClick={() => setSelectedDate(cell.dateStr)}
                   className={`flex min-h-[76px] flex-col items-start p-1.5 text-left transition-colors sm:min-h-[104px] sm:p-2 ${
                     !cell.isCurrentMonth
-                      ? 'bg-slate-50/70 text-slate-400'
-                      : 'bg-white hover:bg-slate-50'
-                  } ${isSelected ? 'ring-2 ring-inset ring-slate-900 bg-slate-50/80' : ''}`}
+                      ? 'bg-slate-50/70 text-slate-400 dark:bg-slate-950/60 dark:text-slate-600'
+                      : 'bg-white hover:bg-slate-50 dark:bg-slate-900 dark:hover:bg-slate-800/70'
+                  } ${
+                    isSelected
+                      ? 'bg-slate-50/80 ring-2 ring-inset ring-slate-900 dark:bg-slate-800/80 dark:ring-white'
+                      : ''
+                  }`}
                 >
                   <div className="flex w-full items-center justify-between gap-1">
                     <span
                       className={`inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${
                         cell.isToday
-                          ? 'bg-slate-900 text-white'
+                          ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
                           : cell.isHoliday || cell.dayOfWeek === 0
-                            ? 'text-rose-600'
+                            ? 'text-rose-600 dark:text-rose-400'
                             : cell.dayOfWeek === 6
-                              ? 'text-blue-600'
-                              : 'text-slate-700'
+                              ? 'text-blue-600 dark:text-blue-400'
+                              : 'text-slate-700 dark:text-slate-200'
                       }`}
                     >
                       {cell.dayOfMonth}
                     </span>
                     {cell.holidayName && (
-                      <span className="hidden truncate text-[9px] font-medium text-rose-500 sm:inline">
+                      <span className="hidden truncate text-[9px] font-medium text-rose-500 dark:text-rose-400 sm:inline">
                         {cell.holidayName}
                       </span>
                     )}
@@ -303,7 +312,7 @@ export function MonthlyCalendar({
                       );
                     })}
                     {cell.items.length > 3 && (
-                      <div className="px-1 text-[10px] font-semibold text-slate-500">
+                      <div className="px-1 text-[10px] font-semibold text-slate-500 dark:text-slate-400">
                         +{cell.items.length - 3}件
                       </div>
                     )}
@@ -314,24 +323,26 @@ export function MonthlyCalendar({
           </div>
         </div>
 
-        {/* Selected Date Detail Panel */}
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs">
-          <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+        {/* Selected Date Detail Panel (tap any event to open Gym Detail Sheet!) */}
+        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs dark:border-slate-800 dark:bg-slate-900">
+          <div className="flex items-center justify-between border-b border-slate-100 pb-3 dark:border-slate-800">
             <div>
-              <h3 className="text-base font-bold text-slate-900">
+              <h3 className="text-base font-bold text-slate-900 dark:text-white">
                 {formatDateJa(selectedDate)} の予定
               </h3>
               {selectedCell?.holidayName && (
-                <p className="text-xs font-medium text-rose-600">{selectedCell.holidayName}</p>
+                <p className="text-xs font-medium text-rose-600 dark:text-rose-400">
+                  {selectedCell.holidayName}
+                </p>
               )}
             </div>
-            <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-600">
+            <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
               {selectedCell?.items.length ?? 0}件
             </span>
           </div>
 
           {!selectedCell || selectedCell.items.length === 0 ? (
-            <p className="py-8 text-center text-xs text-slate-500">
+            <p className="py-8 text-center text-xs text-slate-500 dark:text-slate-400">
               この日に登録されているホールド替え・休業・イベント情報はありません。
             </p>
           ) : (
@@ -341,11 +352,20 @@ export function MonthlyCalendar({
                 return (
                   <div
                     key={event.id}
-                    className={`rounded-xl border p-3 text-xs ${meta.cardClass}`}
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => onSelectGym(event.gymId, selectedDate)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        onSelectGym(event.gymId, selectedDate);
+                      }
+                    }}
+                    className={`cursor-pointer rounded-xl border p-3 text-xs transition-all hover:shadow-xs active:scale-[0.985] ${meta.cardClass}`}
                   >
                     <div className="flex items-center justify-between gap-2">
-                      <span className="font-bold text-slate-900">{gymName}</span>
-                      <span className="rounded bg-white/80 px-1.5 py-0.5 text-[10px] font-semibold">
+                      <span className="font-bold text-slate-900 dark:text-white">{gymName}</span>
+                      <span className="rounded bg-white/80 px-1.5 py-0.5 text-[10px] font-semibold text-slate-900 dark:bg-slate-900/70 dark:text-slate-100">
                         {meta.shortLabel}
                       </span>
                     </div>
@@ -362,14 +382,18 @@ export function MonthlyCalendar({
                       <span>
                         {event.source.label} ({getConfidenceLabel(event.source.confidence)})
                       </span>
-                      <a
-                        href={event.source.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-0.5 font-semibold underline"
-                      >
-                        元ページ <ExternalLink className="h-3 w-3" />
-                      </a>
+                      <div className="flex items-center gap-2">
+                        <span className="font-bold underline">店舗詳細 ›</span>
+                        <a
+                          href={event.source.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center gap-0.5 font-semibold underline"
+                        >
+                          元ページ <ExternalLink className="h-3 w-3" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 );
@@ -380,44 +404,61 @@ export function MonthlyCalendar({
       </div>
 
       {/* Monthly Chronological Feed */}
-      <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs">
-        <h3 className="text-sm font-bold text-slate-900">
+      <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs dark:border-slate-800 dark:bg-slate-900">
+        <h3 className="text-sm font-bold text-slate-900 dark:text-white">
           {year}年{month}月のホールド替え・休業・イベント一覧（{monthEvents.length}件）
         </h3>
         {monthEvents.length === 0 ? (
-          <p className="py-6 text-center text-xs text-slate-500">
+          <p className="py-6 text-center text-xs text-slate-500 dark:text-slate-400">
             この月の該当予定はまだ登録されていません。
           </p>
         ) : (
-          <ul className="mt-3 divide-y divide-slate-100">
+          <ul className="mt-3 divide-y divide-slate-100 dark:divide-slate-800">
             {monthEvents.map((ev) => {
               const gym = gymMap.get(ev.gymId);
               const meta = getEventTypeMeta(ev.type);
               return (
                 <li
                   key={ev.id}
-                  className="flex flex-col gap-1.5 py-3 sm:flex-row sm:items-center sm:justify-between"
+                  onClick={() => onSelectGym(ev.gymId, ev.startDate)}
+                  className="flex cursor-pointer flex-col gap-1.5 rounded-xl px-2 py-3 transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/60 sm:flex-row sm:items-center sm:justify-between"
                 >
                   <div className="min-w-0">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="text-xs font-bold text-slate-700">
+                      <span className="text-xs font-bold text-slate-700 dark:text-slate-300">
                         {formatDateRangeJa(ev.startDate, ev.endDate)}
                       </span>
-                      <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold ${meta.pillClass}`}>
+                      <span
+                        className={`rounded-full px-2 py-0.5 text-[10px] font-semibold ${meta.pillClass}`}
+                      >
                         {meta.shortLabel}
                       </span>
-                      <span className="text-sm font-bold text-slate-900">{gym?.name}</span>
+                      <span className="text-sm font-bold text-slate-900 dark:text-white">
+                        {gym?.name}
+                      </span>
                     </div>
-                    <p className="mt-0.5 text-xs text-slate-700">{ev.title}</p>
+                    <p className="mt-0.5 text-xs text-slate-700 dark:text-slate-300">{ev.title}</p>
                   </div>
-                  <a
-                    href={ev.source.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex shrink-0 items-center gap-1 self-start rounded-lg bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-700 hover:bg-slate-200 sm:self-center"
+                  <div
+                    className="flex items-center gap-2 self-start sm:self-center"
+                    onClick={(e) => e.stopPropagation()}
                   >
-                    公式確認 <ExternalLink className="h-3 w-3" />
-                  </a>
+                    <button
+                      type="button"
+                      onClick={() => onSelectGym(ev.gymId, ev.startDate)}
+                      className="rounded-lg bg-slate-900 px-2.5 py-1 text-[11px] font-semibold text-white hover:bg-slate-700 dark:bg-white dark:text-slate-900"
+                    >
+                      詳細
+                    </button>
+                    <a
+                      href={ev.source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex shrink-0 items-center gap-1 rounded-lg bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
+                    >
+                      公式確認 <ExternalLink className="h-3 w-3" />
+                    </a>
+                  </div>
                 </li>
               );
             })}

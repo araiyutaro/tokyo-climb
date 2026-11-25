@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     title: 'Tokyo Climb',
-    statusBarStyle: 'default',
+    statusBarStyle: 'black-translucent',
   },
   openGraph: {
     title: 'Tokyo Climb | 東京・近郊ボルダリングジム 営業時間・ホールド替えまとめ',
@@ -30,12 +30,17 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#0f172a',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#020617' },
+  ],
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
   viewportFit: 'cover',
 };
+
+const THEME_INIT_SCRIPT = `(function(){try{var k='tokyo-climb:theme:v1';var m=localStorage.getItem(k)||'system';var d=m==='dark'||(m==='system'&&window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',d);}catch(e){}})();`;
 
 export default function RootLayout({
   children,
@@ -43,8 +48,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
-      <body className="min-h-screen bg-slate-50 text-slate-900">
+    <html lang="ja" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+      </head>
+      <body className="min-h-screen bg-slate-50 text-slate-900 transition-colors duration-200 dark:bg-slate-950 dark:text-slate-100">
         {children}
         <PwaEnhancer />
       </body>
