@@ -50,10 +50,13 @@ describe('GymDetailSheet mobile touch & close behavior', () => {
     const sheetCard = dialog.firstElementChild as HTMLElement;
 
     // Simulate mobile touch tap on close button (touchStart -> touchEnd -> click)
+    const initialClassName = sheetCard.className;
     fireEvent.touchStart(closeBtn, { touches: [{ clientY: 120 }] });
     // Should NOT start dragging or toggle animation class on button touch
     expect(sheetCard.style.transform).toBe('');
+    expect(sheetCard.className).toBe(initialClassName);
     fireEvent.touchEnd(closeBtn);
+    expect(sheetCard.className).toBe(initialClassName);
     fireEvent.click(closeBtn);
 
     expect(onClose).toHaveBeenCalledTimes(1);

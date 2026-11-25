@@ -238,6 +238,10 @@ export function TokyoClimbApp({
     [gymMap, events, now],
   );
 
+  const handleCloseDetail = useCallback(() => {
+    setDetailDayStatus(null);
+  }, []);
+
   const handlePullRefresh = useCallback(async () => {
     setNow(new Date());
     router.refresh();
@@ -468,7 +472,7 @@ export function TokyoClimbApp({
         visitSummary={detailDayStatus ? climbStats.byGym[detailDayStatus.gym.id] : undefined}
         onLogVisit={handleLogVisit}
         onToggleFavorite={toggleFavorite}
-        onClose={() => setDetailDayStatus(null)}
+        onClose={handleCloseDetail}
       />
     </div>
   );

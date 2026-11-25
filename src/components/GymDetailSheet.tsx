@@ -103,20 +103,25 @@ export function GymDetailSheet({
 
   const handleTouchStart = (e: React.TouchEvent, forceAllow = false) => {
     if (e.touches.length !== 1) return;
+    const target = e.target as HTMLElement | null;
+    if (target?.closest('button, a, input, textarea, select, label')) {
+      touchStartYRef.current = null;
+      return;
+    }
     const scrollTop = scrollContainerRef.current?.scrollTop ?? 0;
     if (forceAllow || scrollTop <= 0) {
       touchStartYRef.current = e.touches[0].clientY;
       touchStartTimeRef.current = Date.now();
-      setIsDragging(true);
     }
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
     if (touchStartYRef.current === null) return;
     const delta = e.touches[0].clientY - touchStartYRef.current;
-    if (delta > 0) {
-      setDragY(delta);
-    } else {
+    if (delta > 10) {
+      if (!isDragging) setIsDragging(true);
+      setDragY(delta - 10);
+    } else if (isDragging) {
       setDragY(0);
     }
   };
@@ -125,15 +130,20 @@ export function GymDetailSheet({
     if (touchStartYRef.current === null) return;
     const elapsedMs = Math.max(1, Date.now() - touchStartTimeRef.current);
     const velocity = dragY / elapsedMs; // px per ms
+    const finalDragY = dragY;
     touchStartYRef.current = null;
     setIsDragging(false);
+    setDragY(0);
 
-    if (dragY > 96 || (dragY > 40 && velocity > 0.45)) {
-      setDragY(0);
+    if (finalDragY > 96 || (finalDragY > 40 && velocity > 0.45)) {
       onClose();
-    } else {
-      setDragY(0);
     }
+  };
+
+  const handleTouchCancel = () => {
+    touchStartYRef.current = null;
+    setIsDragging(false);
+    setDragY(0);
   };
 
   const backdropOpacity = Math.max(0.15, 0.52 - dragY / 600);
@@ -148,8 +158,8 @@ export function GymDetailSheet({
       onClick={onClose}
     >
       <div
-        className={`pb-safe relative flex max-h-[90vh] w-full max-w-xl flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl dark:bg-slate-900 dark:ring-1 dark:ring-slate-800 md:max-h-[85vh] md:rounded-3xl ${
-          isDragging ? '' : 'transition-transform duration-200 ease-out animate-[sheet-up_0.22s_ease-out]'
+        className={`pb-safe relative flex max-h-[90vh] w-full max-w-xl flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl animate-[sheet-up_0.22s_ease-out] dark:bg-slate-900 dark:ring-1 dark:ring-slate-800 md:max-h-[85vh] md:rounded-3xl ${
+          isDragging ? '' : 'transition-transform duration-200 ease-out'
         }`}
         style={dragY > 0 ? { transform: `translateY(${dragY}px)` } : undefined}
         onClick={(e) => e.stopPropagation()}
@@ -159,8 +169,9 @@ export function GymDetailSheet({
           onTouchStart={(e) => handleTouchStart(e, true)}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
+          onTouchCancel={handleTouchCancel}
         >
-          <div className="flex justify-center pt-2.5 pb-1 md:hidden">
+          <div data-testid="sheet-drag-handle" className="flex justify-center pt-2.5 pb-1 md:hidden">
             <div className="h-1.5 w-12 rounded-full bg-slate-200 dark:bg-slate-700" />
           </div>
 
@@ -203,9 +214,13 @@ export function GymDetailSheet({
             <div className="flex shrink-0 items-center gap-1.5">
               <button
                 type="button"
-                onClick={() => onToggleFavorite(gym.id)}
+                onTouchStart={(e) => e.stopPropagation()}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onToggleFavorite(gym.id);
+                }}
                 aria-label={isFavorite ? 'お気に入りを解除' : 'お気に入りに追加'}
-                className={`rounded-full p-2.5 transition-colors active:scale-90 ${
+                className={`inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full p-2.5 transition-colors active:scale-90 ${
                   isFavorite
                     ? 'bg-amber-50 text-amber-500 dark:bg-amber-950/70'
                     : 'bg-slate-100 text-slate-400 hover:text-slate-600 dark:bg-slate-800 dark:text-slate-500'
@@ -215,9 +230,13 @@ export function GymDetailSheet({
               </button>
               <button
                 type="button"
-                onClick={onClose}
+                onTouchStart={(e) => e.stopPropagation()}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onClose();
+                }}
                 aria-label="詳細を閉じる"
-                className="rounded-full bg-slate-100 p-2.5 text-slate-500 transition-colors hover:bg-slate-200 active:scale-90 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
+                className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-slate-100 p-2.5 text-slate-600 transition-colors hover:bg-slate-200 active:scale-90 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -231,6 +250,7 @@ export function GymDetailSheet({
           onTouchStart={(e) => handleTouchStart(e, false)}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
+          onTouchCancel={handleTouchCancel}
           className="flex-1 space-y-4 overflow-y-auto px-5 py-4"
         >
           {/* Status Hero */}
