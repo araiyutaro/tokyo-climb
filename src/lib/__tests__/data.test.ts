@@ -51,6 +51,11 @@ describe('data integrity', () => {
 
     for (const gym of dataset.gyms) {
       expect(gym.links.scheduleUrl ?? '').not.toContain('%e3%82%ab%e3%83%ac%e3%83%b3%e3%83%80%e3%83%bc');
+      expect(gym.coordinates, `Expected coordinates on ${gym.id}`).toBeDefined();
+      expect(gym.coordinates!.lat).toBeGreaterThan(35.0);
+      expect(gym.coordinates!.lat).toBeLessThan(36.3);
+      expect(gym.coordinates!.lng).toBeGreaterThan(139.0);
+      expect(gym.coordinates!.lng).toBeLessThan(140.5);
     }
   });
 
