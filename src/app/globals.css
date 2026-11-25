@@ -42,6 +42,12 @@ body {
   display: none;
 }
 
+/* Defer off-screen card layout/paint work for snappier mobile rendering */
+.gym-card-cv {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 280px;
+}
+
 @keyframes sheet-up {
   from {
     opacity: 0;

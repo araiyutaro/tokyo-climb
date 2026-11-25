@@ -28,7 +28,7 @@ export function BottomTabBar({
           className={`flex flex-col items-center justify-center gap-0.5 rounded-xl py-1.5 transition-all active:scale-95 ${
             activeTab === 'today'
               ? 'text-slate-900 dark:text-white'
-              : 'text-slate-400 dark:text-slate-500'
+              : 'text-slate-600 dark:text-slate-400'
           }`}
         >
           <span
@@ -40,7 +40,7 @@ export function BottomTabBar({
           >
             <Compass className="h-4.5 w-4.5" />
           </span>
-          <span className="text-[10px] font-bold">今日</span>
+          <span className="text-[11px] font-bold">今日</span>
         </button>
 
         <button
@@ -48,29 +48,29 @@ export function BottomTabBar({
           onClick={() => onSelectTab('favorites')}
           className={`relative flex flex-col items-center justify-center gap-0.5 rounded-xl py-1.5 transition-all active:scale-95 ${
             activeTab === 'favorites'
-              ? 'text-amber-600 dark:text-amber-400'
-              : 'text-slate-400 dark:text-slate-500'
+              ? 'text-amber-700 dark:text-amber-400'
+              : 'text-slate-600 dark:text-slate-400'
           }`}
         >
           <span
             className={`relative flex h-7 w-12 items-center justify-center rounded-full transition-colors ${
-              activeTab === 'favorites' ? 'bg-amber-500 text-white' : ''
+              activeTab === 'favorites' ? 'bg-amber-600 text-white' : ''
             }`}
           >
             <Star className={`h-4.5 w-4.5 ${activeTab === 'favorites' ? 'fill-white' : ''}`} />
             {favoritesCount > 0 && (
               <span
-                className={`absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full px-1 text-[9px] font-extrabold ${
+                className={`absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full px-1 text-[10px] font-extrabold ${
                   activeTab === 'favorites'
                     ? 'bg-slate-900 text-white dark:bg-slate-950'
-                    : 'bg-amber-500 text-white'
+                    : 'bg-amber-600 text-white'
                 }`}
               >
                 {favoritesCount}
               </span>
             )}
           </span>
-          <span className="text-[10px] font-bold">お気に入り</span>
+          <span className="text-[11px] font-bold">お気に入り</span>
         </button>
 
         <button
@@ -79,7 +79,7 @@ export function BottomTabBar({
           className={`flex flex-col items-center justify-center gap-0.5 rounded-xl py-1.5 transition-all active:scale-95 ${
             activeTab === 'calendar'
               ? 'text-slate-900 dark:text-white'
-              : 'text-slate-400 dark:text-slate-500'
+              : 'text-slate-600 dark:text-slate-400'
           }`}
         >
           <span
@@ -91,17 +91,17 @@ export function BottomTabBar({
           >
             <CalendarDays className="h-4.5 w-4.5" />
           </span>
-          <span className="text-[10px] font-bold">カレンダー</span>
+          <span className="text-[11px] font-bold">カレンダー</span>
         </button>
 
         <Link
           href="/import"
-          className="flex flex-col items-center justify-center gap-0.5 rounded-xl py-1.5 text-slate-400 transition-all active:scale-95 hover:text-slate-700 dark:text-slate-500 dark:hover:text-slate-200"
+          className="flex flex-col items-center justify-center gap-0.5 rounded-xl py-1.5 text-slate-600 transition-all active:scale-95 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200"
         >
           <span className="flex h-7 w-12 items-center justify-center rounded-full">
-            <PlusCircle className="h-4.5 w-4.5 text-emerald-600 dark:text-emerald-400" />
+            <PlusCircle className="h-4.5 w-4.5 text-emerald-700 dark:text-emerald-400" />
           </span>
-          <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300">SNS取込</span>
+          <span className="text-[11px] font-bold">SNS取込</span>
         </Link>
       </div>
     </nav>

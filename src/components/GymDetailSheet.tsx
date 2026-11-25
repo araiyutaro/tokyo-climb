@@ -286,7 +286,7 @@ export function GymDetailSheet({
                 最終ホールド替え
               </span>
               {lastHoldChange && lastHoldChange.daysAgo <= 7 && (
-                <span className="rounded-full bg-teal-600 px-2 py-0.5 text-[10px] font-bold text-white">
+                <span className="rounded-full bg-teal-700 px-2 py-0.5 text-[10px] font-bold text-white">
                   NEWセット
                 </span>
               )}

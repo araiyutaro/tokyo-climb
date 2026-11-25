@@ -64,7 +64,7 @@ export function GymCard({
           onOpenDetail(dayStatus);
         }
       }}
-      className={`group relative flex cursor-pointer flex-col justify-between rounded-2xl border bg-white p-4 shadow-xs transition-all hover:shadow-md active:scale-[0.985] dark:bg-slate-900/95 ${
+      className={`gym-card-cv group relative flex cursor-pointer flex-col justify-between rounded-2xl border bg-white p-4 shadow-xs transition-all hover:shadow-md active:scale-[0.985] dark:bg-slate-900/95 ${
         status === 'hold_change_closed' || status === 'temp_closed'
           ? 'border-rose-200 bg-rose-50/20 dark:border-rose-900/70 dark:bg-rose-950/20'
           : dayStatus.hasPartialHoldChange
@@ -91,9 +91,9 @@ export function GymCard({
                 </span>
               )}
             </div>
-            <h3 className="mt-1.5 text-base font-bold tracking-tight text-slate-900 dark:text-white">
+            <h2 className="mt-1.5 text-base font-bold tracking-tight text-slate-900 dark:text-white">
               {gym.name}
-            </h3>
+            </h2>
             <div className="mt-0.5 flex flex-wrap items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
               <span className="inline-flex min-w-0 items-center gap-1">
                 <MapPin className="h-3.5 w-3.5 shrink-0 text-slate-400" />
@@ -176,19 +176,19 @@ export function GymCard({
         <div
           className={`mt-2.5 flex items-center justify-between gap-2 rounded-xl px-2.5 py-1.5 text-[11px] ${
             lastHoldChange && lastHoldChange.daysAgo <= 7
-              ? 'bg-teal-50/90 text-teal-900 ring-1 ring-teal-200/80 dark:bg-teal-950/60 dark:text-teal-100 dark:ring-teal-800/70'
-              : 'bg-slate-50/80 text-slate-600 ring-1 ring-slate-200/60 dark:bg-slate-800/50 dark:text-slate-400 dark:ring-slate-800'
+              ? 'bg-teal-50 text-teal-900 ring-1 ring-teal-200/80 dark:bg-teal-950/60 dark:text-teal-100 dark:ring-teal-800/70'
+              : 'bg-slate-50 text-slate-700 ring-1 ring-slate-200/60 dark:bg-slate-800/50 dark:text-slate-300 dark:ring-slate-800'
           }`}
         >
           <div className="flex min-w-0 items-center gap-1.5">
-            <History className="h-3.5 w-3.5 shrink-0 opacity-70" />
+            <History className="h-3.5 w-3.5 shrink-0 text-slate-500 dark:text-slate-400" />
             {lastHoldChange ? (
               <span className="truncate" title={`${lastHoldChange.date} ${lastHoldChange.title}`}>
                 最終セット:{' '}
-                <strong className="font-bold text-slate-800 dark:text-slate-100">
+                <strong className="font-bold text-slate-900 dark:text-white">
                   {formatDateJa(lastHoldChange.date)}
                 </strong>
-                <span className="ml-1 opacity-80">
+                <span className="ml-1 text-slate-700 dark:text-slate-300">
                   (
                   {lastHoldChange.daysAgo === 0
                     ? '本日'
@@ -199,13 +199,13 @@ export function GymCard({
                 </span>
               </span>
             ) : (
-              <span className="text-slate-400 dark:text-slate-500">最終セット: 情報収集中</span>
+              <span className="text-slate-600 dark:text-slate-400">最終セット: 情報収集中</span>
             )}
           </div>
 
           <div className="flex shrink-0 items-center gap-1.5">
             {lastHoldChange && lastHoldChange.daysAgo <= 7 && (
-              <span className="rounded-full bg-teal-600 px-1.5 py-0.5 text-[10px] font-bold text-white">
+              <span className="rounded-full bg-teal-700 px-2 py-0.5 text-[10px] font-bold text-white">
                 NEW
               </span>
             )}
@@ -248,8 +248,8 @@ export function GymCard({
                       ))}
                     </div>
                   )}
-                  <div className="mt-1 flex items-center justify-between text-[10px] opacity-75">
-                    <span>
+                  <div className="mt-1.5 flex items-center justify-between gap-2 text-[11px]">
+                    <span className="opacity-85">
                       {ev.source.label} ({getConfidenceLabel(ev.source.confidence)})
                     </span>
                     <a
@@ -257,7 +257,7 @@ export function GymCard({
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-0.5 font-semibold underline hover:opacity-100"
+                      className="inline-flex min-h-[28px] shrink-0 items-center gap-1 rounded-md bg-white/75 px-2 py-1 text-[11px] font-semibold underline hover:bg-white dark:bg-slate-900/60 dark:hover:bg-slate-900"
                     >
                       元ページ <ExternalLink className="h-3 w-3" />
                     </a>
@@ -343,7 +343,7 @@ export function GymCard({
               href={gym.links.x}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 rounded-lg bg-slate-900 px-2.5 py-1.5 text-[11px] font-semibold text-white transition-colors hover:bg-slate-700 active:scale-95 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-300"
+              className="inline-flex items-center gap-1 rounded-lg bg-slate-900 px-2.5 py-1.5 text-[11px] font-semibold text-white transition-colors hover:bg-slate-700 active:scale-95 dark:bg-slate-800 dark:text-slate-100 dark:ring-1 dark:ring-slate-700 dark:hover:bg-slate-700"
             >
               X
             </a>

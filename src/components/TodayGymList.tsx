@@ -9,6 +9,7 @@ import {
   LocateFixed,
   Search,
   Star,
+  X,
 } from 'lucide-react';
 import { AREA_OPTIONS, type AreaId, type Gym, type ScheduleEvent } from '@/lib/schema';
 import {
@@ -301,8 +302,18 @@ export function TodayGymList({
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="ジム名・最寄り駅・チェーンで検索（例: 三鷹、NOBOROCK...）"
-              className="w-full rounded-xl border border-slate-200 bg-slate-50 py-2 pl-9 pr-3 text-[16px] text-slate-800 placeholder:text-slate-400 focus:border-slate-400 focus:bg-white focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-slate-500 dark:focus:bg-slate-800 sm:text-sm"
+              className="w-full rounded-xl border border-slate-200 bg-slate-50 py-2 pl-9 pr-9 text-[16px] text-slate-800 placeholder:text-slate-500 focus:border-slate-400 focus:bg-white focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:placeholder:text-slate-400 dark:focus:border-slate-500 dark:focus:bg-slate-800 sm:text-sm"
             />
+            {searchQuery && (
+              <button
+                type="button"
+                onClick={() => setSearchQuery('')}
+                aria-label="検索をクリア"
+                className="absolute right-2 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full text-slate-500 hover:bg-slate-200 hover:text-slate-800 dark:text-slate-400 dark:hover:bg-slate-700 dark:hover:text-white"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            )}
           </div>
 
           <div className="no-scrollbar flex items-center gap-1.5 overflow-x-auto pb-0.5">

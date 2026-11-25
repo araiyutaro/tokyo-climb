@@ -62,6 +62,7 @@ export function TokyoClimbApp({
   const [now, setNow] = useState<Date>(() => new Date(initialNowIso));
   const [favorites, setFavorites] = useState<Set<string>>(() => new Set());
   const [detailDayStatus, setDetailDayStatus] = useState<GymDayStatus | null>(null);
+  const [toastText, setToastText] = useState<string | null>(null);
 
   // GPS geolocation state shared across views & detail sheet
   const [userLocation, setUserLocation] = useState<Coordinates | null>(null);
@@ -98,16 +99,36 @@ export function TokyoClimbApp({
     }
   }, []);
 
+  const showToast = useCallback((msg: string) => {
+    setToastText(msg);
+    if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
+      try {
+        navigator.vibrate(10);
+      } catch {
+        // Ignore on unsupported devices
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!toastText) return;
+    const t = setTimeout(() => setToastText(null), 2200);
+    return () => clearTimeout(t);
+  }, [toastText]);
+
   const toggleFavorite = (gymId: string) => {
+    const gymName = gymMap.get(gymId)?.shortName ?? gymMap.get(gymId)?.name ?? 'ジム';
     setFavorites((prev) => {
       const next = new Set(prev);
-      if (next.has(gymId)) next.delete(gymId);
-      else next.add(gymId);
+      const willAdd = !next.has(gymId);
+      if (willAdd) next.add(gymId);
+      else next.delete(gymId);
       try {
         window.localStorage.setItem(FAVORITES_KEY, JSON.stringify(Array.from(next)));
       } catch {
         // Ignore storage errors
       }
+      showToast(willAdd ? `★ ${gymName} をお気に入りに追加` : `${gymName} をお気に入りから解除`);
       return next;
     });
   };
@@ -322,6 +343,17 @@ export function TokyoClimbApp({
           </div>
         </footer>
       </PullToRefresh>
+
+      {/* Native Tactile Toast Feedback */}
+      {toastText && (
+        <div
+          role="status"
+          aria-live="polite"
+          className="pointer-events-none fixed bottom-[calc(4.75rem+env(safe-area-inset-bottom))] left-1/2 z-50 -translate-x-1/2 animate-[sheet-up_0.18s_ease-out] whitespace-nowrap rounded-full bg-slate-900/95 px-4 py-2 text-xs font-bold text-white shadow-lg backdrop-blur-md dark:bg-slate-100/95 dark:text-slate-900 md:bottom-6"
+        >
+          {toastText}
+        </div>
+      )}
 
       {/* Native Mobile Bottom Tab Bar */}
       <BottomTabBar
