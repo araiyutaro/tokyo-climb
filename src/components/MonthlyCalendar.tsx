@@ -2,8 +2,10 @@
 
 import { useMemo, useState } from 'react';
 import {
+  CalendarPlus,
   ChevronLeft,
   ChevronRight,
+  Download,
   ExternalLink,
   Star,
 } from 'lucide-react';
@@ -15,6 +17,7 @@ import {
   type ScheduleEventType,
 } from '@/lib/schema';
 import { buildMonthCalendar } from '@/lib/calendar';
+import { buildGoogleCalendarUrl, downloadIcsFile } from '@/lib/calendar-export';
 import {
   formatDateJa,
   formatDateRangeJa,
@@ -378,18 +381,46 @@ export function MonthlyCalendar({
                         {event.description}
                       </p>
                     )}
-                    <div className="mt-2 flex items-center justify-between text-[10px] opacity-75">
-                      <span>
-                        {event.source.label} ({getConfidenceLabel(event.source.confidence)})
-                      </span>
+                    <div
+                      className="mt-2 flex flex-wrap items-center justify-between gap-2 text-[11px]"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <div className="flex flex-wrap items-center gap-1.5">
+                        {gymMap.get(event.gymId) && (
+                          <>
+                            <a
+                              href={buildGoogleCalendarUrl(gymMap.get(event.gymId)!, event)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex min-h-[28px] items-center gap-1 rounded-md bg-white/85 px-2 py-1 text-[11px] font-semibold text-slate-800 ring-1 ring-black/10 hover:bg-white dark:bg-slate-900/75 dark:text-slate-100"
+                            >
+                              <CalendarPlus className="h-3 w-3" />
+                              カレンダー追加
+                            </a>
+                            <button
+                              type="button"
+                              onClick={() => downloadIcsFile(gymMap.get(event.gymId)!, event)}
+                              className="inline-flex min-h-[28px] items-center gap-1 rounded-md bg-white/85 px-2 py-1 text-[11px] font-semibold text-slate-800 ring-1 ring-black/10 hover:bg-white dark:bg-slate-900/75 dark:text-slate-100"
+                            >
+                              <Download className="h-3 w-3" />
+                              .ics
+                            </button>
+                          </>
+                        )}
+                      </div>
                       <div className="flex items-center gap-2">
-                        <span className="font-bold underline">店舗詳細 ›</span>
+                        <button
+                          type="button"
+                          onClick={() => onSelectGym(event.gymId, selectedDate)}
+                          className="min-h-[28px] px-1 font-bold underline"
+                        >
+                          店舗詳細 ›
+                        </button>
                         <a
                           href={event.source.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="inline-flex items-center gap-0.5 font-semibold underline"
+                          className="inline-flex min-h-[28px] items-center gap-0.5 px-1 font-semibold underline"
                         >
                           元ページ <ExternalLink className="h-3 w-3" />
                         </a>

@@ -19,6 +19,7 @@ import {
   type GymDayStatus,
 } from '@/lib/schedule';
 import { haversineDistanceKm, type Coordinates } from '@/lib/geo';
+import type { GymVisitSummary } from '@/lib/climb-log';
 import { formatDateJa, getStatusMeta } from '@/lib/ui-helpers';
 import { GymCard } from './GymCard';
 
@@ -28,6 +29,7 @@ interface TodayGymListProps {
   now: Date;
   todayStr: string;
   favorites: Set<string>;
+  visitStatsByGym: Record<string, GymVisitSummary>;
   favoritesOnlyTab?: boolean;
   userLocation: Coordinates | null;
   locating: boolean;
@@ -46,6 +48,7 @@ export function TodayGymList({
   now,
   todayStr,
   favorites,
+  visitStatsByGym,
   favoritesOnlyTab = false,
   userLocation,
   locating,
@@ -57,11 +60,28 @@ export function TodayGymList({
 }: TodayGymListProps) {
   const [selectedDate, setSelectedDate] = useState<string>(todayStr);
   const [selectedArea, setSelectedArea] = useState<AreaId | 'all'>('all');
+  const [selectedChain, setSelectedChain] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [onlyOpenNow, setOnlyOpenNow] = useState(false);
   const [excludeClosed, setExcludeClosed] = useState(false);
   const [onlyFavoritesFilter, setOnlyFavoritesFilter] = useState(false);
   const [sortMode, setSortMode] = useState<SortMode>('status');
+
+  const chainOptions = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const g of gyms) {
+      const key = g.chain || '独立系';
+      counts.set(key, (counts.get(key) ?? 0) + 1);
+    }
+    return Array.from(counts.entries())
+      .map(([name, count]) => ({ name, count }))
+      .sort((a, b) => {
+        if (a.name === '独立系') return 1;
+        if (b.name === '独立系') return -1;
+        if (b.count !== a.count) return b.count - a.count;
+        return a.name.localeCompare(b.name, 'ja');
+      });
+  }, [gyms]);
 
   const effectiveOnlyFavorites = favoritesOnlyTab || onlyFavoritesFilter;
   const isViewingToday = selectedDate === todayStr;
@@ -118,6 +138,13 @@ export function TodayGymList({
           return false;
         }
         if (
+          !favoritesOnlyTab &&
+          selectedChain !== 'all' &&
+          (item.gym.chain || '独立系') !== selectedChain
+        ) {
+          return false;
+        }
+        if (
           onlyOpenNow &&
           isViewingToday &&
           item.status !== 'open' &&
@@ -170,6 +197,7 @@ export function TodayGymList({
     favorites,
     favoritesOnlyTab,
     selectedArea,
+    selectedChain,
     onlyOpenNow,
     isViewingToday,
     excludeClosed,
@@ -400,34 +428,66 @@ export function TodayGymList({
           </p>
         )}
 
-        {/* Area Pills */}
+        {/* Area & Chain Pills */}
         {!favoritesOnlyTab && (
-          <div className="no-scrollbar mt-2.5 flex gap-1.5 overflow-x-auto pb-0.5">
-            <button
-              type="button"
-              onClick={() => setSelectedArea('all')}
-              className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold transition-all active:scale-95 ${
-                selectedArea === 'all'
-                  ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700'
-              }`}
-            >
-              全エリア ({gyms.length})
-            </button>
-            {AREA_OPTIONS.map((area) => (
+          <div className="mt-2.5 space-y-2">
+            <div className="no-scrollbar flex gap-1.5 overflow-x-auto pb-0.5">
               <button
-                key={area.id}
                 type="button"
-                onClick={() => setSelectedArea(area.id)}
+                onClick={() => setSelectedArea('all')}
                 className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold transition-all active:scale-95 ${
-                  selectedArea === area.id
+                  selectedArea === 'all'
                     ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700'
                 }`}
               >
-                {area.label}
+                全エリア ({gyms.length})
               </button>
-            ))}
+              {AREA_OPTIONS.map((area) => (
+                <button
+                  key={area.id}
+                  type="button"
+                  onClick={() => setSelectedArea(area.id)}
+                  className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold transition-all active:scale-95 ${
+                    selectedArea === area.id
+                      ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
+                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700'
+                  }`}
+                >
+                  {area.label}
+                </button>
+              ))}
+            </div>
+
+            <div className="no-scrollbar flex gap-1.5 overflow-x-auto pb-0.5">
+              <button
+                type="button"
+                onClick={() => setSelectedChain('all')}
+                className={`shrink-0 rounded-lg px-2.5 py-1 text-[11px] font-bold transition-all active:scale-95 ${
+                  selectedChain === 'all'
+                    ? 'bg-indigo-600 text-white'
+                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700'
+                }`}
+              >
+                全チェーン
+              </button>
+              {chainOptions.map((chain) => (
+                <button
+                  key={chain.name}
+                  type="button"
+                  onClick={() =>
+                    setSelectedChain((cur) => (cur === chain.name ? 'all' : chain.name))
+                  }
+                  className={`shrink-0 rounded-lg px-2.5 py-1 text-[11px] font-bold transition-all active:scale-95 ${
+                    selectedChain === chain.name
+                      ? 'bg-indigo-600 text-white'
+                      : 'bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700'
+                  }`}
+                >
+                  {chain.name} ({chain.count})
+                </button>
+              ))}
+            </div>
           </div>
         )}
       </div>
@@ -467,6 +527,7 @@ export function TodayGymList({
               key={dayStatus.gym.id}
               dayStatus={dayStatus}
               distanceKm={distanceKm}
+              visitSummary={visitStatsByGym[dayStatus.gym.id]}
               isFavorite={favorites.has(dayStatus.gym.id)}
               onToggleFavorite={onToggleFavorite}
               onOpenDetail={onOpenGymDetail}

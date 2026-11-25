@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { CalendarDays, Compass, PlusCircle, Star } from 'lucide-react';
+import { CalendarDays, Compass, Map as MapIcon, PlusCircle, Star } from 'lucide-react';
 
-export type AppTab = 'today' | 'favorites' | 'calendar';
+export type AppTab = 'today' | 'map' | 'favorites' | 'calendar';
 
 interface BottomTabBarProps {
   activeTab: AppTab;
@@ -21,7 +21,7 @@ export function BottomTabBar({
       aria-label="モバイルナビゲーション"
       className="pb-safe fixed inset-x-0 bottom-0 z-40 border-t border-slate-200/80 bg-white/92 backdrop-blur-xl dark:border-slate-800/90 dark:bg-slate-950/92 md:hidden"
     >
-      <div className="mx-auto grid h-16 max-w-lg grid-cols-4 items-center px-2">
+      <div className="mx-auto grid h-16 max-w-lg grid-cols-5 items-center px-1">
         <button
           type="button"
           onClick={() => onSelectTab('today')}
@@ -32,7 +32,7 @@ export function BottomTabBar({
           }`}
         >
           <span
-            className={`flex h-7 w-12 items-center justify-center rounded-full transition-colors ${
+            className={`flex h-7 w-11 items-center justify-center rounded-full transition-colors ${
               activeTab === 'today'
                 ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
                 : ''
@@ -45,6 +45,27 @@ export function BottomTabBar({
 
         <button
           type="button"
+          onClick={() => onSelectTab('map')}
+          className={`flex flex-col items-center justify-center gap-0.5 rounded-xl py-1.5 transition-all active:scale-95 ${
+            activeTab === 'map'
+              ? 'text-slate-900 dark:text-white'
+              : 'text-slate-600 dark:text-slate-400'
+          }`}
+        >
+          <span
+            className={`flex h-7 w-11 items-center justify-center rounded-full transition-colors ${
+              activeTab === 'map'
+                ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
+                : ''
+            }`}
+          >
+            <MapIcon className="h-4.5 w-4.5" />
+          </span>
+          <span className="text-[11px] font-bold">マップ</span>
+        </button>
+
+        <button
+          type="button"
           onClick={() => onSelectTab('favorites')}
           className={`relative flex flex-col items-center justify-center gap-0.5 rounded-xl py-1.5 transition-all active:scale-95 ${
             activeTab === 'favorites'
@@ -53,7 +74,7 @@ export function BottomTabBar({
           }`}
         >
           <span
-            className={`relative flex h-7 w-12 items-center justify-center rounded-full transition-colors ${
+            className={`relative flex h-7 w-11 items-center justify-center rounded-full transition-colors ${
               activeTab === 'favorites' ? 'bg-amber-600 text-white' : ''
             }`}
           >
@@ -70,7 +91,7 @@ export function BottomTabBar({
               </span>
             )}
           </span>
-          <span className="text-[11px] font-bold">お気に入り</span>
+          <span className="text-[11px] font-bold">マイジム</span>
         </button>
 
         <button
@@ -83,7 +104,7 @@ export function BottomTabBar({
           }`}
         >
           <span
-            className={`flex h-7 w-12 items-center justify-center rounded-full transition-colors ${
+            className={`flex h-7 w-11 items-center justify-center rounded-full transition-colors ${
               activeTab === 'calendar'
                 ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
                 : ''
@@ -91,14 +112,14 @@ export function BottomTabBar({
           >
             <CalendarDays className="h-4.5 w-4.5" />
           </span>
-          <span className="text-[11px] font-bold">カレンダー</span>
+          <span className="text-[11px] font-bold">予定表</span>
         </button>
 
         <Link
           href="/import"
           className="flex flex-col items-center justify-center gap-0.5 rounded-xl py-1.5 text-slate-600 transition-all active:scale-95 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200"
         >
-          <span className="flex h-7 w-12 items-center justify-center rounded-full">
+          <span className="flex h-7 w-11 items-center justify-center rounded-full">
             <PlusCircle className="h-4.5 w-4.5 text-emerald-700 dark:text-emerald-400" />
           </span>
           <span className="text-[11px] font-bold">SNS取込</span>

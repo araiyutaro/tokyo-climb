@@ -1,12 +1,14 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import {
   CalendarDays,
   Clock,
   Compass,
+  Map as MapIcon,
   Mountain,
   PlusCircle,
   RefreshCw,
@@ -15,12 +17,31 @@ import {
 import type { CollectorRunMeta, Gym, ScheduleEvent } from '@/lib/schema';
 import { evaluateGymDayStatus, getJstDateParts, type GymDayStatus } from '@/lib/schedule';
 import { haversineDistanceKm, type Coordinates } from '@/lib/geo';
+import {
+  addClimbVisit,
+  CLIMB_LOG_STORAGE_KEY,
+  computeClimbStats,
+  hasVisitedOnDate,
+  removeClimbVisit,
+  type ClimbVisit,
+} from '@/lib/climb-log';
 import { TodayGymList } from './TodayGymList';
 import { MonthlyCalendar } from './MonthlyCalendar';
 import { BottomTabBar, type AppTab } from './BottomTabBar';
 import { GymDetailSheet } from './GymDetailSheet';
 import { ThemeToggle } from './ThemeToggle';
 import { PullToRefresh } from './PullToRefresh';
+import { ClimbLogSummary } from './ClimbLogSummary';
+
+// Lazy-load Leaflet map ONLY when Map tab is selected (0 bytes on initial load!)
+const GymMapView = dynamic(() => import('./GymMapView').then((m) => m.GymMapView), {
+  ssr: false,
+  loading: () => (
+    <div className="flex h-[62vh] min-h-[420px] items-center justify-center rounded-2xl border border-slate-200 bg-white text-sm font-semibold text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+      マップを読み込み中...
+    </div>
+  ),
+});
 
 interface TokyoClimbAppProps {
   gyms: Gym[];
@@ -61,10 +82,10 @@ export function TokyoClimbApp({
   const [activeTab, setActiveTab] = useState<AppTab>('today');
   const [now, setNow] = useState<Date>(() => new Date(initialNowIso));
   const [favorites, setFavorites] = useState<Set<string>>(() => new Set());
+  const [visits, setVisits] = useState<ClimbVisit[]>([]);
   const [detailDayStatus, setDetailDayStatus] = useState<GymDayStatus | null>(null);
   const [toastText, setToastText] = useState<string | null>(null);
 
-  // GPS geolocation state shared across views & detail sheet
   const [userLocation, setUserLocation] = useState<Coordinates | null>(null);
   const [locating, setLocating] = useState(false);
   const [locationError, setLocationError] = useState<string | null>(null);
@@ -80,18 +101,30 @@ export function TokyoClimbApp({
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const tabParam = params.get('tab');
-    if (tabParam === 'today' || tabParam === 'favorites' || tabParam === 'calendar') {
+    if (
+      tabParam === 'today' ||
+      tabParam === 'map' ||
+      tabParam === 'favorites' ||
+      tabParam === 'calendar'
+    ) {
       setActiveTab(tabParam);
     }
   }, []);
 
   useEffect(() => {
     try {
-      const raw = window.localStorage.getItem(FAVORITES_KEY);
-      if (raw) {
-        const parsed = JSON.parse(raw);
+      const rawFav = window.localStorage.getItem(FAVORITES_KEY);
+      if (rawFav) {
+        const parsed = JSON.parse(rawFav);
         if (Array.isArray(parsed)) {
           setFavorites(new Set(parsed.filter((v) => typeof v === 'string')));
+        }
+      }
+      const rawVisits = window.localStorage.getItem(CLIMB_LOG_STORAGE_KEY);
+      if (rawVisits) {
+        const parsed = JSON.parse(rawVisits);
+        if (Array.isArray(parsed)) {
+          setVisits(parsed);
         }
       }
     } catch {
@@ -133,6 +166,33 @@ export function TokyoClimbApp({
     });
   };
 
+  const handleLogVisit = (gymId: string, dateStr: string, note?: string) => {
+    const gymName = gymMap.get(gymId)?.shortName ?? gymMap.get(gymId)?.name ?? 'ジム';
+    setVisits((prev) => {
+      const next = addClimbVisit(prev, gymId, dateStr, note);
+      try {
+        window.localStorage.setItem(CLIMB_LOG_STORAGE_KEY, JSON.stringify(next));
+      } catch {
+        // Ignore
+      }
+      return next;
+    });
+    showToast(`🧗 ${gymName} の登攀ログを記録しました！`);
+  };
+
+  const handleDeleteVisit = (visitId: string) => {
+    setVisits((prev) => {
+      const next = removeClimbVisit(prev, visitId);
+      try {
+        window.localStorage.setItem(CLIMB_LOG_STORAGE_KEY, JSON.stringify(next));
+      } catch {
+        // Ignore
+      }
+      return next;
+    });
+    showToast('登攀ログを削除しました');
+  };
+
   const handleSelectTab = (tab: AppTab) => {
     setActiveTab(tab);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -168,7 +228,9 @@ export function TokyoClimbApp({
     );
   }, []);
 
-  const handleSelectGymFromCalendar = useCallback(
+  const jstParts = getJstDateParts(now);
+
+  const handleSelectGymOnDate = useCallback(
     (gymId: string, dateStr: string) => {
       const gym = gymMap.get(gymId);
       if (!gym) return;
@@ -184,7 +246,11 @@ export function TokyoClimbApp({
     await new Promise((resolve) => setTimeout(resolve, 400));
   }, [router]);
 
-  const jstParts = getJstDateParts(now);
+  const climbStats = useMemo(
+    () => computeClimbStats(visits, jstParts.dateStr),
+    [visits, jstParts.dateStr],
+  );
+
   const okCount = syncStatus.filter((s) => s.status === 'ok').length;
 
   const detailDistanceKm =
@@ -207,7 +273,7 @@ export function TokyoClimbApp({
                 <h1 className="text-sm font-extrabold tracking-tight text-slate-900 dark:text-white md:text-lg">
                   Tokyo Climb
                 </h1>
-                <p className="text-[10px] text-slate-500 dark:text-slate-400 md:text-[11px]">
+                <p className="text-[10px] text-slate-600 dark:text-slate-400 md:text-[11px]">
                   東京・近郊ボルダリング {gyms.length}店舗
                 </p>
               </div>
@@ -221,28 +287,40 @@ export function TokyoClimbApp({
               <button
                 type="button"
                 onClick={() => handleSelectTab('today')}
-                className={`inline-flex items-center gap-1.5 rounded-lg px-4 py-1.5 text-sm font-bold transition-all ${
+                className={`inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-sm font-bold transition-all ${
                   activeTab === 'today'
                     ? 'bg-white text-slate-900 shadow-xs dark:bg-slate-800 dark:text-white'
                     : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
                 }`}
               >
                 <Compass className="h-4 w-4" />
-                今日・営業一覧
+                今日一覧
+              </button>
+              <button
+                type="button"
+                onClick={() => handleSelectTab('map')}
+                className={`inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-sm font-bold transition-all ${
+                  activeTab === 'map'
+                    ? 'bg-white text-slate-900 shadow-xs dark:bg-slate-800 dark:text-white'
+                    : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+                }`}
+              >
+                <MapIcon className="h-4 w-4" />
+                マップ
               </button>
               <button
                 type="button"
                 onClick={() => handleSelectTab('favorites')}
-                className={`inline-flex items-center gap-1.5 rounded-lg px-4 py-1.5 text-sm font-bold transition-all ${
+                className={`inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-sm font-bold transition-all ${
                   activeTab === 'favorites'
-                    ? 'bg-white text-amber-600 shadow-xs dark:bg-slate-800 dark:text-amber-400'
+                    ? 'bg-white text-amber-700 shadow-xs dark:bg-slate-800 dark:text-amber-400'
                     : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
                 }`}
               >
                 <Star className={`h-4 w-4 ${activeTab === 'favorites' ? 'fill-amber-400' : ''}`} />
-                お気に入り
+                マイジム
                 {favorites.size > 0 && (
-                  <span className="rounded-full bg-amber-100 px-1.5 text-[11px] font-extrabold text-amber-700 dark:bg-amber-950 dark:text-amber-300">
+                  <span className="rounded-full bg-amber-100 px-1.5 text-[11px] font-extrabold text-amber-800 dark:bg-amber-950 dark:text-amber-300">
                     {favorites.size}
                   </span>
                 )}
@@ -250,14 +328,14 @@ export function TokyoClimbApp({
               <button
                 type="button"
                 onClick={() => handleSelectTab('calendar')}
-                className={`inline-flex items-center gap-1.5 rounded-lg px-4 py-1.5 text-sm font-bold transition-all ${
+                className={`inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-sm font-bold transition-all ${
                   activeTab === 'calendar'
                     ? 'bg-white text-slate-900 shadow-xs dark:bg-slate-800 dark:text-white'
                     : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
                 }`}
               >
                 <CalendarDays className="h-4 w-4" />
-                月間カレンダー
+                カレンダー
               </button>
             </nav>
 
@@ -275,7 +353,7 @@ export function TokyoClimbApp({
                 className="hidden items-center gap-1 rounded-xl border border-slate-200 bg-white px-3 py-1.5 text-xs font-bold text-slate-700 shadow-2xs transition-colors hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800 md:inline-flex"
                 title="Instagram / X の告知文やカレンダー画像から予定を取り込む"
               >
-                <PlusCircle className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
+                <PlusCircle className="h-3.5 w-3.5 text-emerald-700 dark:text-emerald-400" />
                 SNS取込
               </Link>
             </div>
@@ -292,29 +370,53 @@ export function TokyoClimbApp({
               events={events}
               todayStr={jstParts.dateStr}
               favorites={favorites}
-              onSelectGym={handleSelectGymFromCalendar}
+              onSelectGym={handleSelectGymOnDate}
             />
-          ) : (
-            <TodayGymList
+          ) : activeTab === 'map' ? (
+            <GymMapView
               gyms={gyms}
               events={events}
               now={now}
               todayStr={jstParts.dateStr}
               favorites={favorites}
-              favoritesOnlyTab={activeTab === 'favorites'}
               userLocation={userLocation}
               locating={locating}
-              locationError={locationError}
               onRequestLocation={handleRequestLocation}
-              onToggleFavorite={toggleFavorite}
               onOpenGymDetail={(ds) => setDetailDayStatus(ds)}
-              onSwitchToAllTab={() => handleSelectTab('today')}
             />
+          ) : (
+            <div className="space-y-4">
+              {activeTab === 'favorites' && (
+                <ClimbLogSummary
+                  visits={visits}
+                  stats={climbStats}
+                  gyms={gyms}
+                  onDeleteVisit={handleDeleteVisit}
+                  onSelectGym={(gymId) => handleSelectGymOnDate(gymId, jstParts.dateStr)}
+                />
+              )}
+              <TodayGymList
+                gyms={gyms}
+                events={events}
+                now={now}
+                todayStr={jstParts.dateStr}
+                favorites={favorites}
+                visitStatsByGym={climbStats.byGym}
+                favoritesOnlyTab={activeTab === 'favorites'}
+                userLocation={userLocation}
+                locating={locating}
+                locationError={locationError}
+                onRequestLocation={handleRequestLocation}
+                onToggleFavorite={toggleFavorite}
+                onOpenGymDetail={(ds) => setDetailDayStatus(ds)}
+                onSwitchToAllTab={() => handleSelectTab('today')}
+              />
+            </div>
           )}
         </main>
 
         {/* Footer */}
-        <footer className="mx-auto mt-10 max-w-7xl border-t border-slate-200 px-4 pt-6 text-xs text-slate-500 dark:border-slate-800 dark:text-slate-400 sm:px-6">
+        <footer className="mx-auto mt-10 max-w-7xl border-t border-slate-200 px-4 pt-6 text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400 sm:px-6">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center gap-1">
@@ -335,7 +437,7 @@ export function TokyoClimbApp({
                 href="https://github.com/araiyutaro/tokyo-climb/issues/new"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-slate-600 underline hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+                className="font-semibold text-slate-700 underline hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
               >
                 掲載ジム追加・情報修正リクエスト (GitHub)
               </a>
@@ -362,12 +464,20 @@ export function TokyoClimbApp({
         favoritesCount={favorites.size}
       />
 
-      {/* Native Gym Detail Bottom Sheet / Modal (swipe down to dismiss!) */}
+      {/* Native Gym Detail Bottom Sheet / Modal */}
       <GymDetailSheet
         dayStatus={detailDayStatus}
+        todayStr={jstParts.dateStr}
         distanceKm={detailDistanceKm}
         allEvents={events}
         isFavorite={detailDayStatus ? favorites.has(detailDayStatus.gym.id) : false}
+        visitedToday={
+          detailDayStatus
+            ? hasVisitedOnDate(visits, detailDayStatus.gym.id, jstParts.dateStr)
+            : false
+        }
+        visitSummary={detailDayStatus ? climbStats.byGym[detailDayStatus.gym.id] : undefined}
+        onLogVisit={handleLogVisit}
         onToggleFavorite={toggleFavorite}
         onClose={() => setDetailDayStatus(null)}
       />

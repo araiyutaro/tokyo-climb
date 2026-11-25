@@ -4,8 +4,12 @@ import { useEffect, useRef, useState } from 'react';
 import {
   AlertTriangle,
   CalendarClock,
+  CalendarPlus,
+  CheckCircle2,
   Clock,
+  Download,
   ExternalLink,
+  Flame,
   History,
   MapPin,
   Navigation,
@@ -20,6 +24,8 @@ import {
   type GymDayStatus,
 } from '@/lib/schedule';
 import { formatDistanceJa } from '@/lib/geo';
+import { buildGoogleCalendarUrl, downloadIcsFile } from '@/lib/calendar-export';
+import type { GymVisitSummary } from '@/lib/climb-log';
 import {
   AREA_LABEL_MAP,
   DAY_LABEL_JA,
@@ -33,9 +39,13 @@ import {
 
 interface GymDetailSheetProps {
   dayStatus: GymDayStatus | null;
+  todayStr: string;
   distanceKm?: number;
   allEvents: ScheduleEvent[];
   isFavorite: boolean;
+  visitedToday: boolean;
+  visitSummary?: GymVisitSummary;
+  onLogVisit: (gymId: string, dateStr: string, note?: string) => void;
   onToggleFavorite: (gymId: string) => void;
   onClose: () => void;
 }
@@ -44,9 +54,13 @@ const WEEK_ORDER: DayKey[] = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun', '
 
 export function GymDetailSheet({
   dayStatus,
+  todayStr,
   distanceKm,
   allEvents,
   isFavorite,
+  visitedToday,
+  visitSummary,
+  onLogVisit,
   onToggleFavorite,
   onClose,
 }: GymDetailSheetProps) {
@@ -55,9 +69,11 @@ export function GymDetailSheet({
   const touchStartTimeRef = useRef<number>(0);
   const [dragY, setDragY] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
+  const [visitNote, setVisitNote] = useState('');
 
   // Close on Escape and lock background scroll while open
   useEffect(() => {
+    setVisitNote('');
     if (!dayStatus) {
       setDragY(0);
       setIsDragging(false);
@@ -272,6 +288,53 @@ export function GymDetailSheet({
             )}
           </div>
 
+          {/* Climb Visit Check-in Card */}
+          <div className="rounded-2xl border border-emerald-200/80 bg-emerald-50/70 p-3.5 dark:border-emerald-900/70 dark:bg-emerald-950/35">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div className="flex items-center gap-1.5 text-xs font-extrabold text-emerald-900 dark:text-emerald-200">
+                <Flame className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+                登攀ログ
+                {visitSummary && (
+                  <span className="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-bold text-emerald-800 dark:bg-slate-900/70 dark:text-emerald-300">
+                    累計 {visitSummary.count}回 · 前回{' '}
+                    {visitSummary.daysAgo === 0
+                      ? '本日'
+                      : visitSummary.daysAgo === 1
+                        ? '昨日'
+                        : `${visitSummary.daysAgo}日前`}
+                  </span>
+                )}
+              </div>
+              {visitedToday && (
+                <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-700 dark:text-emerald-300">
+                  <CheckCircle2 className="h-3.5 w-3.5" />
+                  本日記録済み
+                </span>
+              )}
+            </div>
+
+            <div className="mt-2.5 flex gap-2">
+              <input
+                type="text"
+                value={visitNote}
+                onChange={(e) => setVisitNote(e.target.value)}
+                placeholder="一言メモ（任意 例: 3級2本完登！）"
+                className="min-w-0 flex-1 rounded-xl border border-emerald-200 bg-white px-3 py-2 text-[16px] text-slate-900 placeholder:text-slate-500 focus:border-emerald-500 focus:outline-none dark:border-emerald-800/80 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400 sm:text-xs"
+              />
+              <button
+                type="button"
+                onClick={() => {
+                  onLogVisit(gym.id, todayStr, visitNote);
+                  setVisitNote('');
+                }}
+                className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-emerald-700 px-3.5 py-2 text-xs font-bold text-white transition-all hover:bg-emerald-800 active:scale-95"
+              >
+                <CheckCircle2 className="h-3.5 w-3.5" />
+                {visitedToday ? 'メモ更新' : '今日登った！'}
+              </button>
+            </div>
+          </div>
+
           {/* Last Hold Change */}
           <div
             className={`rounded-2xl p-3.5 text-xs ${
@@ -356,18 +419,37 @@ export function GymDetailSheet({
                           {ev.description}
                         </p>
                       )}
-                      <div className="mt-1.5 flex items-center justify-between text-[10px] opacity-75">
-                        <span>
+                      <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-[11px]">
+                        <span className="opacity-80">
                           {ev.source.label} ({getConfidenceLabel(ev.source.confidence)})
                         </span>
-                        <a
-                          href={ev.source.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-0.5 font-bold underline"
-                        >
-                          元ページ <ExternalLink className="h-3 w-3" />
-                        </a>
+                        <div className="flex flex-wrap items-center gap-1.5">
+                          <a
+                            href={buildGoogleCalendarUrl(gym, ev)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex min-h-[28px] items-center gap-1 rounded-md bg-white/85 px-2 py-1 text-[11px] font-semibold text-slate-800 ring-1 ring-black/10 hover:bg-white dark:bg-slate-900/75 dark:text-slate-100"
+                          >
+                            <CalendarPlus className="h-3 w-3" />
+                            Googleカレンダー
+                          </a>
+                          <button
+                            type="button"
+                            onClick={() => downloadIcsFile(gym, ev)}
+                            className="inline-flex min-h-[28px] items-center gap-1 rounded-md bg-white/85 px-2 py-1 text-[11px] font-semibold text-slate-800 ring-1 ring-black/10 hover:bg-white dark:bg-slate-900/75 dark:text-slate-100"
+                          >
+                            <Download className="h-3 w-3" />
+                            .ics
+                          </button>
+                          <a
+                            href={ev.source.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex min-h-[28px] items-center gap-0.5 px-1.5 py-1 font-bold underline"
+                          >
+                            元ページ <ExternalLink className="h-3 w-3" />
+                          </a>
+                        </div>
                       </div>
                     </div>
                   );

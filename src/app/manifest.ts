@@ -36,19 +36,19 @@ export default function manifest(): MetadataRoute.Manifest {
         url: '/?tab=today',
       },
       {
-        name: 'お気に入りジム',
-        short_name: 'お気に入り',
+        name: '東京ジムマップ',
+        short_name: 'マップ',
+        url: '/?tab=map',
+      },
+      {
+        name: 'マイジム＆登攀ログ',
+        short_name: 'マイジム',
         url: '/?tab=favorites',
       },
       {
         name: '月間横断カレンダー',
         short_name: 'カレンダー',
         url: '/?tab=calendar',
-      },
-      {
-        name: 'SNS予定取込',
-        short_name: 'SNS取込',
-        url: '/import',
       },
     ],
   };

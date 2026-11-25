@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { formatMinutesToDuration, type GymDayStatus } from '@/lib/schedule';
 import { formatDistanceJa } from '@/lib/geo';
+import type { GymVisitSummary } from '@/lib/climb-log';
 import {
   AREA_LABEL_MAP,
   formatDateJa,
@@ -25,6 +26,7 @@ import {
 interface GymCardProps {
   dayStatus: GymDayStatus;
   distanceKm?: number;
+  visitSummary?: GymVisitSummary;
   isFavorite: boolean;
   onToggleFavorite: (gymId: string) => void;
   onOpenDetail: (dayStatus: GymDayStatus) => void;
@@ -33,6 +35,7 @@ interface GymCardProps {
 export function GymCard({
   dayStatus,
   distanceKm,
+  visitSummary,
   isFavorite,
   onToggleFavorite,
   onOpenDetail,
@@ -86,8 +89,13 @@ export function GymCard({
                 {AREA_LABEL_MAP[gym.area]}
               </span>
               {gym.is24HoursForMembers && (
-                <span className="inline-flex items-center rounded-md bg-teal-50 px-2 py-0.5 text-[11px] font-medium text-teal-700 ring-1 ring-teal-600/20 dark:bg-teal-950/70 dark:text-teal-300 dark:ring-teal-700/50">
+                <span className="inline-flex items-center rounded-md bg-teal-50 px-2 py-0.5 text-[11px] font-medium text-teal-800 ring-1 ring-teal-600/20 dark:bg-teal-950/70 dark:text-teal-300 dark:ring-teal-700/50">
                   会員24h対応
+                </span>
+              )}
+              {visitSummary && (
+                <span className="inline-flex items-center rounded-md bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-800 ring-1 ring-emerald-600/20 dark:bg-emerald-950/70 dark:text-emerald-300 dark:ring-emerald-700/50">
+                  訪問{visitSummary.count}回
                 </span>
               )}
             </div>
