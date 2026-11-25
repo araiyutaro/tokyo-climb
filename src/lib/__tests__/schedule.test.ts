@@ -5,6 +5,7 @@ import {
   getJstDateParts,
   mergeEvents,
   evaluateGymDayStatus,
+  getUpcomingEventsForGym,
 } from '../schedule';
 
 const baseGym: Gym = {
@@ -395,5 +396,45 @@ describe('evaluateGymDayStatus', () => {
     const withNewer = evaluateGymDayStatus(gymWithBaseline, '2026-11-25', [newerEvent], now);
     expect(withNewer.lastHoldChange?.date).toBe('2026-11-20');
     expect(withNewer.lastHoldChange?.daysAgo).toBe(5);
+  });
+
+  it('returns sorted upcoming events for a gym within the specified horizon', () => {
+    const events: ScheduleEvent[] = [
+      makeEvent({
+        id: 'past',
+        gymId: 'bpump-ogikubo',
+        type: 'hold_change_full',
+        title: '過去のセット',
+        startDate: '2026-11-10',
+        endDate: '2026-11-10',
+      }),
+      makeEvent({
+        id: 'active-today',
+        gymId: 'bpump-ogikubo',
+        type: 'event',
+        title: '今日開催イベント',
+        startDate: '2026-11-24',
+        endDate: '2026-11-26',
+      }),
+      makeEvent({
+        id: 'future-near',
+        gymId: 'bpump-ogikubo',
+        type: 'hold_change_partial',
+        title: '12月の壁替え',
+        startDate: '2026-12-10',
+        endDate: '2026-12-11',
+      }),
+      makeEvent({
+        id: 'future-too-far',
+        gymId: 'bpump-ogikubo',
+        type: 'event',
+        title: '3ヶ月先のイベント',
+        startDate: '2027-02-20',
+        endDate: '2027-02-20',
+      }),
+    ];
+
+    const list = getUpcomingEventsForGym('bpump-ogikubo', '2026-11-25', events, 60);
+    expect(list.map((e) => e.id)).toEqual(['active-today', 'future-near']);
   });
 });

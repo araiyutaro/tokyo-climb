@@ -2,12 +2,13 @@ import { describe, it, expect } from 'vitest';
 import { loadDataset } from '../data';
 
 describe('data integrity', () => {
-  it('loads and validates all 43 configured Tokyo & nearby gyms with unique IDs', () => {
+  it('loads and validates all 46 configured Tokyo & nearby gyms with unique IDs', () => {
     const dataset = loadDataset();
-    expect(dataset.gyms.length).toBeGreaterThanOrEqual(43);
+    expect(dataset.gyms.length).toBeGreaterThanOrEqual(46);
 
     const ids = new Set(dataset.gyms.map((g) => g.id));
     expect(ids.size).toBe(dataset.gyms.length);
+    expect(ids.has('boulcom-shinjuku')).toBe(false);
 
     // Ensure key user-requested and newly added gyms are present
     const requiredIds = [
@@ -32,9 +33,12 @@ describe('data integrity', () => {
       'noborock-omiya',
       'rocky-funabashi',
       'rocky-inzai',
-      'boulcom-shinjuku',
+      'boulcom-tokyo',
+      'boulcom-kawasaki',
       'project-yokohama',
       'dogwood-chofu',
+      'mitaka-gym',
+      'jam-session-mitaka',
       'quail-nerima',
       'girigiri-nishitokyo',
       'nextgen-niiza',
