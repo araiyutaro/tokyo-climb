@@ -48,6 +48,11 @@ body {
   contain-intrinsic-size: 0 280px;
 }
 
+/* Crisp dark mode transform for OpenStreetMap tiles (leaves pins & UI untouched) */
+.tokyo-map-dark .leaflet-tile-pane {
+  filter: invert(100%) hue-rotate(180deg) brightness(92%) contrast(92%);
+}
+
 @keyframes sheet-up {
   from {
     opacity: 0;

@@ -143,7 +143,7 @@ export function GymDetailSheet({
       role="dialog"
       aria-modal="true"
       aria-labelledby="gym-sheet-title"
-      className="fixed inset-0 z-50 flex items-end justify-center backdrop-blur-[2px] animate-[fade-in_0.16s_ease-out] md:items-center md:p-6"
+      className="fixed inset-0 z-[1100] flex items-end justify-center backdrop-blur-[2px] animate-[fade-in_0.16s_ease-out] md:items-center md:p-6"
       style={{ backgroundColor: `rgba(2, 6, 23, ${backdropOpacity})` }}
       onClick={onClose}
     >

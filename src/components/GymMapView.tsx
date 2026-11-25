@@ -30,9 +30,8 @@ interface GymMapViewProps {
   onOpenGymDetail: (dayStatus: GymDayStatus) => void;
 }
 
-const LIGHT_TILES = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
-const DARK_TILES = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
-const TILE_ATTRIBUTION = '&copy; OpenStreetMap &copy; CARTO';
+const OSM_TILES = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+const TILE_ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
 
 const QUICK_CHAINS = ['all', 'NOBOROCK', 'Base Camp', 'B-PUMP', 'D.Bouldering', 'ROCKY', '独立系'] as const;
 
@@ -125,10 +124,10 @@ export function GymMapView({
     });
 
     L.control.zoom({ position: 'topright' }).addTo(map);
-    const layer = L.tileLayer(
-      document.documentElement.classList.contains('dark') ? DARK_TILES : LIGHT_TILES,
-      { attribution: TILE_ATTRIBUTION, maxZoom: 19 },
-    ).addTo(map);
+    const layer = L.tileLayer(OSM_TILES, {
+      attribution: TILE_ATTRIBUTION,
+      maxZoom: 19,
+    }).addTo(map);
 
     const markersGroup = L.layerGroup().addTo(map);
 
@@ -143,12 +142,6 @@ export function GymMapView({
       markersLayerRef.current = null;
     };
   }, []);
-
-  // Swap map tiles cleanly when Dark Mode toggles
-  useEffect(() => {
-    if (!mapRef.current || !tileLayerRef.current) return;
-    tileLayerRef.current.setUrl(isDark ? DARK_TILES : LIGHT_TILES);
-  }, [isDark]);
 
   // Render gym markers & user GPS dot
   useEffect(() => {
@@ -300,8 +293,12 @@ export function GymMapView({
         </div>
       </div>
 
-      {/* Interactive Map Canvas */}
-      <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-xs dark:border-slate-800 dark:bg-slate-900">
+      {/* Interactive Map Canvas (isolated stacking context so Detail Sheet always renders above) */}
+      <div
+        className={`relative isolate z-0 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-xs dark:border-slate-800 dark:bg-slate-900 ${
+          isDark ? 'tokyo-map-dark' : ''
+        }`}
+      >
         <div
           ref={mapContainerRef}
           className="h-[62vh] min-h-[420px] w-full md:h-[68vh]"
