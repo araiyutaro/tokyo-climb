@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import {
   CalendarDays,
@@ -426,14 +427,28 @@ export function TokyoClimbApp({
               <p>
                 ※ 突発的な臨時休業やSNS限定告知（Instagramストーリー等）は各店舗の公式リンクより最新情報をご確認ください。
               </p>
-              <a
-                href="https://github.com/araiyutaro/tokyo-climb/issues/new"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-slate-700 underline hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
-              >
-                掲載ジム追加・情報修正リクエスト (GitHub)
-              </a>
+              <div className="flex flex-wrap items-center gap-3">
+                <Link
+                  href="/about"
+                  className="font-semibold text-slate-700 underline hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+                >
+                  このサイトについて
+                </Link>
+                <Link
+                  href="/privacy"
+                  className="font-semibold text-slate-700 underline hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+                >
+                  プライバシーポリシー
+                </Link>
+                <a
+                  href="https://github.com/araiyutaro/tokyo-climb/issues/new"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-slate-700 underline hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+                >
+                  掲載ジム追加・情報修正 (GitHub)
+                </a>
+              </div>
             </div>
           </div>
         </footer>

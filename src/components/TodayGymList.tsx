@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { Fragment, useMemo, useState } from 'react';
 import {
   ArrowUpDown,
   Calendar,
@@ -22,6 +22,7 @@ import { haversineDistanceKm, type Coordinates } from '@/lib/geo';
 import type { GymVisitSummary } from '@/lib/climb-log';
 import { formatDateJa, getStatusMeta } from '@/lib/ui-helpers';
 import { GymCard } from './GymCard';
+import { AdSlot } from './AdSlot';
 
 interface TodayGymListProps {
   gyms: Gym[];
@@ -522,16 +523,20 @@ export function TodayGymList({
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-3.5 md:grid-cols-2 lg:grid-cols-3">
-          {filteredAndSorted.map(({ dayStatus, distanceKm }) => (
-            <GymCard
-              key={dayStatus.gym.id}
-              dayStatus={dayStatus}
-              distanceKm={distanceKm}
-              visitSummary={visitStatsByGym[dayStatus.gym.id]}
-              isFavorite={favorites.has(dayStatus.gym.id)}
-              onToggleFavorite={onToggleFavorite}
-              onOpenDetail={onOpenGymDetail}
-            />
+          {filteredAndSorted.map(({ dayStatus, distanceKm }, idx) => (
+            <Fragment key={dayStatus.gym.id}>
+              <GymCard
+                dayStatus={dayStatus}
+                distanceKm={distanceKm}
+                visitSummary={visitStatsByGym[dayStatus.gym.id]}
+                isFavorite={favorites.has(dayStatus.gym.id)}
+                onToggleFavorite={onToggleFavorite}
+                onOpenDetail={onOpenGymDetail}
+              />
+              {!favoritesOnlyTab && idx === 5 && (
+                <AdSlot variant="infeed" className="md:col-span-2 lg:col-span-3" />
+              )}
+            </Fragment>
           ))}
         </div>
       )}

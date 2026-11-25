@@ -1,14 +1,11 @@
 import type { Metadata, Viewport } from 'next';
+import Script from 'next/script';
 import { PwaEnhancer } from '@/components/PwaEnhancer';
+import { getAdSenseConfig, getSiteUrl } from '@/lib/site';
 import './globals.css';
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : 'http://localhost:3000');
+const siteUrl = getSiteUrl();
+const adSense = getAdSenseConfig();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -27,6 +24,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ja_JP',
   },
+  ...(adSense.client
+    ? {
+        other: {
+          'google-adsense-account': adSense.client,
+        },
+      }
+    : {}),
 };
 
 export const viewport: Viewport = {
@@ -54,6 +58,15 @@ export default function RootLayout({
       <body className="min-h-screen bg-slate-50 text-slate-900 transition-colors duration-200 dark:bg-slate-950 dark:text-slate-100">
         {children}
         <PwaEnhancer />
+        {adSense.client && (
+          <Script
+            id="google-adsense"
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adSense.client}`}
+            strategy="lazyOnload"
+            crossOrigin="anonymous"
+          />
+        )}
       </body>
     </html>
   );

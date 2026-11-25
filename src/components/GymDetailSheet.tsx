@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import {
   AlertTriangle,
   CalendarClock,
@@ -546,6 +547,15 @@ export function GymDetailSheet({
                   公式 X <ExternalLink className="h-3.5 w-3.5" />
                 </a>
               )}
+            </div>
+            <div className="mt-3 text-center">
+              <Link
+                href={`/gyms/${gym.id}`}
+                onClick={onClose}
+                className="inline-flex items-center gap-1 text-xs font-semibold text-slate-600 underline decoration-slate-300 underline-offset-4 hover:text-slate-900 dark:text-slate-400 dark:decoration-slate-700 dark:hover:text-white"
+              >
+                {gym.name}の専用詳細ページ（周辺ジム・URL共有）を開く →
+              </Link>
             </div>
           </div>
         </div>
