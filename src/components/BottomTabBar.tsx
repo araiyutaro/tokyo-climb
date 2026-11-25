@@ -1,7 +1,6 @@
 'use client';
 
-import Link from 'next/link';
-import { CalendarDays, Compass, Map as MapIcon, PlusCircle, Star } from 'lucide-react';
+import { CalendarDays, Compass, Map as MapIcon, Star } from 'lucide-react';
 
 export type AppTab = 'today' | 'map' | 'favorites' | 'calendar';
 
@@ -21,7 +20,7 @@ export function BottomTabBar({
       aria-label="モバイルナビゲーション"
       className="pb-safe fixed inset-x-0 bottom-0 z-40 border-t border-slate-200/80 bg-white/92 backdrop-blur-xl dark:border-slate-800/90 dark:bg-slate-950/92 md:hidden"
     >
-      <div className="mx-auto grid h-16 max-w-lg grid-cols-5 items-center px-1">
+      <div className="mx-auto grid h-16 max-w-lg grid-cols-4 items-center px-2">
         <button
           type="button"
           onClick={() => onSelectTab('today')}
@@ -32,7 +31,7 @@ export function BottomTabBar({
           }`}
         >
           <span
-            className={`flex h-7 w-11 items-center justify-center rounded-full transition-colors ${
+            className={`flex h-7 w-12 items-center justify-center rounded-full transition-colors ${
               activeTab === 'today'
                 ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
                 : ''
@@ -53,7 +52,7 @@ export function BottomTabBar({
           }`}
         >
           <span
-            className={`flex h-7 w-11 items-center justify-center rounded-full transition-colors ${
+            className={`flex h-7 w-12 items-center justify-center rounded-full transition-colors ${
               activeTab === 'map'
                 ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
                 : ''
@@ -74,7 +73,7 @@ export function BottomTabBar({
           }`}
         >
           <span
-            className={`relative flex h-7 w-11 items-center justify-center rounded-full transition-colors ${
+            className={`relative flex h-7 w-12 items-center justify-center rounded-full transition-colors ${
               activeTab === 'favorites' ? 'bg-amber-600 text-white' : ''
             }`}
           >
@@ -104,7 +103,7 @@ export function BottomTabBar({
           }`}
         >
           <span
-            className={`flex h-7 w-11 items-center justify-center rounded-full transition-colors ${
+            className={`flex h-7 w-12 items-center justify-center rounded-full transition-colors ${
               activeTab === 'calendar'
                 ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
                 : ''
@@ -112,18 +111,8 @@ export function BottomTabBar({
           >
             <CalendarDays className="h-4.5 w-4.5" />
           </span>
-          <span className="text-[11px] font-bold">予定表</span>
+          <span className="text-[11px] font-bold">カレンダー</span>
         </button>
-
-        <Link
-          href="/import"
-          className="flex flex-col items-center justify-center gap-0.5 rounded-xl py-1.5 text-slate-600 transition-all active:scale-95 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200"
-        >
-          <span className="flex h-7 w-11 items-center justify-center rounded-full">
-            <PlusCircle className="h-4.5 w-4.5 text-emerald-700 dark:text-emerald-400" />
-          </span>
-          <span className="text-[11px] font-bold">SNS取込</span>
-        </Link>
       </div>
     </nav>
   );

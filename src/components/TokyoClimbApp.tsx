@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import {
   CalendarDays,
@@ -10,7 +9,6 @@ import {
   Compass,
   Map as MapIcon,
   Mountain,
-  PlusCircle,
   RefreshCw,
   Star,
 } from 'lucide-react';
@@ -347,15 +345,6 @@ export function TokyoClimbApp({
               </div>
 
               <ThemeToggle />
-
-              <Link
-                href="/import"
-                className="hidden items-center gap-1 rounded-xl border border-slate-200 bg-white px-3 py-1.5 text-xs font-bold text-slate-700 shadow-2xs transition-colors hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800 md:inline-flex"
-                title="Instagram / X の告知文やカレンダー画像から予定を取り込む"
-              >
-                <PlusCircle className="h-3.5 w-3.5 text-emerald-700 dark:text-emerald-400" />
-                SNS取込
-              </Link>
             </div>
           </div>
         </div>

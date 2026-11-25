@@ -35,15 +35,12 @@ function readDataJsonSafe(
   return fallback;
 }
 
-export function loadOverridesOnly(): ScheduleEvent[] {
-  const raw = readDataJsonSafe('overrides.json', overridesJson);
-  return EventsFileSchema.parse(raw).events;
-}
-
 export function loadDataset(): LoadedDataset {
   const gymsFile = GymsFileSchema.parse(readDataJsonSafe('gyms.json', gymsJson));
   const eventsFile = EventsFileSchema.parse(readDataJsonSafe('events.json', eventsJson));
-  const overridesEvents = loadOverridesOnly();
+  const overridesEvents = EventsFileSchema.parse(
+    readDataJsonSafe('overrides.json', overridesJson),
+  ).events;
 
   return {
     gyms: gymsFile.gyms,
