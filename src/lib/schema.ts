@@ -7,7 +7,7 @@ export const AREA_OPTIONS = [
   { id: 'minato-shinagawa', label: '港区・品川' },
   { id: 'chuo-west', label: '中央線・杉並・西東京' },
   { id: 'tama', label: '多摩・調布・府中・立川・八王子' },
-  { id: 'kanagawa-saitama', label: '神奈川・埼玉（近郊）' },
+  { id: 'kanagawa-saitama', label: '神奈川・埼玉・千葉（近郊）' },
 ] as const;
 
 export const AreaIdSchema = z.enum([
@@ -90,6 +90,13 @@ export const CollectorConfigSchema = z.object({
   storeKeyword: z.string().optional(),
 });
 
+export const LastHoldChangeBaselineSchema = z.object({
+  date: z.string().regex(DATE_REGEX, 'date must be YYYY-MM-DD'),
+  summary: z.string().min(1).optional(),
+  type: z.enum(['hold_change_full', 'hold_change_partial']).optional(),
+  sourceUrl: z.string().url().optional(),
+});
+
 export const GymSchema = z.object({
   id: z.string().min(1),
   name: z.string().min(1),
@@ -103,6 +110,7 @@ export const GymSchema = z.object({
   memberHoursNote: z.string().optional(),
   is24HoursForMembers: z.boolean().optional(),
   notes: z.string().optional(),
+  lastHoldChange: LastHoldChangeBaselineSchema.optional(),
   links: GymLinksSchema,
   collector: CollectorConfigSchema.optional(),
 });

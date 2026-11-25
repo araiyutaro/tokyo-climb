@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Tokyo Climb | 東京・近郊ボルダリングジムまとめ',
     short_name: 'Tokyo Climb',
     description:
-      '東京都内・近郊の主要ボルダリングジム31店舗の営業時間、ホールド替え休業、イベント情報を一箇所で確認。',
+      '東京都内・近郊の主要ボルダリングジム43店舗の営業時間、最終ホールド替え日、ホールド替え休業、イベント情報を一箇所で確認。',
     start_url: '/',
     display: 'standalone',
     background_color: '#f8fafc',

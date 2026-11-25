@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { Calendar, Filter, Search, Star } from 'lucide-react';
+import { ArrowUpDown, Calendar, Filter, Search, Star } from 'lucide-react';
 import { AREA_OPTIONS, type AreaId, type Gym, type ScheduleEvent } from '@/lib/schema';
 import {
   addDaysToDateStr,
@@ -34,6 +34,7 @@ export function TodayGymList({
   const [onlyOpenNow, setOnlyOpenNow] = useState(false);
   const [excludeClosed, setExcludeClosed] = useState(false);
   const [onlyFavorites, setOnlyFavorites] = useState(false);
+  const [sortMode, setSortMode] = useState<'status' | 'fresh_set'>('status');
 
   const isViewingToday = selectedDate === todayStr;
   const holidayName = getJapaneseHolidayName(selectedDate);
@@ -98,6 +99,12 @@ export function TodayGymList({
         const favB = favorites.has(b.gym.id) ? 0 : 1;
         if (favA !== favB) return favA - favB;
 
+        if (sortMode === 'fresh_set') {
+          const daysA = a.lastHoldChange?.daysAgo ?? Number.POSITIVE_INFINITY;
+          const daysB = b.lastHoldChange?.daysAgo ?? Number.POSITIVE_INFINITY;
+          if (daysA !== daysB) return daysA - daysB;
+        }
+
         const wA = getStatusMeta(a.status).sortWeight;
         const wB = getStatusMeta(b.status).sortWeight;
         if (wA !== wB) return wA - wB;
@@ -113,6 +120,7 @@ export function TodayGymList({
     isViewingToday,
     excludeClosed,
     searchQuery,
+    sortMode,
   ]);
 
   const tomorrowStr = addDaysToDateStr(todayStr, 1);
@@ -244,6 +252,19 @@ export function TodayGymList({
             >
               <Star className={`h-3.5 w-3.5 ${onlyFavorites ? 'fill-white' : ''}`} />
               お気に入り ({favorites.size})
+            </button>
+            <button
+              type="button"
+              onClick={() => setSortMode((m) => (m === 'status' ? 'fresh_set' : 'status'))}
+              className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-semibold transition-colors ${
+                sortMode === 'fresh_set'
+                  ? 'bg-teal-600 text-white'
+                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+              }`}
+              title="最後にホールド替えを行った日が新しい順に並べ替え"
+            >
+              <ArrowUpDown className="h-3.5 w-3.5" />
+              {sortMode === 'fresh_set' ? 'セット新しい順' : '並び替え: 営業順'}
             </button>
           </div>
         </div>

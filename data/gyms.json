@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T08:40:34.879Z",
+  "updatedAt": "2026-11-25T00:04:25.927Z",
   "gyms": [
     {
       "id": "bpump-ogikubo",
@@ -1147,6 +1147,12 @@
       "collector": {
         "adapter": "wordpress-rss",
         "feedUrl": "https://b-camp.jp/edogawabashi/feed/"
+      },
+      "lastHoldChange": {
+        "date": "2026-11-13",
+        "summary": "ルートエリアセット",
+        "type": "hold_change_partial",
+        "sourceUrl": "https://b-camp.jp/edogawabashi/"
       }
     },
     {
@@ -1256,6 +1262,12 @@
       "collector": {
         "adapter": "wordpress-rss",
         "feedUrl": "https://b-camp.jp/kinshicho/feed/"
+      },
+      "lastHoldChange": {
+        "date": "2026-11-20",
+        "summary": "11月ボルダー全面リニューアルセット（錦祭りVer.）",
+        "type": "hold_change_full",
+        "sourceUrl": "https://b-camp.jp/kinshicho/"
       }
     },
     {
@@ -1694,6 +1706,661 @@
       "collector": {
         "adapter": "html-news",
         "feedUrl": "https://www.rocklands.tokyo/"
+      }
+    },
+    {
+      "id": "bpump-yokohama",
+      "name": "B-PUMP 横浜",
+      "shortName": "B-PUMP横浜",
+      "chain": "B-PUMP",
+      "area": "kanagawa-saitama",
+      "prefecture": "神奈川県",
+      "address": "神奈川県横浜市西区平沼1-8-1",
+      "nearestStation": "戸部駅・高島町駅 徒歩5分 / 横浜駅 徒歩10分",
+      "regularHours": {
+        "mon": {
+          "open": "11:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "11:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "11:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "11:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "11:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "11:00",
+          "close": "22:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "11:00",
+          "close": "22:00"
+        }
+      },
+      "links": {
+        "website": "https://pump-climbing.com/gym/bpump2/",
+        "scheduleUrl": "https://pump-climbing.com/gym/bpump2/",
+        "instagram": "https://www.instagram.com/bpumpyokohama/",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=B-PUMP+%E6%A8%AA%E6%B5%9C"
+      },
+      "collector": {
+        "adapter": "wordpress-rss",
+        "feedUrl": "https://pump-climbing.com/gym/bpump2/feed/"
+      }
+    },
+    {
+      "id": "pump1-kawaguchi",
+      "name": "PUMP1 川口",
+      "shortName": "PUMP1川口",
+      "chain": "B-PUMP",
+      "area": "kanagawa-saitama",
+      "prefecture": "埼玉県",
+      "address": "埼玉県川口市元郷2-3-12",
+      "nearestStation": "川口元郷駅 徒歩12分 / 赤羽駅からバス",
+      "regularHours": {
+        "mon": null,
+        "tue": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "12:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "20:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "20:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "20:00"
+        }
+      },
+      "notes": "月曜定休（祝日の場合は営業）",
+      "links": {
+        "website": "https://pump-climbing.com/gym/pump1/",
+        "scheduleUrl": "https://pump-climbing.com/gym/pump1/",
+        "instagram": "https://www.instagram.com/pump1_kawaguchi/",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=PUMP1+%E5%B7%9D%E5%8F%A3"
+      },
+      "collector": {
+        "adapter": "wordpress-rss",
+        "feedUrl": "https://pump-climbing.com/gym/pump1/feed/"
+      }
+    },
+    {
+      "id": "basecamp-iruma",
+      "name": "Climb Park Base Camp 入間",
+      "shortName": "Base Camp入間",
+      "chain": "Base Camp",
+      "area": "kanagawa-saitama",
+      "prefecture": "埼玉県",
+      "address": "埼玉県入間市東町7-1-7",
+      "nearestStation": "武蔵藤沢駅 徒歩15分",
+      "regularHours": {
+        "mon": {
+          "open": "12:30",
+          "close": "22:30"
+        },
+        "tue": {
+          "open": "12:30",
+          "close": "22:30"
+        },
+        "wed": {
+          "open": "12:30",
+          "close": "22:30"
+        },
+        "thu": {
+          "open": "12:30",
+          "close": "22:30"
+        },
+        "fri": {
+          "open": "12:30",
+          "close": "22:30"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "20:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "20:00"
+        }
+      },
+      "lastHoldChange": {
+        "date": "2026-11-07",
+        "summary": "Base Camp Rock Festival 2026 セット",
+        "type": "hold_change_full",
+        "sourceUrl": "https://b-camp.jp/iruma/"
+      },
+      "links": {
+        "website": "https://b-camp.jp/iruma/",
+        "scheduleUrl": "https://b-camp.jp/iruma/",
+        "instagram": "https://www.instagram.com/basecamp_iruma/",
+        "x": "https://twitter.com/climbparkb_camp",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=Climb+Park+Base+Camp+%E5%85%A5%E9%96%93"
+      },
+      "collector": {
+        "adapter": "wordpress-rss",
+        "feedUrl": "https://b-camp.jp/iruma/feed/"
+      }
+    },
+    {
+      "id": "noborock-asakusa",
+      "name": "NOBOROCK 浅草",
+      "shortName": "NOBOROCK浅草",
+      "chain": "NOBOROCK",
+      "area": "akiba-east",
+      "prefecture": "東京都",
+      "address": "東京都墨田区吾妻橋1-23-30 パトリア吾妻橋102",
+      "nearestStation": "浅草駅 徒歩4分 / 本所吾妻橋駅 徒歩5分",
+      "regularHours": {
+        "mon": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      },
+      "links": {
+        "website": "https://noborock-climbing.com/program/%e6%b5%85%e8%8d%89%e5%ba%97/",
+        "scheduleUrl": "https://noborock-climbing.com/calendar/",
+        "instagram": "https://www.instagram.com/noborock_asakusa/",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=NOBOROCK+%E6%B5%85%E8%8D%89"
+      },
+      "collector": {
+        "adapter": "noborock-calendar",
+        "feedUrl": "https://noborock-climbing.com/calendar/",
+        "storeKeyword": "浅草"
+      }
+    },
+    {
+      "id": "noborock-omiya",
+      "name": "NOBOROCK 大宮",
+      "shortName": "NOBOROCK大宮",
+      "chain": "NOBOROCK",
+      "area": "kanagawa-saitama",
+      "prefecture": "埼玉県",
+      "address": "埼玉県さいたま市大宮区仲町1-54-3 ビジョナリーIII B1F",
+      "nearestStation": "大宮駅 東口 徒歩4分",
+      "regularHours": {
+        "mon": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      },
+      "links": {
+        "website": "https://noborock-climbing.com/program/omiya/",
+        "scheduleUrl": "https://noborock-climbing.com/calendar/",
+        "instagram": "https://www.instagram.com/noborock_omiya/",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=NOBOROCK+%E5%A4%A7%E5%AE%AE"
+      },
+      "collector": {
+        "adapter": "noborock-calendar",
+        "feedUrl": "https://noborock-climbing.com/calendar/",
+        "storeKeyword": "大宮"
+      }
+    },
+    {
+      "id": "rocky-funabashi",
+      "name": "ROCKY 船橋",
+      "shortName": "ROCKY船橋",
+      "chain": "ROCKY",
+      "area": "kanagawa-saitama",
+      "prefecture": "千葉県",
+      "address": "千葉県船橋市海神町2-225-1",
+      "nearestStation": "船橋駅・海神駅 徒歩10分",
+      "regularHours": {
+        "mon": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      },
+      "links": {
+        "website": "https://www.rockyclimbing.com/funabashi/",
+        "scheduleUrl": "https://www.rockyclimbing.com/",
+        "instagram": "https://www.instagram.com/funabashirocky/",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=ROCKY+%E8%88%B9%E6%A9%8B"
+      },
+      "collector": {
+        "adapter": "html-news",
+        "feedUrl": "https://www.rockyclimbing.com/",
+        "storeKeyword": "船橋"
+      }
+    },
+    {
+      "id": "rocky-inzai",
+      "name": "MEGA ROCKY 印西",
+      "shortName": "ROCKY印西",
+      "chain": "ROCKY",
+      "area": "kanagawa-saitama",
+      "prefecture": "千葉県",
+      "address": "千葉県印西市原1-2 BIGHOPガーデンモール印西2F",
+      "nearestStation": "印西牧の原駅 徒歩3分",
+      "regularHours": {
+        "mon": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      },
+      "links": {
+        "website": "https://www.rockyclimbing.com/inzai/",
+        "scheduleUrl": "https://www.rockyclimbing.com/",
+        "instagram": "https://www.instagram.com/inzairocky/",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=ROCKY+%E5%8D%B0%E8%A5%BF"
+      },
+      "collector": {
+        "adapter": "html-news",
+        "feedUrl": "https://www.rockyclimbing.com/",
+        "storeKeyword": "印西"
+      }
+    },
+    {
+      "id": "dbouldering-tsunashima",
+      "name": "Dボルダリング 綱島",
+      "shortName": "Dボル綱島",
+      "chain": "D.Bouldering",
+      "area": "kanagawa-saitama",
+      "prefecture": "神奈川県",
+      "address": "神奈川県横浜市港北区綱島西2-2-22 パークノヴァ綱島202",
+      "nearestStation": "綱島駅 徒歩2分 / 新綱島駅 徒歩4分",
+      "regularHours": {
+        "mon": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "10:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      },
+      "links": {
+        "website": "https://www.d-b-c.jp/top/tsunashima/",
+        "scheduleUrl": "https://www.d-b-c.jp/top/tsunashima/",
+        "instagram": "https://www.instagram.com/dbouldering_tsunashima/",
+        "x": "https://twitter.com/dbouldering_tsu",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=D%E3%83%9C%E3%83%AB%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0+%E7%B6%B1%E5%B3%B6"
+      },
+      "collector": {
+        "adapter": "html-news",
+        "feedUrl": "https://www.d-b-c.jp/top/tsunashima/"
+      }
+    },
+    {
+      "id": "dbouldering-tsudanuma",
+      "name": "Dボルダリングプラス 津田沼",
+      "shortName": "Dボル津田沼",
+      "chain": "D.Bouldering",
+      "area": "kanagawa-saitama",
+      "prefecture": "千葉県",
+      "address": "千葉県船橋市前原西2-39-8 1F",
+      "nearestStation": "津田沼駅 徒歩5分 / 新津田沼駅 徒歩6分",
+      "regularHours": {
+        "mon": null,
+        "tue": {
+          "open": "12:00",
+          "close": "21:00"
+        },
+        "wed": {
+          "open": "12:00",
+          "close": "21:00"
+        },
+        "thu": {
+          "open": "12:00",
+          "close": "21:00"
+        },
+        "fri": {
+          "open": "12:00",
+          "close": "21:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "20:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "20:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "20:00"
+        }
+      },
+      "memberHoursNote": "月パス会員は全日 7:00〜24:00 利用可（表示は都度利用・受付時間／月曜は無人営業のみ）",
+      "links": {
+        "website": "https://www.d-b-c.jp/top/tsudanuma/",
+        "scheduleUrl": "https://www.d-b-c.jp/top/tsudanuma/",
+        "instagram": "https://www.instagram.com/dbouldering_tsudanuma/",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=D%E3%83%9C%E3%83%AB%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0+%E6%B4%A5%E7%94%B0%E6%B2%BC"
+      },
+      "collector": {
+        "adapter": "html-news",
+        "feedUrl": "https://www.d-b-c.jp/top/tsudanuma/"
+      }
+    },
+    {
+      "id": "boulcom-shinjuku",
+      "name": "BOULCOM 新宿・代々木",
+      "shortName": "BOULCOM新宿",
+      "chain": "BOULCOM",
+      "area": "shinjuku-shibuya",
+      "prefecture": "東京都",
+      "address": "東京都渋谷区千駄ヶ谷5-29-7 ドルミ御苑B1F",
+      "nearestStation": "代々木駅 徒歩3分 / 新宿駅 新南口 徒歩4分",
+      "regularHours": {
+        "mon": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "sun": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "holiday": {
+          "open": "07:00",
+          "close": "23:00"
+        }
+      },
+      "notes": "朝7:00から営業（年中無休）",
+      "links": {
+        "website": "https://boulcom.jp/",
+        "scheduleUrl": "https://boulcom.jp/",
+        "instagram": "https://www.instagram.com/boulcom_tokyo/",
+        "x": "https://x.com/BoulcomTokyo",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=BOULCOM+%E6%96%B0%E5%AE%BF"
+      },
+      "collector": {
+        "adapter": "wordpress-rss",
+        "feedUrl": "https://boulcom.jp/feed/"
+      }
+    },
+    {
+      "id": "project-yokohama",
+      "name": "クライミングジム プロジェクト 横浜",
+      "shortName": "PROJECT横浜",
+      "chain": "独立系",
+      "area": "kanagawa-saitama",
+      "prefecture": "神奈川県",
+      "address": "神奈川県横浜市都筑区佐江戸町417",
+      "nearestStation": "鴨居駅 徒歩7分",
+      "regularHours": {
+        "mon": null,
+        "tue": {
+          "open": "15:00",
+          "close": "23:30"
+        },
+        "wed": {
+          "open": "15:00",
+          "close": "23:30"
+        },
+        "thu": {
+          "open": "15:00",
+          "close": "23:30"
+        },
+        "fri": {
+          "open": "15:00",
+          "close": "23:30"
+        },
+        "sat": {
+          "open": "12:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "12:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "12:00",
+          "close": "21:00"
+        }
+      },
+      "notes": "月曜定休（祝日の場合は変動あり）",
+      "links": {
+        "website": "https://project-climbing.com/",
+        "scheduleUrl": "https://project-climbing.com/",
+        "instagram": "https://www.instagram.com/project_climbing_gym/",
+        "x": "https://twitter.com/franproject",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%B8%E3%83%A0+%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88+%E6%A8%AA%E6%B5%9C"
+      },
+      "collector": {
+        "adapter": "wordpress-rss",
+        "feedUrl": "https://project-climbing.com/feed/"
+      }
+    },
+    {
+      "id": "dogwood-chofu",
+      "name": "DOGWOOD Climbing Gym 調布",
+      "shortName": "DOGWOOD調布",
+      "chain": "DOGWOOD",
+      "area": "tama",
+      "prefecture": "東京都",
+      "address": "東京都調布市多摩川1-26-3",
+      "nearestStation": "京王多摩川駅 徒歩5分",
+      "regularHours": {
+        "mon": {
+          "open": "13:00",
+          "close": "23:30"
+        },
+        "tue": {
+          "open": "13:00",
+          "close": "23:30"
+        },
+        "wed": {
+          "open": "13:00",
+          "close": "23:30"
+        },
+        "thu": {
+          "open": "13:00",
+          "close": "23:30"
+        },
+        "fri": null,
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      },
+      "notes": "金曜定休",
+      "links": {
+        "website": "https://dogwood-climbing.jp/",
+        "scheduleUrl": "https://dogwood-climbing.jp/",
+        "instagram": "https://www.instagram.com/dogwood_climbing_chofu/",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=DOGWOOD+Climbing+Gym+%E8%AA%BF%E5%B8%83"
+      },
+      "collector": {
+        "adapter": "wordpress-rss",
+        "feedUrl": "https://dogwood-climbing.jp/feed/"
       }
     }
   ]

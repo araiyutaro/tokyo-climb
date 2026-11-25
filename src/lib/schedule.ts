@@ -48,6 +48,14 @@ export function addDaysToDateStr(dateStr: string, offsetDays: number): string {
   return `${y}-${m}-${d}`;
 }
 
+export function diffDaysBetweenDateStr(laterDateStr: string, earlierDateStr: string): number {
+  const [ly, lm, ld] = laterDateStr.split('-').map(Number);
+  const [ey, em, ed] = earlierDateStr.split('-').map(Number);
+  const laterMs = Date.UTC(ly, lm - 1, ld);
+  const earlierMs = Date.UTC(ey, em - 1, ed);
+  return Math.round((laterMs - earlierMs) / (24 * 60 * 60 * 1000));
+}
+
 export interface JstDateParts {
   dateStr: string;
   dayKey: Exclude<DayKey, 'holiday'>;
@@ -191,6 +199,14 @@ export type LiveGymStatus =
   | 'regular_closed'
   | 'scheduled_open';
 
+export interface LastHoldChangeInfo {
+  date: string;
+  daysAgo: number;
+  title: string;
+  type?: 'hold_change_full' | 'hold_change_partial';
+  sourceUrl?: string;
+}
+
 export interface GymDayStatus {
   gym: Gym;
   dateStr: string;
@@ -206,6 +222,43 @@ export interface GymDayStatus {
   hasEvent: boolean;
   eventsOnDate: ScheduleEvent[];
   upcomingAlerts: ScheduleEvent[];
+  lastHoldChange?: LastHoldChangeInfo;
+}
+
+function resolveLastHoldChange(
+  gym: Gym,
+  dateStr: string,
+  events: ScheduleEvent[],
+): LastHoldChangeInfo | undefined {
+  let latest: LastHoldChangeInfo | undefined;
+
+  if (gym.lastHoldChange && gym.lastHoldChange.date <= dateStr) {
+    latest = {
+      date: gym.lastHoldChange.date,
+      daysAgo: diffDaysBetweenDateStr(dateStr, gym.lastHoldChange.date),
+      title: gym.lastHoldChange.summary ?? 'ホールド替え',
+      type: gym.lastHoldChange.type,
+      sourceUrl: gym.lastHoldChange.sourceUrl,
+    };
+  }
+
+  for (const ev of events) {
+    if (ev.gymId !== gym.id) continue;
+    if (ev.type !== 'hold_change_full' && ev.type !== 'hold_change_partial') continue;
+    if (ev.endDate > dateStr) continue;
+
+    if (!latest || ev.endDate >= latest.date) {
+      latest = {
+        date: ev.endDate,
+        daysAgo: diffDaysBetweenDateStr(dateStr, ev.endDate),
+        title: ev.title,
+        type: ev.type,
+        sourceUrl: ev.source.url,
+      };
+    }
+  }
+
+  return latest;
 }
 
 export function evaluateGymDayStatus(
@@ -219,6 +272,7 @@ export function evaluateGymDayStatus(
     (e) => e.type === 'hold_change_partial',
   );
   const hasEvent = resolution.eventsOnDate.some((e) => e.type === 'event');
+  const lastHoldChange = resolveLastHoldChange(gym, dateStr, events);
 
   // Collect upcoming alerts (next 1..30 days) that affect climbing availability
   const nextStart = addDaysToDateStr(dateStr, 1);
@@ -247,6 +301,7 @@ export function evaluateGymDayStatus(
     hasEvent,
     eventsOnDate: resolution.eventsOnDate,
     upcomingAlerts,
+    lastHoldChange,
   };
 
   if (now) {

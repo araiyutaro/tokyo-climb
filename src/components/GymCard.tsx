@@ -8,6 +8,7 @@ import {
   ChevronUp,
   Clock,
   ExternalLink,
+  History,
   MapPin,
   Star,
 } from 'lucide-react';
@@ -16,6 +17,7 @@ import { formatMinutesToDuration, type GymDayStatus } from '@/lib/schedule';
 import {
   AREA_LABEL_MAP,
   DAY_LABEL_JA,
+  formatDateJa,
   formatDateRangeJa,
   formatTimeRange,
   getConfidenceLabel,
@@ -33,7 +35,15 @@ const WEEK_ORDER: DayKey[] = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun', '
 
 export function GymCard({ dayStatus, isFavorite, onToggleFavorite }: GymCardProps) {
   const [showWeekly, setShowWeekly] = useState(false);
-  const { gym, status, effectiveHours, isSpecialHours, eventsOnDate, upcomingAlerts } = dayStatus;
+  const {
+    gym,
+    status,
+    effectiveHours,
+    isSpecialHours,
+    eventsOnDate,
+    upcomingAlerts,
+    lastHoldChange,
+  } = dayStatus;
   const statusMeta = getStatusMeta(status);
 
   const isClosedDay =
@@ -125,6 +135,57 @@ export function GymCard({ dayStatus, isFavorite, onToggleFavorite }: GymCardProp
               <span className="rounded bg-indigo-100 px-1.5 py-0.5 text-[10px] font-semibold text-indigo-700">
                 特別時間
               </span>
+            )}
+          </div>
+        </div>
+
+        {/* Last Hold Change Info */}
+        <div
+          className={`mt-2.5 flex items-center justify-between gap-2 rounded-xl px-2.5 py-1.5 text-[11px] ${
+            lastHoldChange && lastHoldChange.daysAgo <= 7
+              ? 'bg-teal-50/90 text-teal-900 ring-1 ring-teal-200/80'
+              : 'bg-slate-50/80 text-slate-600 ring-1 ring-slate-200/60'
+          }`}
+        >
+          <div className="flex min-w-0 items-center gap-1.5">
+            <History className="h-3.5 w-3.5 shrink-0 opacity-70" />
+            {lastHoldChange ? (
+              <span className="truncate" title={`${lastHoldChange.date} ${lastHoldChange.title}`}>
+                最終セット:{' '}
+                <strong className="font-bold">
+                  {formatDateJa(lastHoldChange.date)}
+                </strong>
+                <span className="ml-1 opacity-80">
+                  (
+                  {lastHoldChange.daysAgo === 0
+                    ? '本日'
+                    : lastHoldChange.daysAgo === 1
+                      ? '昨日'
+                      : `${lastHoldChange.daysAgo}日前`}
+                  )
+                </span>
+              </span>
+            ) : (
+              <span className="text-slate-400">最終セット: 情報収集中</span>
+            )}
+          </div>
+
+          <div className="flex shrink-0 items-center gap-1.5">
+            {lastHoldChange && lastHoldChange.daysAgo <= 7 && (
+              <span className="rounded-full bg-teal-600 px-1.5 py-0.5 text-[10px] font-bold text-white">
+                NEW
+              </span>
+            )}
+            {lastHoldChange?.sourceUrl && (
+              <a
+                href={lastHoldChange.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold underline opacity-75 hover:opacity-100"
+                title={lastHoldChange.title}
+              >
+                詳細
+              </a>
             )}
           </div>
         </div>
