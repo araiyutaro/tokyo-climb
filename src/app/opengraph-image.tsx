@@ -47,7 +47,7 @@ export default function OpenGraphImage() {
             Tokyo Bouldering Schedule Hub
           </div>
           <div style={{ fontSize: 28, color: '#cbd5e1' }}>
-            43 Tokyo & Nearby Gyms · Live Open Status · Last Hold Change · Monthly Calendar
+            46 Tokyo & Nearby Gyms · Live Open Status · Last Hold Change · Native PWA
           </div>
         </div>
 

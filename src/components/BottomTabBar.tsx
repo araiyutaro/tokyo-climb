@@ -1,0 +1,99 @@
+'use client';
+
+import Link from 'next/link';
+import { CalendarDays, Compass, PlusCircle, Star } from 'lucide-react';
+
+export type AppTab = 'today' | 'favorites' | 'calendar';
+
+interface BottomTabBarProps {
+  activeTab: AppTab;
+  onSelectTab: (tab: AppTab) => void;
+  favoritesCount: number;
+}
+
+export function BottomTabBar({
+  activeTab,
+  onSelectTab,
+  favoritesCount,
+}: BottomTabBarProps) {
+  return (
+    <nav
+      aria-label="モバイルナビゲーション"
+      className="pb-safe fixed inset-x-0 bottom-0 z-40 border-t border-slate-200/80 bg-white/92 backdrop-blur-xl md:hidden"
+    >
+      <div className="mx-auto grid h-16 max-w-lg grid-cols-4 items-center px-2">
+        <button
+          type="button"
+          onClick={() => onSelectTab('today')}
+          className={`flex flex-col items-center justify-center gap-0.5 rounded-xl py-1.5 transition-all active:scale-95 ${
+            activeTab === 'today' ? 'text-slate-900' : 'text-slate-400'
+          }`}
+        >
+          <span
+            className={`flex h-7 w-12 items-center justify-center rounded-full transition-colors ${
+              activeTab === 'today' ? 'bg-slate-900 text-white' : ''
+            }`}
+          >
+            <Compass className="h-4.5 w-4.5" />
+          </span>
+          <span className="text-[10px] font-bold">今日</span>
+        </button>
+
+        <button
+          type="button"
+          onClick={() => onSelectTab('favorites')}
+          className={`relative flex flex-col items-center justify-center gap-0.5 rounded-xl py-1.5 transition-all active:scale-95 ${
+            activeTab === 'favorites' ? 'text-amber-600' : 'text-slate-400'
+          }`}
+        >
+          <span
+            className={`relative flex h-7 w-12 items-center justify-center rounded-full transition-colors ${
+              activeTab === 'favorites' ? 'bg-amber-500 text-white' : ''
+            }`}
+          >
+            <Star className={`h-4.5 w-4.5 ${activeTab === 'favorites' ? 'fill-white' : ''}`} />
+            {favoritesCount > 0 && (
+              <span
+                className={`absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full px-1 text-[9px] font-extrabold ${
+                  activeTab === 'favorites'
+                    ? 'bg-slate-900 text-white'
+                    : 'bg-amber-500 text-white'
+                }`}
+              >
+                {favoritesCount}
+              </span>
+            )}
+          </span>
+          <span className="text-[10px] font-bold">お気に入り</span>
+        </button>
+
+        <button
+          type="button"
+          onClick={() => onSelectTab('calendar')}
+          className={`flex flex-col items-center justify-center gap-0.5 rounded-xl py-1.5 transition-all active:scale-95 ${
+            activeTab === 'calendar' ? 'text-slate-900' : 'text-slate-400'
+          }`}
+        >
+          <span
+            className={`flex h-7 w-12 items-center justify-center rounded-full transition-colors ${
+              activeTab === 'calendar' ? 'bg-slate-900 text-white' : ''
+            }`}
+          >
+            <CalendarDays className="h-4.5 w-4.5" />
+          </span>
+          <span className="text-[10px] font-bold">カレンダー</span>
+        </button>
+
+        <Link
+          href="/import"
+          className="flex flex-col items-center justify-center gap-0.5 rounded-xl py-1.5 text-slate-400 transition-all active:scale-95 hover:text-slate-700"
+        >
+          <span className="flex h-7 w-12 items-center justify-center rounded-full">
+            <PlusCircle className="h-4.5 w-4.5 text-emerald-600" />
+          </span>
+          <span className="text-[10px] font-bold text-slate-600">SNS取込</span>
+        </Link>
+      </div>
+    </nav>
+  );
+}

@@ -1,0 +1,372 @@
+'use client';
+
+import { useEffect } from 'react';
+import {
+  AlertTriangle,
+  CalendarClock,
+  Clock,
+  ExternalLink,
+  History,
+  MapPin,
+  Navigation,
+  Star,
+  X,
+} from 'lucide-react';
+import type { DayKey, ScheduleEvent } from '@/lib/schema';
+import {
+  formatMinutesToDuration,
+  getDayKeyForDateStr,
+  getUpcomingEventsForGym,
+  type GymDayStatus,
+} from '@/lib/schedule';
+import {
+  AREA_LABEL_MAP,
+  DAY_LABEL_JA,
+  formatDateJa,
+  formatDateRangeJa,
+  formatTimeRange,
+  getConfidenceLabel,
+  getEventTypeMeta,
+  getStatusMeta,
+} from '@/lib/ui-helpers';
+
+interface GymDetailSheetProps {
+  dayStatus: GymDayStatus | null;
+  allEvents: ScheduleEvent[];
+  isFavorite: boolean;
+  onToggleFavorite: (gymId: string) => void;
+  onClose: () => void;
+}
+
+const WEEK_ORDER: DayKey[] = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun', 'holiday'];
+
+export function GymDetailSheet({
+  dayStatus,
+  allEvents,
+  isFavorite,
+  onToggleFavorite,
+  onClose,
+}: GymDetailSheetProps) {
+  // Close on Escape and lock background scroll while open
+  useEffect(() => {
+    if (!dayStatus) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', onKeyDown);
+
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [dayStatus, onClose]);
+
+  if (!dayStatus) return null;
+
+  const { gym, status, effectiveHours, isSpecialHours, lastHoldChange, dateStr, isHoliday } =
+    dayStatus;
+  const statusMeta = getStatusMeta(status);
+  const activeDayKey: DayKey = isHoliday ? 'holiday' : getDayKeyForDateStr(dateStr);
+  const upcoming60 = getUpcomingEventsForGym(gym.id, dateStr, allEvents, 60);
+
+  return (
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="gym-sheet-title"
+      className="fixed inset-0 z-50 flex items-end justify-center bg-slate-950/50 backdrop-blur-[2px] animate-[fade-in_0.16s_ease-out] md:items-center md:p-6"
+      onClick={onClose}
+    >
+      <div
+        className="pb-safe relative flex max-h-[90vh] w-full max-w-xl flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl animate-[sheet-up_0.22s_ease-out] md:max-h-[85vh] md:rounded-3xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Mobile Drag Handle */}
+        <div className="flex justify-center pt-2.5 pb-1 md:hidden">
+          <div className="h-1.5 w-12 rounded-full bg-slate-200" />
+        </div>
+
+        {/* Sticky Sheet Header */}
+        <div className="flex items-start justify-between gap-3 border-b border-slate-100 px-5 py-3.5">
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-1.5">
+              {gym.chain && (
+                <span className="rounded-md bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-600">
+                  {gym.chain}
+                </span>
+              )}
+              <span className="rounded-md bg-slate-50 px-2 py-0.5 text-[11px] text-slate-500 ring-1 ring-slate-200/80">
+                {AREA_LABEL_MAP[gym.area]}
+              </span>
+              {gym.is24HoursForMembers && (
+                <span className="rounded-md bg-teal-50 px-2 py-0.5 text-[11px] font-semibold text-teal-700">
+                  会員24h対応
+                </span>
+              )}
+            </div>
+            <h2 id="gym-sheet-title" className="mt-1.5 text-lg font-extrabold text-slate-900">
+              {gym.name}
+            </h2>
+            <p className="mt-0.5 flex items-center gap-1 text-xs text-slate-500">
+              <MapPin className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+              {gym.nearestStation}
+            </p>
+          </div>
+
+          <div className="flex shrink-0 items-center gap-1.5">
+            <button
+              type="button"
+              onClick={() => onToggleFavorite(gym.id)}
+              aria-label={isFavorite ? 'お気に入りを解除' : 'お気に入りに追加'}
+              className={`rounded-full p-2.5 transition-colors active:scale-90 ${
+                isFavorite
+                  ? 'bg-amber-50 text-amber-500'
+                  : 'bg-slate-100 text-slate-400 hover:text-slate-600'
+              }`}
+            >
+              <Star className={`h-5 w-5 ${isFavorite ? 'fill-amber-400 text-amber-500' : ''}`} />
+            </button>
+            <button
+              type="button"
+              onClick={onClose}
+              aria-label="詳細を閉じる"
+              className="rounded-full bg-slate-100 p-2.5 text-slate-500 transition-colors hover:bg-slate-200 active:scale-90"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Scrollable Content */}
+        <div className="flex-1 space-y-4 overflow-y-auto px-5 py-4">
+          {/* Status Hero */}
+          <div className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200/70">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div className="flex items-center gap-2">
+                <span
+                  className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold ${statusMeta.badgeClass}`}
+                >
+                  <span className={`h-2 w-2 rounded-full ${statusMeta.dotClass}`} />
+                  {statusMeta.label}
+                </span>
+                {dayStatus.minutesUntilClose !== undefined && (
+                  <span className="text-xs font-semibold text-slate-600">
+                    あと{formatMinutesToDuration(dayStatus.minutesUntilClose)}
+                  </span>
+                )}
+                {dayStatus.minutesUntilOpen !== undefined && (
+                  <span className="text-xs font-semibold text-slate-600">
+                    開店まで{formatMinutesToDuration(dayStatus.minutesUntilOpen)}
+                  </span>
+                )}
+              </div>
+              <span className="text-xs font-semibold text-slate-400">
+                {formatDateJa(dateStr)}
+                {dayStatus.holidayName ? ` · ${dayStatus.holidayName}` : ''}
+              </span>
+            </div>
+
+            <div className="mt-2.5 flex items-center gap-2 text-xl font-extrabold text-slate-900">
+              <Clock className="h-5 w-5 text-slate-400" />
+              <span className={isSpecialHours ? 'text-indigo-700' : ''}>
+                {effectiveHours
+                  ? formatTimeRange(effectiveHours)
+                  : status === 'regular_closed'
+                    ? '定休日'
+                    : '終日休業'}
+              </span>
+              {isSpecialHours && (
+                <span className="rounded-md bg-indigo-100 px-2 py-0.5 text-xs font-bold text-indigo-700">
+                  特別営業時間
+                </span>
+              )}
+            </div>
+
+            {gym.memberHoursNote && (
+              <p className="mt-2 text-xs leading-relaxed text-slate-600">※ {gym.memberHoursNote}</p>
+            )}
+            {gym.notes && (
+              <p className="mt-1 text-xs leading-relaxed text-slate-500">注記: {gym.notes}</p>
+            )}
+          </div>
+
+          {/* Last Hold Change */}
+          <div
+            className={`rounded-2xl p-3.5 text-xs ${
+              lastHoldChange && lastHoldChange.daysAgo <= 7
+                ? 'bg-teal-50 text-teal-950 ring-1 ring-teal-200'
+                : 'bg-slate-50 text-slate-700 ring-1 ring-slate-200/70'
+            }`}
+          >
+            <div className="flex items-center justify-between gap-2">
+              <span className="inline-flex items-center gap-1.5 font-bold">
+                <History className="h-4 w-4" />
+                最終ホールド替え
+              </span>
+              {lastHoldChange && lastHoldChange.daysAgo <= 7 && (
+                <span className="rounded-full bg-teal-600 px-2 py-0.5 text-[10px] font-bold text-white">
+                  NEWセット
+                </span>
+              )}
+            </div>
+            {lastHoldChange ? (
+              <div className="mt-1.5 flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <span className="font-extrabold">
+                    {formatDateJa(lastHoldChange.date)}（
+                    {lastHoldChange.daysAgo === 0
+                      ? '本日'
+                      : lastHoldChange.daysAgo === 1
+                        ? '昨日'
+                        : `${lastHoldChange.daysAgo}日前`}
+                    ）
+                  </span>
+                  <p className="mt-0.5 opacity-90">{lastHoldChange.title}</p>
+                </div>
+                {lastHoldChange.sourceUrl && (
+                  <a
+                    href={lastHoldChange.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-bold underline"
+                  >
+                    元記事 <ExternalLink className="h-3 w-3" />
+                  </a>
+                )}
+              </div>
+            ) : (
+              <p className="mt-1 text-slate-500">
+                まだホールド替え履歴が取得されていません（公式・Instaをご確認ください）。
+              </p>
+            )}
+          </div>
+
+          {/* Upcoming 60-day schedule events */}
+          <div>
+            <h3 className="flex items-center gap-1.5 text-xs font-extrabold text-slate-800">
+              <CalendarClock className="h-4 w-4 text-slate-500" />
+              今後のホールド替え・休業・イベント（60日先まで · {upcoming60.length}件）
+            </h3>
+            {upcoming60.length === 0 ? (
+              <p className="mt-2 rounded-xl bg-slate-50 p-3 text-xs text-slate-500">
+                現在登録されている今後のホールド替え・休業予定はありません。
+              </p>
+            ) : (
+              <div className="mt-2 space-y-2">
+                {upcoming60.map((ev) => {
+                  const meta = getEventTypeMeta(ev.type);
+                  return (
+                    <div key={ev.id} className={`rounded-xl border p-3 text-xs ${meta.cardClass}`}>
+                      <div className="flex flex-wrap items-center justify-between gap-1">
+                        <span className="inline-flex items-center gap-1 font-bold">
+                          {(ev.type === 'hold_change_full' ||
+                            ev.type === 'hold_change_partial' ||
+                            ev.type === 'closed') && <AlertTriangle className="h-3.5 w-3.5" />}
+                          {formatDateRangeJa(ev.startDate, ev.endDate)}
+                        </span>
+                        <span className="rounded bg-white/80 px-1.5 py-0.5 text-[10px] font-bold">
+                          {meta.shortLabel}
+                        </span>
+                      </div>
+                      <p className="mt-1 font-semibold">{ev.title}</p>
+                      {ev.description && (
+                        <p className="mt-1 text-[11px] leading-relaxed opacity-90">
+                          {ev.description}
+                        </p>
+                      )}
+                      <div className="mt-1.5 flex items-center justify-between text-[10px] opacity-75">
+                        <span>
+                          {ev.source.label} ({getConfidenceLabel(ev.source.confidence)})
+                        </span>
+                        <a
+                          href={ev.source.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-0.5 font-bold underline"
+                        >
+                          元ページ <ExternalLink className="h-3 w-3" />
+                        </a>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+
+          {/* Weekly Hours Table */}
+          <div>
+            <h3 className="text-xs font-extrabold text-slate-800">通常営業時間</h3>
+            <div className="mt-2 grid grid-cols-2 gap-1.5 rounded-2xl bg-slate-50 p-3 text-xs">
+              {WEEK_ORDER.map((dk) => {
+                const isTodayRow = dk === activeDayKey;
+                return (
+                  <div
+                    key={dk}
+                    className={`flex items-center justify-between rounded-lg px-2.5 py-1.5 ${
+                      isTodayRow
+                        ? 'bg-slate-900 font-bold text-white'
+                        : 'text-slate-600'
+                    }`}
+                  >
+                    <span>{DAY_LABEL_JA[dk]}</span>
+                    <span>{formatTimeRange(gym.regularHours[dk])}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Address & Big Action Buttons */}
+          <div>
+            <p className="text-xs text-slate-500">住所: {gym.address}</p>
+            <div className="mt-2.5 grid grid-cols-2 gap-2">
+              <a
+                href={gym.links.scheduleUrl ?? gym.links.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-1.5 rounded-xl bg-slate-900 px-3 py-3 text-xs font-bold text-white transition-transform active:scale-95"
+              >
+                公式サイト <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+              {gym.links.instagram && (
+                <a
+                  href={gym.links.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-1.5 rounded-xl bg-pink-600 px-3 py-3 text-xs font-bold text-white transition-transform active:scale-95"
+                >
+                  Insta を開く <ExternalLink className="h-3.5 w-3.5" />
+                </a>
+              )}
+              {gym.links.googleMaps && (
+                <a
+                  href={gym.links.googleMaps}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-1.5 rounded-xl bg-blue-50 px-3 py-3 text-xs font-bold text-blue-700 ring-1 ring-blue-200 transition-transform active:scale-95"
+                >
+                  <Navigation className="h-3.5 w-3.5" />
+                  Googleマップ
+                </a>
+              )}
+              {gym.links.x && (
+                <a
+                  href={gym.links.x}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-1.5 rounded-xl bg-slate-100 px-3 py-3 text-xs font-bold text-slate-800 ring-1 ring-slate-200 transition-transform active:scale-95"
+                >
+                  公式 X <ExternalLink className="h-3.5 w-3.5" />
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

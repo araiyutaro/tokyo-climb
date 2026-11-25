@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T00:04:26.520Z",
+  "updatedAt": "2026-11-25T06:11:42.044Z",
   "events": [
     {
       "id": "auto-underground-jujo-2026-05-01-0c407b2cde",
@@ -13,7 +13,7 @@
         "url": "https://underground-climb.com/2026/04/30/12195/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -28,12 +28,12 @@
         "url": "https://b-camp.jp/shinjuku/pickup/1458/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
-      "id": "auto-boulcom-shinjuku-2026-08-23-b51223f518",
-      "gymId": "boulcom-shinjuku",
+      "id": "auto-boulcom-tokyo-2026-08-23-9180850134",
+      "gymId": "boulcom-tokyo",
       "type": "closed",
       "title": "【東京店】8/23(日) 貸切利用に伴う休業のお知らせ",
       "description": "いつもご利用いただきありがとうございます。 BOULCOM東京店では、8/23（日）に貸切利用（のぼコン開催）のため、終日休業とさせていただきます。 ご不便をお掛けいたしますが、ご来店の際はご注意下さい。The post 【東京店】8/23(日) 貸切利用に伴う休業のお知らせ first appeared on BOULCOM（ボルコム）公式サイト | 東京・川崎のボルダリングジム.",
@@ -43,7 +43,22 @@
         "url": "https://boulcom.jp/post-1046/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
+      }
+    },
+    {
+      "id": "auto-boulcom-kawasaki-2026-08-23-ebe983115f",
+      "gymId": "boulcom-kawasaki",
+      "type": "closed",
+      "title": "【東京店】8/23(日) 貸切利用に伴う休業のお知らせ",
+      "description": "いつもご利用いただきありがとうございます。 BOULCOM東京店では、8/23（日）に貸切利用（のぼコン開催）のため、終日休業とさせていただきます。 ご不便をお掛けいたしますが、ご来店の際はご注意下さい。The post 【東京店】8/23(日) 貸切利用に伴う休業のお知らせ first appeared on BOULCOM（ボルコム）公式サイト | 東京・川崎のボルダリングジム.",
+      "startDate": "2026-08-23",
+      "endDate": "2026-08-23",
+      "source": {
+        "url": "https://boulcom.jp/post-1046/",
+        "label": "公式サイトRSS",
+        "confidence": "auto",
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -58,7 +73,7 @@
         "url": "https://b-camp.jp/higashimurayama/route/1092/?utm_source=rss&utm_medium=rss&utm_campaign=9%25e6%259c%2588%25e3%2582%25bb%25e3%2583%2583%25e3%2583%2588%25e3%2582%25b9%25e3%2582%25b1%25e3%2582%25b8%25e3%2583%25a5%25e3%2583%25bc%25e3%2583%25ab-2",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -73,7 +88,7 @@
         "url": "http://quail-climbing.com/2026/10/01/%e3%83%9b%e3%83%bc%e3%83%ab%e3%83%89%e6%9b%bf%e3%81%88%e3%81%ab%e4%bc%b4%e3%81%86%e5%96%b6%e6%a5%ad%e3%82%b9%e3%82%b1%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e5%a4%89%e6%9b%b4%e3%81%ae%e3%81%8a-47/",
         "label": "公式サイトお知らせ",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -88,7 +103,7 @@
         "url": "https://b-camp.jp/shinbashi/route/836/?utm_source=rss&utm_medium=rss&utm_campaign=10%25e6%259c%2588%25e5%2585%25a8%25e9%259d%25a2%25e3%2583%259b%25e3%2583%25bc%25e3%2583%25ab%25e3%2583%2589%25e6%259b%25bf%25e3%2581%2588%25e3%2581%25ae%25e3%2581%258a%25e7%259f%25a5%25e3%2582%2589%25e3%2581%259b-3",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -103,7 +118,7 @@
         "url": "https://b-camp.jp/shinbashi/pickup/840/?utm_source=rss&utm_medium=rss&utm_campaign=10%25e6%259c%258819%25e6%2597%25a5%25ef%25bc%2588%25e6%259c%2588%25ef%25bc%2589%25e3%2580%2580%25e3%2583%25ab%25e3%2583%25bc%25e3%2583%2588%25e3%2582%25bb%25e3%2583%2583%25e3%2583%2588%25e3%2581%25ab%25e4%25bc%25b4%25e3%2581%2586%25e8%2587%25a8%25e6%2599%2582%25e4%25bc%2591%25e6%25a5%25ad%25e3%2581%25ae%25e3%2581%258a",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -118,7 +133,7 @@
         "url": "https://pump-climbing.com/gym/bpump2/2f-right-set/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -133,12 +148,12 @@
         "url": "https://pump-climbing.com/gym/pump1/diamond-session%e9%96%8b%e5%82%ac%e3%81%97%e3%81%be%e3%81%97%e3%81%9f%ef%bc%81%ef%bc%81/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
-      "id": "auto-boulcom-shinjuku-2026-10-25-70929b10ca",
-      "gymId": "boulcom-shinjuku",
+      "id": "auto-boulcom-tokyo-2026-10-25-ef1594502e",
+      "gymId": "boulcom-tokyo",
       "type": "hold_change_partial",
       "title": "【川崎店】10/25(日) 営業時間変更、10/26(月)10/27(火)休業のお知らせ",
       "description": "いつもご利用いただきありがとうございます。 BOULCOM川崎店では、ホールド外し・ホールド替えのため 下記日程で営業時間の変更を行います。 10/25（日） ホールド外しのため 15:00 奥壁close 17:00 閉店 10/26（月）、10/27（火） ホールド替えのため終日閉店 10/28（水）〜 通常営業 ご来店の際はご注意ください。 ご迷惑をおかけいたしますが ご理解、ご協力お願いいたします。 The post 【川崎店】",
@@ -148,7 +163,22 @@
         "url": "https://boulcom.jp/post-1064/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
+      }
+    },
+    {
+      "id": "auto-boulcom-kawasaki-2026-10-25-b1de327f83",
+      "gymId": "boulcom-kawasaki",
+      "type": "hold_change_partial",
+      "title": "【川崎店】10/25(日) 営業時間変更、10/26(月)10/27(火)休業のお知らせ",
+      "description": "いつもご利用いただきありがとうございます。 BOULCOM川崎店では、ホールド外し・ホールド替えのため 下記日程で営業時間の変更を行います。 10/25（日） ホールド外しのため 15:00 奥壁close 17:00 閉店 10/26（月）、10/27（火） ホールド替えのため終日閉店 10/28（水）〜 通常営業 ご来店の際はご注意ください。 ご迷惑をおかけいたしますが ご理解、ご協力お願いいたします。 The post 【川崎店】",
+      "startDate": "2026-10-25",
+      "endDate": "2026-10-25",
+      "source": {
+        "url": "https://boulcom.jp/post-1064/",
+        "label": "公式サイトRSS",
+        "confidence": "auto",
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -163,7 +193,7 @@
         "url": "https://pump-climbing.com/gym/pump1/%e4%b8%ad%e7%b4%9a%e5%90%8c%e5%a0%b4%e9%96%8b%e5%82%ac%e4%b8%ad%e2%80%bc/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -178,7 +208,7 @@
         "url": "https://b-camp.jp/higashimurayama/pickup/1118/?utm_source=rss&utm_medium=rss&utm_campaign=%25e8%2587%25a8%25e6%2599%2582%25e4%25bc%2591%25e6%25a5%25ad%25e3%2581%25a8%25e5%2596%25b6%25e6%25a5%25ad%25e6%2599%2582%25e9%2596%2593%25e3%2581%25ae%25e5%25a4%2589%25e6%259b%25b4%25e3%2581%25ae%25e3%2581%258a%25e7%259f%25a5%25e3%2582%2589%25e3%2581%259b",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -193,7 +223,7 @@
         "url": "https://climbing-girigiri.com/2026/10/26/10-31%e5%9c%9f%e3%83%9c%e3%83%ab%e3%83%80%e3%83%bc%e3%82%a8%e3%83%aa%e3%82%a2%e8%b2%b8%e5%88%87%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -208,7 +238,7 @@
         "url": "https://pump-climbing.com/gym/bpump2/halloween-cup-%e5%a4%a7%e7%9b%9b%e6%b3%81%ef%bc%81/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -223,7 +253,7 @@
         "url": "https://b-camp.jp/iruma/pickup/10855/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -241,7 +271,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e9%ab%98%e7%94%b0%e9%a6%ac%e5%a0%b41700close/?instance_id=1995",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -259,7 +289,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e5%a4%a7%e5%ae%ae1700close/?instance_id=1948",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -273,7 +303,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e9%ab%98%e7%94%b0%e9%a6%ac%e5%a0%b4%e3%83%ab%e3%83%bc%e3%83%88%e3%82%bb%e3%83%83%e3%83%88/?instance_id=1983",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -288,7 +318,7 @@
         "url": "https://pump-climbing.com/gym/pump1/10%e6%9c%88%e6%9c%80%e5%be%8c%e3%81%ae%e4%b8%ad%e7%b4%9a%e9%81%93%e5%a0%b4/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -302,7 +332,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e5%a4%a7%e5%ae%ae%e3%83%ab%e3%83%bc%e3%83%88%e3%82%bb%e3%83%83%e3%83%88/?instance_id=1960",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -320,7 +350,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e9%ab%98%e7%94%b0%e9%a6%ac%e5%a0%b41830open/?instance_id=2007",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -338,12 +368,12 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e5%a4%a7%e5%ae%ae1830-open/?instance_id=1971",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
-      "id": "auto-boulcom-shinjuku-2026-11-05-9ae2f6fcb9",
-      "gymId": "boulcom-shinjuku",
+      "id": "auto-boulcom-tokyo-2026-11-05-3c6c7c78d7",
+      "gymId": "boulcom-tokyo",
       "type": "hours_change",
       "title": "【東京店】11/5(木) 貸切利用に伴う営業時間変更のお知らせ",
       "description": "いつもご利用いただきありがとうございます。 BOULCOM東京店では、11/5（木）に貸切利用のため、18:30～20:30の間は閉店とさせていただきます。 ご不便をお掛けいたしますが、ご来店の際はご注意下さい。The post 【東京店】11/5(木) 貸切利用に伴う営業時間変更のお知らせ first appeared on BOULCOM（ボルコム）公式サイト | 東京・川崎のボルダリングジム.",
@@ -357,7 +387,26 @@
         "url": "https://boulcom.jp/post-1072/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
+      }
+    },
+    {
+      "id": "auto-boulcom-kawasaki-2026-11-05-1085a0e4fa",
+      "gymId": "boulcom-kawasaki",
+      "type": "hours_change",
+      "title": "【東京店】11/5(木) 貸切利用に伴う営業時間変更のお知らせ",
+      "description": "いつもご利用いただきありがとうございます。 BOULCOM東京店では、11/5（木）に貸切利用のため、18:30～20:30の間は閉店とさせていただきます。 ご不便をお掛けいたしますが、ご来店の際はご注意下さい。The post 【東京店】11/5(木) 貸切利用に伴う営業時間変更のお知らせ first appeared on BOULCOM（ボルコム）公式サイト | 東京・川崎のボルダリングジム.",
+      "startDate": "2026-11-05",
+      "endDate": "2026-11-05",
+      "specialHours": {
+        "open": "18:30",
+        "close": "20:30"
+      },
+      "source": {
+        "url": "https://boulcom.jp/post-1072/",
+        "label": "公式サイトRSS",
+        "confidence": "auto",
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -375,7 +424,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%b1%a0%e8%a2%8b1700close/?instance_id=2032",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -393,12 +442,12 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%b5%85%e8%8d%891700-close/?instance_id=2056",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
-      "id": "auto-boulcom-shinjuku-2026-11-08-c1b71e7fd3",
-      "gymId": "boulcom-shinjuku",
+      "id": "auto-boulcom-tokyo-2026-11-08-21193923a6",
+      "gymId": "boulcom-tokyo",
       "type": "hold_change_partial",
       "title": "【東京店】11/8(日) 営業時間変更、11/9(月)11/10(火)休業のお知らせ",
       "description": "いつもご利用いただきありがとうございます。 BOULCOM東京店では、ホールド外し・ホールド替えのため 下記日程で営業時間の変更を行います。 11/8（日） ホールド外しのため 15:00 左壁（強傾斜側）close 17:00 閉店 11/9（月）、11/10（火） ホールド替えのため終日閉店 11/11（水）〜 通常営業 ご来店の際はご注意ください。 ご迷惑をおかけいたしますが ご理解、ご協力お願いいたします。The post 【東",
@@ -408,7 +457,22 @@
         "url": "https://boulcom.jp/post-1065/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
+      }
+    },
+    {
+      "id": "auto-boulcom-kawasaki-2026-11-08-05bebdceac",
+      "gymId": "boulcom-kawasaki",
+      "type": "hold_change_partial",
+      "title": "【東京店】11/8(日) 営業時間変更、11/9(月)11/10(火)休業のお知らせ",
+      "description": "いつもご利用いただきありがとうございます。 BOULCOM東京店では、ホールド外し・ホールド替えのため 下記日程で営業時間の変更を行います。 11/8（日） ホールド外しのため 15:00 左壁（強傾斜側）close 17:00 閉店 11/9（月）、11/10（火） ホールド替えのため終日閉店 11/11（水）〜 通常営業 ご来店の際はご注意ください。 ご迷惑をおかけいたしますが ご理解、ご協力お願いいたします。The post 【東",
+      "startDate": "2026-11-08",
+      "endDate": "2026-11-08",
+      "source": {
+        "url": "https://boulcom.jp/post-1065/",
+        "label": "公式サイトRSS",
+        "confidence": "auto",
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -422,7 +486,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%b1%a0%e8%a2%8b%e3%83%ab%e3%83%bc%e3%83%88%e3%82%bb%e3%83%83%e3%83%88/?instance_id=2020",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -436,7 +500,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%b5%85%e8%8d%89%e4%bc%91%e6%a5%ad%e3%80%90%e3%83%ab%e3%83%bc%e3%83%88%e3%82%bb%e3%83%83%e3%83%88%e3%80%91/?instance_id=2080",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -454,7 +518,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%b1%a0%e8%a2%8b1830open/?instance_id=2044",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -472,7 +536,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%b1%a0%e8%a2%8b1830-open/?instance_id=2068",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -487,7 +551,7 @@
         "url": "https://pump-climbing.com/gym/pump1/11%e6%9c%88%e6%9c%80%e5%88%9d%e3%81%ae%e4%b8%ad%e7%b4%9a%e9%81%93%e5%a0%b4%e2%80%bc/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -505,7 +569,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e7%94%ba%e7%94%b01700close/?instance_id=2116",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -523,7 +587,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%ba%9d%e3%83%8e%e5%8f%a31845-close/?instance_id=2212",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -538,7 +602,7 @@
         "url": "https://b-camp.jp/shinbashi/route/852/?utm_source=rss&utm_medium=rss&utm_campaign=11%25e6%259c%2588%25e5%2585%25a8%25e9%259d%25a2%25e3%2583%259b%25e3%2583%25bc%25e3%2583%25ab%25e3%2583%2589%25e6%259b%25bf%25e3%2581%2588%25e3%2581%25ae%25e3%2581%258a%25e7%259f%25a5%25e3%2582%2589%25e3%2581%259b-4",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -552,7 +616,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e7%94%ba%e7%94%b0%e3%83%ab%e3%83%bc%e3%83%88%e3%82%bb%e3%83%83%e3%83%88/?instance_id=2094",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -566,7 +630,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%ba%9d%e3%83%8e%e5%8f%a3%e3%83%ab%e3%83%bc%e3%83%88%e3%82%bb%e3%83%83%e3%83%88/?instance_id=2200",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -581,7 +645,7 @@
         "url": "https://b-camp.jp/shinbashi/pickup/856/?utm_source=rss&utm_medium=rss&utm_campaign=11%25e6%259c%258816%25e6%2597%25a5%25ef%25bc%2588%25e6%259c%2588%25ef%25bc%2589%25e3%2580%2580%25e3%2583%25ab%25e3%2583%25bc%25e3%2583%2588%25e3%2582%25bb%25e3%2583%2583%25e3%2583%2588%25e3%2581%25ab%25e4%25bc%25b4%25e3%2581%2586%25e8%2587%25a8%25e6%2599%2582%25e4%25bc%2591%25e6%25a5%25ad%25e3%2581%25ae%25e3%2581%258a",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -596,7 +660,7 @@
         "url": "http://quail-climbing.com/2026/11/05/%e3%83%9b%e3%83%bc%e3%83%ab%e3%83%89%e6%9b%bf%e3%81%88%e3%81%ab%e4%bc%b4%e3%81%86%e5%96%b6%e6%a5%ad%e3%82%b9%e3%82%b1%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e5%a4%89%e6%9b%b4%e3%81%ae%e3%81%8a-48/",
         "label": "公式サイトお知らせ",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -632,7 +696,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e7%94%ba%e7%94%b01830open/?instance_id=2105",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -650,7 +714,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%ba%9d%e3%83%8e%e5%8f%a31830open/?instance_id=2222",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -665,7 +729,7 @@
         "url": "https://pump-climbing.com/gym/pump1/29647-2/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -680,7 +744,7 @@
         "url": "https://www.d-b-c.jp/tamachi-news/11%e6%9c%8821%e6%97%a5%e5%9c%9f%ef%bc%9a%e8%b2%b8%e5%88%87%e3%82%8a%e5%96%b6%e6%a5%ad%e3%81%ab%e4%bc%b4%e3%81%86%e5%96%b6%e6%a5%ad%e6%99%82%e9%96%93%e5%a4%89%e6%9b%b4%e3%81%ae%e3%81%8a%e7%9f%a5/",
         "label": "公式サイトお知らせ",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -695,7 +759,7 @@
         "url": "https://climbing-girigiri.com/2026/11/20/11-22%e6%97%a5%e3%82%b3%e3%83%b3%e3%83%9a%e3%81%ae%e7%82%ba%e3%80%812%e9%9a%8e%e3%83%9c%e3%83%ab%e3%83%80%e3%83%bc10%ef%bc%9a00%ef%bd%9e16%ef%bc%9a00%e8%b2%b8%e5%88%87%e3%81%a7%e3%81%99/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -713,7 +777,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%b8%8b%e8%b0%b71700%e9%96%89%e5%ba%97/?instance_id=2153",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -731,7 +795,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%96%b0%e5%ae%bf1700-close/?instance_id=2189",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -745,7 +809,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%b8%8b%e8%b0%b7%e3%83%ab%e3%83%bc%e3%83%88%e3%82%bb%e3%83%83%e3%83%88/?instance_id=2129",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -759,7 +823,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%96%b0%e5%ae%bf%e4%bc%91%e6%a5%ad%e3%80%90%e3%83%ab%e3%83%bc%e3%83%88%e3%82%bb%e3%83%83%e3%83%88%e3%80%91/?instance_id=2177",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -777,7 +841,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e9%ab%98%e7%94%b0%e9%a6%ac%e5%a0%b41800%e9%96%89%e5%ba%97/?instance_id=2237",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -795,7 +859,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%b8%8b%e8%b0%b71830open/?instance_id=2141",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -813,7 +877,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%96%b0%e5%ae%bf1830-open/?instance_id=2165",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -828,7 +892,7 @@
         "url": "https://pump-climbing.com/gym/pump1/%e4%b8%ad%e7%b4%9a%e9%81%93%e5%a0%b4%e9%96%8b%e5%82%ac%e4%b8%ad%ef%bc%81/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -915,7 +979,7 @@
         "url": "https://pump-climbing.com/gym/pump2/climbing-shoes-summit-2026-%e9%96%8b%e5%82%ac-b-pump-tokyo/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -930,7 +994,7 @@
         "url": "https://b-camp.jp/kinshicho/pickup/1023/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -945,7 +1009,7 @@
         "url": "https://pump-climbing.com/gym/bpump2/climbing-shoes-summit/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -960,7 +1024,7 @@
         "url": "https://pump-climbing.com/gym/pump1/climbing-shoes-summit-2026-%e9%96%8b%e5%82%ac-b-pump-tokyo/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -978,7 +1042,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e9%ab%98%e7%94%b0%e9%a6%ac%e5%a0%b41700close/?instance_id=1996",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -996,7 +1060,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e5%a4%a7%e5%ae%ae1700close/?instance_id=1949",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1010,7 +1074,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e9%ab%98%e7%94%b0%e9%a6%ac%e5%a0%b4%e3%83%ab%e3%83%bc%e3%83%88%e3%82%bb%e3%83%83%e3%83%88/?instance_id=1984",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1024,7 +1088,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e5%a4%a7%e5%ae%ae%e3%83%ab%e3%83%bc%e3%83%88%e3%82%bb%e3%83%83%e3%83%88/?instance_id=1959",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1057,7 +1121,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e9%ab%98%e7%94%b0%e9%a6%ac%e5%a0%b41830open/?instance_id=2008",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1075,7 +1139,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e5%a4%a7%e5%ae%ae1830-open/?instance_id=1972",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1093,7 +1157,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%b1%a0%e8%a2%8b1700close/?instance_id=2033",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1111,7 +1175,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%b5%85%e8%8d%891700-close/?instance_id=2057",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1125,7 +1189,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%b1%a0%e8%a2%8b%e3%83%ab%e3%83%bc%e3%83%88%e3%82%bb%e3%83%83%e3%83%88/?instance_id=2021",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1139,7 +1203,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%b5%85%e8%8d%89%e4%bc%91%e6%a5%ad%e3%80%90%e3%83%ab%e3%83%bc%e3%83%88%e3%82%bb%e3%83%83%e3%83%88%e3%80%91/?instance_id=2081",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1157,7 +1221,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%b1%a0%e8%a2%8b1830open/?instance_id=2045",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1175,7 +1239,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%b1%a0%e8%a2%8b1830-open/?instance_id=2069",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1190,7 +1254,7 @@
         "url": "https://climbing-girigiri.com/2026/11/08/12-12%ef%bc%88%e5%9c%9f%ef%bc%89%e3%82%ad%e3%83%83%e3%82%ba%e3%83%9c%e3%83%ab%e3%83%80%e3%83%aa%e3%83%b3%e3%82%b0%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e9%96%8b%e5%82%ac%f0%9f%8e%84/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1208,7 +1272,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e7%94%ba%e7%94%b01700close/?instance_id=2117",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1226,7 +1290,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%ba%9d%e3%83%8e%e5%8f%a31845-close/?instance_id=2213",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1241,7 +1305,7 @@
         "url": "https://climbing-girigiri.com/2026/10/26/12-13%e6%97%a5%e5%a4%a7%e8%a5%bf%e3%81%95%e3%82%93%e3%81%ae%e3%83%9c%e3%83%ab%e3%83%80%e3%83%aa%e3%83%b3%e3%82%b0%e8%ac%9b%e7%bf%92%e4%bc%9a%e9%96%8b%e5%82%ac%e2%98%85/",
         "label": "公式サイトRSS",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1255,7 +1319,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e7%94%ba%e7%94%b0%e3%83%ab%e3%83%bc%e3%83%88%e3%82%bb%e3%83%83%e3%83%88/?instance_id=2095",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1269,7 +1333,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%ba%9d%e3%83%8e%e5%8f%a3%e3%83%ab%e3%83%bc%e3%83%88%e3%82%bb%e3%83%83%e3%83%88/?instance_id=2201",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1287,7 +1351,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e7%94%ba%e7%94%b01830open/?instance_id=2106",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1305,7 +1369,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%ba%9d%e3%83%8e%e5%8f%a31830open/?instance_id=2223",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1323,7 +1387,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%b8%8b%e8%b0%b71700%e9%96%89%e5%ba%97/?instance_id=2154",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1341,7 +1405,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%96%b0%e5%ae%bf1700-close/?instance_id=2190",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1355,7 +1419,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%b8%8b%e8%b0%b7%e3%83%ab%e3%83%bc%e3%83%88%e3%82%bb%e3%83%83%e3%83%88/?instance_id=2130",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1369,7 +1433,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%96%b0%e5%ae%bf%e4%bc%91%e6%a5%ad%e3%80%90%e3%83%ab%e3%83%bc%e3%83%88%e3%82%bb%e3%83%83%e3%83%88%e3%80%91/?instance_id=2178",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1387,7 +1451,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%b8%8b%e8%b0%b71830open/?instance_id=2142",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1405,7 +1469,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e6%96%b0%e5%ae%bf1830-open/?instance_id=2166",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     },
     {
@@ -1423,7 +1487,7 @@
         "url": "https://noborock-climbing.com/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/%e9%ab%98%e7%94%b0%e9%a6%ac%e5%a0%b41800%e9%96%89%e5%ba%97/?instance_id=2238",
         "label": "NOBOROCK公式カレンダー",
         "confidence": "auto",
-        "fetchedAt": "2026-11-25T00:04:26.520Z"
+        "fetchedAt": "2026-11-25T06:11:42.044Z"
       }
     }
   ],
@@ -1432,259 +1496,277 @@
       "gymId": "bpump-ogikubo",
       "status": "ok",
       "eventsFound": 0,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "bpump-akiba",
       "status": "ok",
       "eventsFound": 1,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "pump2-kawasaki",
       "status": "ok",
       "eventsFound": 1,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "rocky-shinjuku",
       "status": "ok",
       "eventsFound": 0,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "rocky-shinagawa",
       "status": "ok",
       "eventsFound": 0,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "rocky-ryogoku",
       "status": "ok",
       "eventsFound": 0,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "noborock-shibuya",
       "status": "ok",
       "eventsFound": 12,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "noborock-shinjuku",
       "status": "ok",
       "eventsFound": 12,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "noborock-ikebukuro",
       "status": "ok",
       "eventsFound": 12,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "noborock-takadanobaba",
       "status": "ok",
       "eventsFound": 16,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "noborock-machida",
       "status": "ok",
       "eventsFound": 12,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "noborock-mizonokuchi",
       "status": "ok",
       "eventsFound": 12,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "dbouldering-tachikawa",
       "status": "ok",
       "eventsFound": 0,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "dbouldering-hachioji",
       "status": "ok",
       "eventsFound": 0,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "dbouldering-tamachi",
       "status": "ok",
       "eventsFound": 1,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "dbouldering-yokohama",
       "status": "ok",
       "eventsFound": 0,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "westrock-chofu",
       "status": "ok",
       "eventsFound": 0,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "westrock-fuchu",
       "status": "ok",
       "eventsFound": 0,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "basecamp-shinjuku",
       "status": "ok",
       "eventsFound": 1,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "basecamp-higashimurayama",
       "status": "ok",
       "eventsFound": 2,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "basecamp-edogawabashi",
       "status": "ok",
       "eventsFound": 0,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "basecamp-shinbashi",
       "status": "ok",
       "eventsFound": 4,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "basecamp-kinshicho",
       "status": "ok",
       "eventsFound": 1,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "quail-nerima",
       "status": "ok",
       "eventsFound": 2,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "girigiri-nishitokyo",
       "status": "ok",
       "eventsFound": 4,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "nextgen-niiza",
       "status": "ok",
       "eventsFound": 0,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "fish-and-bird-toyocho",
       "status": "ok",
       "eventsFound": 0,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "rhino-and-bird-nishinippori",
       "status": "ok",
       "eventsFound": 0,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "underground-jujo",
       "status": "ok",
       "eventsFound": 1,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "beta-akebonobashi",
       "status": "ok",
       "eventsFound": 0,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "rocklands-kasai",
       "status": "ok",
       "eventsFound": 0,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "bpump-yokohama",
       "status": "ok",
       "eventsFound": 3,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "pump1-kawaguchi",
       "status": "ok",
       "eventsFound": 7,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "basecamp-iruma",
       "status": "ok",
       "eventsFound": 1,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "noborock-asakusa",
       "status": "ok",
       "eventsFound": 12,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "noborock-omiya",
       "status": "ok",
       "eventsFound": 12,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "rocky-funabashi",
       "status": "ok",
       "eventsFound": 0,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "rocky-inzai",
       "status": "ok",
       "eventsFound": 0,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "dbouldering-tsunashima",
       "status": "ok",
       "eventsFound": 0,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "dbouldering-tsudanuma",
       "status": "ok",
       "eventsFound": 0,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
-    },
-    {
-      "gymId": "boulcom-shinjuku",
-      "status": "ok",
-      "eventsFound": 4,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "project-yokohama",
       "status": "ok",
       "eventsFound": 0,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     },
     {
       "gymId": "dogwood-chofu",
       "status": "ok",
       "eventsFound": 0,
-      "checkedAt": "2026-11-25T00:04:26.520Z"
+      "checkedAt": "2026-11-25T06:11:42.044Z"
+    },
+    {
+      "gymId": "mitaka-gym",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-25T06:11:42.044Z"
+    },
+    {
+      "gymId": "jam-session-mitaka",
+      "status": "ok",
+      "eventsFound": 0,
+      "checkedAt": "2026-11-25T06:11:42.044Z"
+    },
+    {
+      "gymId": "boulcom-tokyo",
+      "status": "ok",
+      "eventsFound": 4,
+      "checkedAt": "2026-11-25T06:11:42.044Z"
+    },
+    {
+      "gymId": "boulcom-kawasaki",
+      "status": "ok",
+      "eventsFound": 4,
+      "checkedAt": "2026-11-25T06:11:42.044Z"
     }
   ]
 }

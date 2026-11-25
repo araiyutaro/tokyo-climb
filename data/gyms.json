@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T00:04:25.927Z",
+  "updatedAt": "2026-11-25T06:08:29.638Z",
   "gyms": [
     {
       "id": "bpump-ogikubo",
@@ -2203,62 +2203,6 @@
       }
     },
     {
-      "id": "boulcom-shinjuku",
-      "name": "BOULCOM 新宿・代々木",
-      "shortName": "BOULCOM新宿",
-      "chain": "BOULCOM",
-      "area": "shinjuku-shibuya",
-      "prefecture": "東京都",
-      "address": "東京都渋谷区千駄ヶ谷5-29-7 ドルミ御苑B1F",
-      "nearestStation": "代々木駅 徒歩3分 / 新宿駅 新南口 徒歩4分",
-      "regularHours": {
-        "mon": {
-          "open": "07:00",
-          "close": "23:00"
-        },
-        "tue": {
-          "open": "07:00",
-          "close": "23:00"
-        },
-        "wed": {
-          "open": "07:00",
-          "close": "23:00"
-        },
-        "thu": {
-          "open": "07:00",
-          "close": "23:00"
-        },
-        "fri": {
-          "open": "07:00",
-          "close": "23:00"
-        },
-        "sat": {
-          "open": "07:00",
-          "close": "23:00"
-        },
-        "sun": {
-          "open": "07:00",
-          "close": "23:00"
-        },
-        "holiday": {
-          "open": "07:00",
-          "close": "23:00"
-        }
-      },
-      "notes": "朝7:00から営業（年中無休）",
-      "links": {
-        "website": "https://boulcom.jp/",
-        "scheduleUrl": "https://boulcom.jp/",
-        "instagram": "https://www.instagram.com/boulcom_tokyo/",
-        "x": "https://x.com/BoulcomTokyo",
-        "googleMaps": "https://www.google.com/maps/search/?api=1&query=BOULCOM+%E6%96%B0%E5%AE%BF"
-      },
-      "collector": {
-        "adapter": "wordpress-rss",
-        "feedUrl": "https://boulcom.jp/feed/"
-      }
-    },
-    {
       "id": "project-yokohama",
       "name": "クライミングジム プロジェクト 横浜",
       "shortName": "PROJECT横浜",
@@ -2361,6 +2305,231 @@
       "collector": {
         "adapter": "wordpress-rss",
         "feedUrl": "https://dogwood-climbing.jp/feed/"
+      }
+    },
+    {
+      "id": "mitaka-gym",
+      "name": "三鷹ジム",
+      "shortName": "三鷹ジム",
+      "chain": "独立系",
+      "area": "chuo-west",
+      "prefecture": "東京都",
+      "address": "東京都武蔵野市中町1-1-8 HN28ビルB1F",
+      "nearestStation": "三鷹駅 北口 徒歩1分",
+      "regularHours": {
+        "mon": {
+          "open": "13:00",
+          "close": "24:00"
+        },
+        "tue": {
+          "open": "13:00",
+          "close": "24:00"
+        },
+        "wed": {
+          "open": "13:00",
+          "close": "24:00"
+        },
+        "thu": {
+          "open": "13:00",
+          "close": "24:00"
+        },
+        "fri": {
+          "open": "13:00",
+          "close": "24:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      },
+      "memberHoursNote": "夜間無人営業あり（平日22:00〜25:00 / 土日祝19:00〜25:00）",
+      "links": {
+        "website": "http://mitakagym.com/",
+        "scheduleUrl": "http://mitakagym.com/",
+        "instagram": "https://www.instagram.com/mitaka_gym/",
+        "x": "https://twitter.com/mitaka_gym",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E4%B8%89%E9%B7%B9%E3%82%B8%E3%83%A0+%E3%83%9C%E3%83%AB%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0"
+      },
+      "collector": {
+        "adapter": "html-news",
+        "feedUrl": "http://mitakagym.com/"
+      }
+    },
+    {
+      "id": "jam-session-mitaka",
+      "name": "ジャムセッション 三鷹",
+      "shortName": "ジャムセッション",
+      "chain": "独立系",
+      "area": "chuo-west",
+      "prefecture": "東京都",
+      "address": "東京都三鷹市上連雀2-2-5 ポリフォニー三鷹ビル2F",
+      "nearestStation": "三鷹駅 南口 徒歩3分",
+      "regularHours": {
+        "mon": {
+          "open": "14:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "14:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "14:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "14:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "14:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      },
+      "links": {
+        "website": "https://xn--xckbj6a9jra6a4gy403a4b6j.com/",
+        "scheduleUrl": "https://xn--xckbj6a9jra6a4gy403a4b6j.com/",
+        "instagram": "https://www.instagram.com/jamsessionmitaka/",
+        "x": "https://twitter.com/Jam_Mitaka",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%B8%E3%83%A3%E3%83%A0%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3+%E4%B8%89%E9%B7%B9"
+      },
+      "collector": {
+        "adapter": "wordpress-rss",
+        "feedUrl": "https://xn--xckbj6a9jra6a4gy403a4b6j.com/feed/"
+      }
+    },
+    {
+      "id": "boulcom-tokyo",
+      "name": "BOULCOM 東京（大手町）",
+      "shortName": "BOULCOM東京",
+      "chain": "BOULCOM",
+      "area": "akiba-east",
+      "prefecture": "東京都",
+      "address": "東京都千代田区内神田1-13-1 豊島屋ビルB2F",
+      "nearestStation": "大手町駅・神田駅・小川町駅 徒歩5分",
+      "regularHours": {
+        "mon": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "sun": {
+          "open": "10:00",
+          "close": "21:00"
+        },
+        "holiday": {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      },
+      "notes": "平日朝7:00から営業 / 天井高5.5m・トップアウト壁あり",
+      "links": {
+        "website": "https://boulcom.jp/tokyo/",
+        "scheduleUrl": "https://boulcom.jp/tokyo/",
+        "instagram": "https://www.instagram.com/boulcom_tokyo/",
+        "x": "https://x.com/BoulcomTokyo",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=BOULCOM+%E6%9D%B1%E4%BA%AC+%E5%A4%A7%E6%89%8B%E7%94%BA"
+      },
+      "collector": {
+        "adapter": "wordpress-rss",
+        "feedUrl": "https://boulcom.jp/feed/",
+        "storeKeyword": "東京"
+      }
+    },
+    {
+      "id": "boulcom-kawasaki",
+      "name": "BOULCOM 川崎",
+      "shortName": "BOULCOM川崎",
+      "chain": "BOULCOM",
+      "area": "kanagawa-saitama",
+      "prefecture": "神奈川県",
+      "address": "神奈川県川崎市幸区南幸町2-19-1 1F",
+      "nearestStation": "川崎駅 徒歩5分（ラゾーナ川崎そば）",
+      "regularHours": {
+        "mon": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "tue": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "wed": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "thu": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "fri": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "sat": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "sun": {
+          "open": "07:00",
+          "close": "23:00"
+        },
+        "holiday": {
+          "open": "07:00",
+          "close": "23:00"
+        }
+      },
+      "notes": "朝7:00から営業（年中無休）",
+      "links": {
+        "website": "https://boulcom.jp/kawasaki/",
+        "scheduleUrl": "https://boulcom.jp/kawasaki/",
+        "instagram": "https://www.instagram.com/boulcom_kawasaki/",
+        "x": "https://x.com/boulcomkawasaki",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=BOULCOM+%E5%B7%9D%E5%B4%8E"
+      },
+      "collector": {
+        "adapter": "wordpress-rss",
+        "feedUrl": "https://boulcom.jp/feed/",
+        "storeKeyword": "川崎"
       }
     }
   ]

@@ -112,6 +112,26 @@ export function getEventsForGymOnDate(
   );
 }
 
+export function getUpcomingEventsForGym(
+  gymId: string,
+  fromDateStr: string,
+  events: ScheduleEvent[],
+  daysAhead = 60,
+): ScheduleEvent[] {
+  const horizonEnd = addDaysToDateStr(fromDateStr, daysAhead);
+  return events
+    .filter(
+      (ev) =>
+        ev.gymId === gymId &&
+        ev.endDate >= fromDateStr &&
+        ev.startDate <= horizonEnd,
+    )
+    .sort((a, b) => {
+      if (a.startDate !== b.startDate) return a.startDate.localeCompare(b.startDate);
+      return a.endDate.localeCompare(b.endDate);
+    });
+}
+
 interface DayHoursResolution {
   effectiveHours: TimeRange | null;
   closedReason: 'hold_change_closed' | 'temp_closed' | 'regular_closed' | null;
