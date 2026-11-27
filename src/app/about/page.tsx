@@ -81,6 +81,15 @@ export default function AboutPage() {
 
           <section className="mt-7 space-y-3 border-t border-slate-100 pt-6 text-sm leading-relaxed text-slate-700 dark:border-slate-800 dark:text-slate-300">
             <h2 className="text-base font-extrabold text-slate-900 dark:text-white">
+              ジムオーナー様・クライミングブランド様へ（PR・協賛掲載のご案内）
+            </h2>
+            <p>
+              Tokyo Climb は、東京都内および近郊で実際に登りに行くアクティブなクライマーに向けたスケジュール特化サイトです。新規オープン告知・コンペや大型ホールド替えのPR・クライミングギアの協賛掲載なども、アプリのユーザー体験を損なわないネイティブカード形式（PR表記付き）にてご相談を承っております。
+            </p>
+          </section>
+
+          <section className="mt-7 space-y-3 border-t border-slate-100 pt-6 text-sm leading-relaxed text-slate-700 dark:border-slate-800 dark:text-slate-300">
+            <h2 className="text-base font-extrabold text-slate-900 dark:text-white">
               掲載ジム追加・情報修正・お問い合わせ
             </h2>
             <p>

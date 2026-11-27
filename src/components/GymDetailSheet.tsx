@@ -26,7 +26,9 @@ import {
 } from '@/lib/schedule';
 import { formatDistanceJa } from '@/lib/geo';
 import { buildGoogleCalendarUrl, downloadIcsFile } from '@/lib/calendar-export';
+import { buildGymShareText } from '@/lib/seo';
 import type { GymVisitSummary } from '@/lib/climb-log';
+import { ShareButton } from './ShareButton';
 import {
   AREA_LABEL_MAP,
   DAY_LABEL_JA,
@@ -213,6 +215,12 @@ export function GymDetailSheet({
             </div>
 
             <div className="flex shrink-0 items-center gap-1.5">
+              <ShareButton
+                compact
+                title={`${gym.name} | Tokyo Climb`}
+                text={buildGymShareText(dayStatus)}
+                path={`/gyms/${gym.id}`}
+              />
               <button
                 type="button"
                 onTouchStart={(e) => e.stopPropagation()}

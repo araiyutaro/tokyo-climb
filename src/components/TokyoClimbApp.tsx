@@ -13,7 +13,7 @@ import {
   RefreshCw,
   Star,
 } from 'lucide-react';
-import type { CollectorRunMeta, Gym, ScheduleEvent } from '@/lib/schema';
+import { AREA_OPTIONS, type CollectorRunMeta, type Gym, type ScheduleEvent } from '@/lib/schema';
 import { evaluateGymDayStatus, getJstDateParts, type GymDayStatus } from '@/lib/schedule';
 import { haversineDistanceKm, type Coordinates } from '@/lib/geo';
 import {
@@ -410,8 +410,45 @@ export function TokyoClimbApp({
         </main>
 
         {/* Footer */}
-        <footer className="mx-auto mt-10 max-w-7xl border-t border-slate-200 px-4 pt-6 text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400 sm:px-6">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <footer className="mx-auto mt-10 max-w-7xl space-y-5 border-t border-slate-200 px-4 pt-6 text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400 sm:px-6">
+          {/* Discovery & SEO Directory Links */}
+          <div className="space-y-2.5">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="font-bold text-slate-700 dark:text-slate-300">特集ガイド:</span>
+              <Link
+                href="/hold-changes"
+                className="rounded-lg bg-teal-50 px-2.5 py-1 font-bold text-teal-800 hover:bg-teal-100 dark:bg-teal-950/60 dark:text-teal-300"
+              >
+                ホールド替え速報・予定
+              </Link>
+              <Link
+                href="/late-night"
+                className="rounded-lg bg-indigo-50 px-2.5 py-1 font-bold text-indigo-800 hover:bg-indigo-100 dark:bg-indigo-950/60 dark:text-indigo-300"
+              >
+                深夜・24時間営業ジム
+              </Link>
+              <Link
+                href="/gear"
+                className="rounded-lg bg-amber-50 px-2.5 py-1 font-bold text-amber-900 hover:bg-amber-100 dark:bg-amber-950/60 dark:text-amber-300"
+              >
+                定番ギア・消耗品ガイド
+              </Link>
+            </div>
+            <div className="flex flex-wrap items-center gap-1.5">
+              <span className="font-bold text-slate-700 dark:text-slate-300">エリア別:</span>
+              {AREA_OPTIONS.map((area) => (
+                <Link
+                  key={area.id}
+                  href={`/areas/${area.id}`}
+                  className="rounded-md bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
+                >
+                  {area.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-2 border-t border-slate-200/70 pt-4 dark:border-slate-800/70 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center gap-1">
                 <RefreshCw className="h-3.5 w-3.5" />

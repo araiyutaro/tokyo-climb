@@ -20,9 +20,11 @@ import {
 } from '@/lib/schedule';
 import { haversineDistanceKm, type Coordinates } from '@/lib/geo';
 import type { GymVisitSummary } from '@/lib/climb-log';
+import { getActivePromotions, loadPromotions } from '@/lib/promotions';
 import { formatDateJa, getStatusMeta } from '@/lib/ui-helpers';
 import { GymCard } from './GymCard';
 import { AdSlot } from './AdSlot';
+import { NativePromoCard } from './NativePromoCard';
 
 interface TodayGymListProps {
   gyms: Gym[];
@@ -220,6 +222,10 @@ export function TodayGymList({
 
   const tomorrowStr = addDaysToDateStr(todayStr, 1);
   const dayAfterStr = addDaysToDateStr(todayStr, 2);
+  const infeedPromo = useMemo(() => {
+    const active = getActivePromotions(loadPromotions(), 'infeed', todayStr);
+    return active.length > 0 ? active[0] : null;
+  }, [todayStr]);
 
   if (favoritesOnlyTab && favorites.size === 0) {
     return (
@@ -534,7 +540,10 @@ export function TodayGymList({
                 onOpenDetail={onOpenGymDetail}
               />
               {!favoritesOnlyTab && idx === 5 && (
-                <AdSlot variant="infeed" className="md:col-span-2 lg:col-span-3" />
+                <>
+                  <NativePromoCard item={infeedPromo} className="md:col-span-2 lg:col-span-3" />
+                  <AdSlot variant="infeed" className="md:col-span-2 lg:col-span-3" />
+                </>
               )}
             </Fragment>
           ))}

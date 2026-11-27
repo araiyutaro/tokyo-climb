@@ -24,6 +24,8 @@ import {
 } from '@/lib/schedule';
 import { formatDistanceJa } from '@/lib/geo';
 import { buildGoogleCalendarUrl } from '@/lib/calendar-export';
+import { getActivePromotions, loadPromotions } from '@/lib/promotions';
+import { buildBreadcrumbJsonLd, buildGymShareText } from '@/lib/seo';
 import { findNearbyGyms, getSiteUrl } from '@/lib/site';
 import {
   AREA_LABEL_MAP,
@@ -36,6 +38,8 @@ import {
   getStatusMeta,
 } from '@/lib/ui-helpers';
 import { AdSlot } from '@/components/AdSlot';
+import { NativePromoCard } from '@/components/NativePromoCard';
+import { ShareButton } from '@/components/ShareButton';
 
 export const revalidate = 300;
 
@@ -108,6 +112,16 @@ export default async function GymDetailPage({
       : [];
 
   const siteUrl = getSiteUrl();
+  const detailPromos = getActivePromotions(loadPromotions(), 'detail', jst.dateStr);
+  const detailPromo = detailPromos.length > 0 ? detailPromos[0] : null;
+  const shareText = buildGymShareText(dayStatus);
+
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd(siteUrl, [
+    { name: 'ホーム', path: '/' },
+    { name: AREA_LABEL_MAP[gym.area], path: `/areas/${gym.area}` },
+    { name: gym.name, path: `/gyms/${gym.id}` },
+  ]);
+
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'SportsActivityLocation',
@@ -137,6 +151,10 @@ export default async function GymDetailPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
 
       <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/92 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/90">
         <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-3 sm:px-6">
@@ -160,20 +178,30 @@ export default async function GymDetailPage({
       <main className="mx-auto max-w-4xl space-y-5 px-4 pt-6 sm:px-6">
         {/* Hero Card */}
         <article className="rounded-3xl border border-slate-200/90 bg-white p-5 shadow-xs dark:border-slate-800 dark:bg-slate-900 sm:p-7">
-          <div className="flex flex-wrap items-center gap-1.5">
-            {gym.chain && (
-              <span className="rounded-md bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-700 dark:bg-slate-800 dark:text-slate-300">
-                {gym.chain}
-              </span>
-            )}
-            <span className="rounded-md bg-slate-50 px-2.5 py-0.5 text-xs font-medium text-slate-600 ring-1 ring-slate-200/80 dark:bg-slate-800/60 dark:text-slate-300 dark:ring-slate-700">
-              {AREA_LABEL_MAP[gym.area]}
-            </span>
-            {gym.is24HoursForMembers && (
-              <span className="rounded-md bg-teal-50 px-2.5 py-0.5 text-xs font-bold text-teal-800 dark:bg-teal-950/70 dark:text-teal-300">
-                会員24h対応
-              </span>
-            )}
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div className="flex flex-wrap items-center gap-1.5">
+              {gym.chain && (
+                <span className="rounded-md bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                  {gym.chain}
+                </span>
+              )}
+              <Link
+                href={`/areas/${gym.area}`}
+                className="rounded-md bg-slate-50 px-2.5 py-0.5 text-xs font-medium text-slate-600 ring-1 ring-slate-200/80 hover:bg-slate-100 dark:bg-slate-800/60 dark:text-slate-300 dark:ring-slate-700"
+              >
+                {AREA_LABEL_MAP[gym.area]}
+              </Link>
+              {gym.is24HoursForMembers && (
+                <span className="rounded-md bg-teal-50 px-2.5 py-0.5 text-xs font-bold text-teal-800 dark:bg-teal-950/70 dark:text-teal-300">
+                  会員24h対応
+                </span>
+              )}
+            </div>
+            <ShareButton
+              title={`${gym.name} | Tokyo Climb`}
+              text={shareText}
+              path={`/gyms/${gym.id}`}
+            />
           </div>
 
           <h1 className="mt-2.5 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
@@ -424,6 +452,9 @@ export default async function GymDetailPage({
             </div>
           </section>
         </article>
+
+        {/* Native PR / Gear Card (hidden until affiliate/sponsor URL is set in data/promotions.json) */}
+        <NativePromoCard item={detailPromo} />
 
         {/* Manual CLS-safe AdSense Slot (hidden until NEXT_PUBLIC_ADSENSE_* env vars are set) */}
         <AdSlot variant="detail" />

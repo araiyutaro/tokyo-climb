@@ -103,7 +103,7 @@ describe('seo helpers', () => {
     const status = evaluateGymDayStatus(gymLate, '2026-11-27', []);
     const text = buildGymShareText(status);
     expect(text).toContain('深夜ジム');
-    expect(text).toContain('13:00–24:00');
+    expect(text).toContain('13:00 – 24:00');
     expect(text).toContain('#TokyoClimb');
 
     const jsonLd = buildBreadcrumbJsonLd('https://tokyo-climb.jp', [
