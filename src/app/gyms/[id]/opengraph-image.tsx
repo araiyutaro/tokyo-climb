@@ -48,7 +48,7 @@ export default async function GymOpenGraphImage({
   const weekendHours = gym ? formatTimeRange(gym.regularHours.sat) : '';
   const chainLabel = gym?.chain ?? '';
 
-  const allText = `${gymName}${areaLabel}${station}${chainLabel}平日土日営業時間ホールド替えまとめTokyo Climb24h対応`;
+  const allText = `${gymName}${areaLabel}${station}${chainLabel}${weekdayHours}${weekendHours}0123456789:– 平日土日営業時間ホールド替えまとめTokyo Climb24h対応`;
   const fontData = await loadJapaneseFontSubset(allText);
 
   return new ImageResponse(
