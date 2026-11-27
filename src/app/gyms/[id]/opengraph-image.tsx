@@ -125,6 +125,7 @@ export default async function GymOpenGraphImage({
           {weekdayHours && (
             <div
               style={{
+                display: 'flex',
                 padding: '12px 24px',
                 borderRadius: 16,
                 background: 'rgba(15,23,42,0.75)',
@@ -133,12 +134,13 @@ export default async function GymOpenGraphImage({
                 fontWeight: 700,
               }}
             >
-              平日 {weekdayHours}
+              {`平日 ${weekdayHours}`}
             </div>
           )}
           {weekendHours && (
             <div
               style={{
+                display: 'flex',
                 padding: '12px 24px',
                 borderRadius: 16,
                 background: 'rgba(15,23,42,0.75)',
@@ -147,12 +149,13 @@ export default async function GymOpenGraphImage({
                 fontWeight: 700,
               }}
             >
-              土日 {weekendHours}
+              {`土日 ${weekendHours}`}
             </div>
           )}
           {gym?.is24HoursForMembers && (
             <div
               style={{
+                display: 'flex',
                 padding: '12px 24px',
                 borderRadius: 16,
                 background: '#0d9488',
